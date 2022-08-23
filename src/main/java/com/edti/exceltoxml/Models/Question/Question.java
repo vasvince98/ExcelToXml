@@ -1,20 +1,24 @@
 package com.edti.exceltoxml.Models.Question;
 
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
+import com.edti.exceltoxml.Models.Category.Category;
+import com.edti.exceltoxml.Models.Category.Info;
+import org.springframework.lang.Nullable;
+
+import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
 
-@XmlType(propOrder = {"name", "questionText", "generalFeedback", "defaultGrade", "penalty",
+@XmlType(propOrder = {"category", "info", "name", "questionText", "generalFeedback", "defaultGrade", "penalty",
 "hidden", "idNumber", "single", "shuffleAnswers", "answerNumbering", "showStandardInstruction", "correctFeedback",
 "partiallyCorrectFeedback", "incorrectFeedback", "answers"})
 public class Question {
 
 
-    private String type;
 
+    private Category category;
+    private Info info;
+    private String type;
     private Name name;
     private QuestionText questionText;
     private GeneralFeedback generalFeedback;
@@ -32,6 +36,13 @@ public class Question {
     private List<Answer> answers;
 
     public Question() {}
+
+    public Question(String type, Category category, Info info, String idNumber) {
+        this.category = category;
+        this.info = info;
+        this.idNumber = idNumber;
+        this.type = type;
+    }
 
     public Question(String type, Name name, QuestionText questionText, GeneralFeedback generalFeedback,
                     double defaultGrade, double penalty, int hidden, String idNumber,
@@ -55,6 +66,22 @@ public class Question {
         this.partiallyCorrectFeedback = partiallyCorrectFeedback;
         this.incorrectFeedback = incorrectFeedback;
         this.answers = new ArrayList<>();
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public Info getInfo() {
+        return info;
+    }
+
+    public void setInfo(Info info) {
+        this.info = info;
     }
 
     @XmlAttribute

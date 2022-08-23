@@ -2,7 +2,6 @@ package com.edti.exceltoxml.Controllers;
 
 import com.edti.exceltoxml.Models.Category.Category;
 import com.edti.exceltoxml.Models.Category.Info;
-import com.edti.exceltoxml.Models.Category.QuestionCategory;
 import com.edti.exceltoxml.Models.Question.*;
 import com.edti.exceltoxml.Models.Quiz;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,10 +22,8 @@ public class TestController {
     public String test() throws JAXBException {
         Quiz quiz = new Quiz();
 
-        QuestionCategory questionCategory1 = new QuestionCategory(new Category("$course$/top/Databases alapbeállítása"), new Info("moodle_auto_format"), "");
-        QuestionCategory questionCategory2 = new QuestionCategory(new Category("$course$/top/Databases alapbeállítása/Bigtest1"), new Info("html"), "");
-
-        List<QuestionCategory> categories = new ArrayList<>(List.of(questionCategory1, questionCategory2));
+        Question category1 = new Question("category", new Category("$course$/top/Databases alapbeállítása"), new Info("'Databases' környezet megosztott kérdéseinek alapkategóriája", "moodle_auto_format"), "");
+        Question category2 = new Question("category", new Category("$course$/top/Databases alapbeállítása/Bigtest1"), new Info("'Databases' környezet megosztott kérdéseinek alapkategóriája","html"), "");
 
         Question question1 = new Question("multichoice", new Name("What are the constraints?"),
                 new QuestionText("What are the constraints?", "html"),
@@ -66,10 +63,9 @@ public class TestController {
 
         question2.setAnswers(answers);
 
-        List<Question> questions = new ArrayList<>(List.of(question1, question2));
+        List<Question> questions = new ArrayList<>(List.of(category1, category2, question1, question2));
 
         quiz.setQuestion(questions);
-        quiz.setCategory(categories);
 
         JAXBContext jaxbContext = JAXBContext.newInstance(Quiz.class);
 
