@@ -1,8 +1,10 @@
 package com.edti.exceltoxml.Models;
 
 
+import com.edti.exceltoxml.Models.Category.QuestionCategory;
 import com.edti.exceltoxml.Models.Question.Question;
 
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import java.util.ArrayList;
@@ -11,6 +13,8 @@ import java.util.List;
 @XmlRootElement
 @XmlType(propOrder = {"category", "question"})
 public class Quiz {
+
+
     private List<QuestionCategory> category;
     private List<Question> question;
 
