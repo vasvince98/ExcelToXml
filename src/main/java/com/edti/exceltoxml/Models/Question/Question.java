@@ -2,7 +2,6 @@ package com.edti.exceltoxml.Models.Question;
 
 import com.edti.exceltoxml.Models.Category.Category;
 import com.edti.exceltoxml.Models.Category.Info;
-import org.springframework.lang.Nullable;
 
 import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
@@ -11,7 +10,7 @@ import java.util.List;
 
 @XmlType(propOrder = {"category", "info", "name", "questionText", "generalFeedback", "defaultGrade", "penalty",
 "hidden", "idNumber", "single", "shuffleAnswers", "answerNumbering", "showStandardInstruction", "correctFeedback",
-"partiallyCorrectFeedback", "incorrectFeedback", "answers"})
+"partiallyCorrectFeedback", "incorrectFeedback", "answer"})
 public class Question {
 
 
@@ -33,7 +32,7 @@ public class Question {
     private CorrectFeedback correctFeedback;
     private PartiallyCorrectFeedback partiallyCorrectFeedback;
     private IncorrectFeedback incorrectFeedback;
-    private List<Answer> answers;
+    private List<Answer> answer;
 
     public Question() {}
 
@@ -65,7 +64,7 @@ public class Question {
         this.correctFeedback = correctFeedback;
         this.partiallyCorrectFeedback = partiallyCorrectFeedback;
         this.incorrectFeedback = incorrectFeedback;
-        this.answers = new ArrayList<>();
+        this.answer = new ArrayList<>();
     }
 
     public Category getCategory() {
@@ -205,12 +204,12 @@ public class Question {
         this.incorrectFeedback = incorrectFeedback;
     }
 
-    public List<Answer> getAnswers() {
-        return answers;
+    public List<Answer> getAnswer() {
+        return answer;
     }
 
-    public void setAnswers(List<Answer> answers) {
-        this.answers = answers;
+    public void setAnswer(List<Answer> answer) {
+        this.answer = answer;
     }
 
     @Override
@@ -230,7 +229,7 @@ public class Question {
                 ", correctFeedback=" + correctFeedback +
                 ", partiallyCorrectFeedback=" + partiallyCorrectFeedback +
                 ", incorrectFeedback=" + incorrectFeedback +
-                ", answers=" + answers +
+                ", answers=" + answer +
                 '}';
     }
 }

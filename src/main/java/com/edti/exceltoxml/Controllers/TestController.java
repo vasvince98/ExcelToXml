@@ -40,11 +40,11 @@ public class TestController {
                 new PartiallyCorrectFeedback("", "html"),
                 new IncorrectFeedback("", "html"));
 
-        Answer answer1 = new Answer("Constraints are keys specifying an attribute or attributes", new Feedback("", "html"));
-        Answer answer2 = new Answer("Másik válasz", new Feedback("", "html"));
-        Answer answer3 = new Answer("Másik asjnass", new Feedback("", "html"));
+        Answer answer1 = new Answer("Constraints are keys specifying an attribute or attributes", new Feedback("", "html"), "0", "html");
+        Answer answer2 = new Answer("Másik válasz", new Feedback("", "html"), "100", "html");
+        Answer answer3 = new Answer("Másik asjnass", new Feedback("", "html"), "0", "html");
         List<Answer> answers = new ArrayList<>(List.of(answer1, answer2, answer3));
-        question1.setAnswers(answers);
+        question1.setAnswer(answers);
 
         Question question2 = new Question("multichoice", new Name("Második kérdés"),
                 new QuestionText("Második kérdés", "html"),
@@ -61,7 +61,7 @@ public class TestController {
                 new PartiallyCorrectFeedback("", "html"),
                 new IncorrectFeedback("", "html"));
 
-        question2.setAnswers(answers);
+        question2.setAnswer(answers);
 
         List<Question> questions = new ArrayList<>(List.of(category1, category2, question1, question2));
 

@@ -1,15 +1,26 @@
 package com.edti.exceltoxml.Models.Question;
 
+import javax.xml.bind.annotation.XmlAttribute;
+
 public class Answer extends Text {
     private Feedback feedback;
 
-    public Answer(Feedback feedback) {
+    @XmlAttribute
+    private String fraction;
+    @XmlAttribute
+    private String format;
+
+    public Answer(Feedback feedback, String fraction, String format) {
         this.feedback = feedback;
+        this.fraction = fraction;
+        this.format = format;
     }
 
-    public Answer(String text, Feedback feedback) {
+    public Answer(String text, Feedback feedback, String fraction, String format) {
         super(text);
         this.feedback = feedback;
+        this.fraction = fraction;
+        this.format = format;
     }
 
     public Feedback getFeedback() {
@@ -18,6 +29,15 @@ public class Answer extends Text {
 
     public void setFeedback(Feedback feedback) {
         this.feedback = feedback;
+    }
+
+
+    public void setFraction(String fraction) {
+        this.fraction = fraction;
+    }
+
+    public void setFormat(String format) {
+        this.format = format;
     }
 
     @Override
