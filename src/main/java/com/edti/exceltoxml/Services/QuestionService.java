@@ -1,14 +1,13 @@
 package com.edti.exceltoxml.Services;
 
+import com.edti.exceltoxml.Exceptions.MissingDataException;
 import com.edti.exceltoxml.Models.Category.Category;
 import com.edti.exceltoxml.Models.Category.Info;
 import com.edti.exceltoxml.Models.Dummy;
 import com.edti.exceltoxml.Models.Question.*;
+import com.edti.exceltoxml.Models.Question.Name;
 import com.edti.exceltoxml.Models.Quiz;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.*;
 import org.springframework.stereotype.Service;
 
 import javax.xml.bind.JAXBContext;
@@ -16,10 +15,7 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import java.io.File;
 import java.io.StringWriter;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Service
 public class QuestionService implements IQuestionService {
@@ -47,6 +43,11 @@ public class QuestionService implements IQuestionService {
                 int i = 0;
                 Question question = new Question();
                 for (Cell cell : row) {
+
+                    if (cell.getColumnIndex() != i) {
+                        throw new MissingDataException("Every cell must be filled!");
+                    }
+
                     switch (i) {
                         case 0 -> question.setType("truefalse");
                         case 1 -> question.setName(new Name(cell.getStringCellValue()));
