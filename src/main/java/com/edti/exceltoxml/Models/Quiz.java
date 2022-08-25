@@ -7,6 +7,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @XmlRootElement
@@ -14,7 +15,7 @@ public class Quiz {
 
 
 //    private List<QuestionCategory> category;
-    private List<Question> question;
+    private List<Question> question = new ArrayList<>();
 
     public Quiz() {}
 
@@ -30,4 +31,10 @@ public class Quiz {
         this.question = question;
     }
 
+    @Override
+    public String toString() {
+        return "Quiz{" +
+                "question=" + question +
+                '}';
+    }
 }

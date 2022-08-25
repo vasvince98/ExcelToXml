@@ -10,6 +10,8 @@ public class Answer extends Text {
     @XmlAttribute
     private String format;
 
+    public Answer() {}
+
     public Answer(Feedback feedback, String fraction, String format) {
         this.feedback = feedback;
         this.fraction = fraction;
