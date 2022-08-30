@@ -3,7 +3,6 @@ package com.edti.exceltoxml.Services;
 import com.edti.exceltoxml.Exceptions.MissingDataException;
 import com.edti.exceltoxml.Models.Category.Category;
 import com.edti.exceltoxml.Models.Category.Info;
-import com.edti.exceltoxml.Models.Dummy;
 import com.edti.exceltoxml.Models.Question.*;
 import com.edti.exceltoxml.Models.Question.Name;
 import com.edti.exceltoxml.Models.Quiz;
@@ -13,7 +12,6 @@ import org.springframework.stereotype.Service;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
-import java.io.File;
 import java.io.StringWriter;
 import java.util.*;
 
@@ -31,35 +29,52 @@ public class QuestionService implements IQuestionService {
 
         workbook.setActiveSheet(0);
 
-        if (workbook.getSheetName(0).equals("igaz-hamis")) {
-            System.out.println("Jó az oldal");
-            this.questionType = "igaz-hamis";
-        }
-
 
         for (Sheet sheet : workbook) {
+            switch (sheet.getSheetName()) {
+                case "igaz-hamis" -> {
+                    this.questionType = "igaz-hamis";
+                    for (Row row : sheet) {
+                        int i = 0;
+                        Question question = new Question();
+                        for (Cell cell : row) {
 
-            for (Row row : sheet) {
-                int i = 0;
-                Question question = new Question();
-                for (Cell cell : row) {
+                            if (cell.getColumnIndex() != i) {
+                                throw new MissingDataException("Every cell must be filled!");
+                            }
 
-                    if (cell.getColumnIndex() != i) {
-                        throw new MissingDataException("Every cell must be filled!");
+                            switch (i) {
+                                case 0 -> question.setType("truefalse");
+                                case 1 -> question.setName(new Name(cell.getStringCellValue()));
+                                case 2 -> question.setQuestionText(new QuestionText(cell.getStringCellValue(), "html"));
+                                case 3 -> question.setDefaultGrade(cell.getNumericCellValue());
+                                case 4 -> question.setAnswer(createAnswers(this.questionType, cell.toString().toLowerCase()));
+                                default -> System.out.println("It's over Anakin!");
+                            }
+                            i++;
+                        }
+                        questions.add(question);
                     }
-
-                    switch (i) {
-                        case 0 -> question.setType("truefalse");
-                        case 1 -> question.setName(new Name(cell.getStringCellValue()));
-                        case 2 -> question.setQuestionText(new QuestionText(cell.getStringCellValue(), "html"));
-                        case 3 -> question.setDefaultGrade(cell.getNumericCellValue());
-                        case 4 -> question.setAnswer(createAnswers(this.questionType, cell.toString().toLowerCase()));
-                        default -> System.out.println("It's over Anakin!");
-                    }
-                    i++;
                 }
-                questions.add(question);
+
+                case "feleletválasztó" -> {
+                    System.out.println("Feleletválasztó");
+                }
+
+                case "párosító" -> {
+                    System.out.println("Párosító");
+                }
+
+                case "szövegbehúzás" -> {
+                    System.out.println("Szövegbehúzás");
+                }
+
+                default -> {
+                    System.out.println("It's over Anakin!");
+                }
             }
+
+
         }
         currentQuiz.setQuestion(questions);
         return currentQuiz;
