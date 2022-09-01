@@ -1,6 +1,8 @@
 package com.edti.exceltoxml.Controllers;
 
 import com.edti.exceltoxml.Exceptions.MissingDataException;
+import com.edti.exceltoxml.Exceptions.MissingHeaderException;
+import com.edti.exceltoxml.Exceptions.NullAnswerException;
 import com.edti.exceltoxml.Exceptions.OwnError;
 import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.stereotype.Controller;
@@ -15,6 +17,20 @@ public class ExceptionHandlerController implements ErrorController {
     @ExceptionHandler({MissingDataException.class})
     public String emptyCellException(Model m) {
         OwnError error = new OwnError("Every cell must be filled!");
+        m.addAttribute("error", error);
+        return "error";
+    }
+
+    @ExceptionHandler({MissingHeaderException.class})
+    public String missingHeaderExceptionHandler(Model m) {
+        OwnError error = new OwnError("Az első sorban szerepelnie kell a mező típusoknak!");
+        m.addAttribute("error", error);
+        return "error";
+    }
+
+    @ExceptionHandler({NullAnswerException.class})
+    public String nullAnswerExceptionHandler(Model m) {
+        OwnError error = new OwnError("Nem vont le pontot a rossz válaszért! Biztosan beküldi a tesztet?");
         m.addAttribute("error", error);
         return "error";
     }

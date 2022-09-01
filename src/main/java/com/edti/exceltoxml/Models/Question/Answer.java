@@ -12,6 +12,10 @@ public class Answer extends Text {
 
     public Answer() {}
 
+    public Answer(String text) {
+        super(text);
+    }
+
     public Answer(Feedback feedback, String fraction, String format) {
         this.feedback = feedback;
         this.fraction = fraction;

@@ -1,0 +1,44 @@
+<question type="matching">
+	<name>
+		<text>Párosító kérdés neve</text>
+	</name>
+	<questiontext format="html">
+		<text><![CDATA[<p dir="ltr" style="text-align: left;"></p><h2>Párosító 				kérdés szövege</h2><br><p></p>]]></text>
+    	</questiontext>
+    	<generalfeedback format="html">
+      		<text></text>
+    	</generalfeedback>
+    	<defaultgrade>100.0000000</defaultgrade>
+    	<penalty>0.3333333</penalty>
+    	<hidden>0</hidden>
+    	<idnumber></idnumber>
+    	<shuffleanswers>true</shuffleanswers>
+    	<correctfeedback format="html">
+      		<text>Válasza helyes.</text>
+    	</correctfeedback>
+    	<partiallycorrectfeedback format="html">
+      		<text>Válasza részben helyes.</text>
+    	</partiallycorrectfeedback>
+    	<incorrectfeedback format="html">
+      		<text>Válasza helytelen.</text>
+    	</incorrectfeedback>
+    	<shownumcorrect/>
+    	<subquestion format="html">
+      		<text><![CDATA[<p dir="ltr" style="text-align: left;">Kék Válasz 1</				p>]]></text>
+      		<answer>
+        		<text>Kék Válasz 2</text>
+      		</answer>
+    	</subquestion>
+    	<subquestion format="html">
+      		<text><![CDATA[<p dir="ltr" style="text-align: left;">Zöld Válasz 1<br></			p>]]></text>
+      		<answer>
+        		<text>Zöld Válasz 2</text>
+      		</answer>
+    	</subquestion>
+    	<subquestion format="html">
+      		<text></text>
+      		<answer>
+        		<text>Fekete Válasz 2</text>
+      		</answer>
+    	</subquestion>
+</question>

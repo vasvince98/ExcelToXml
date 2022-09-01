@@ -8,9 +8,9 @@
 <body class="center">
 <h1>Upload file</h1>
 <p>Upload your file!</p>
-  <form action="/postupload" method="post">
-    <label for="fname">Excel fájl feltöltése:</label>
-    <input type="file" id="fname" name="fname"><br><br>
+  <form action="/postupload" method="post" enctype="multipart/form-data">
+    <label for="file">Excel fájl feltöltése:</label>
+    <input type="file" id="file" name="file"><br><br>
     <input type="submit" value="Submit">
   </form>
 </body>

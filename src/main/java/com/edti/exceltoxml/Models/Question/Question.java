@@ -8,9 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-@XmlType(propOrder = {"category", "info", "name", "questionText", "generalFeedback", "defaultGrade", "penalty",
-"hidden", "idNumber", "single", "shuffleAnswers", "answerNumbering", "showStandardInstruction", "correctFeedback",
-"partiallyCorrectFeedback", "incorrectFeedback", "answer"})
+@XmlType(propOrder = {"category", "info", "name", "questiontext", "generalfeedback", "defaultgrade", "penalty",
+"hidden", "idnumber", "single", "shuffleanswers", "answernumbering", "showstandardinstruction", "correctfeedback",
+"partiallycorrectfeedback", "incorrectfeedback", "subquestion","answer", "dragbox"})
 public class Question {
 
 
@@ -19,52 +19,73 @@ public class Question {
     private Info info;
     private String type;
     private Name name;
-    private QuestionText questionText;
-    private GeneralFeedback generalFeedback;
-    private double defaultGrade;
+    private QuestionText questiontext;
+    private GeneralFeedback generalfeedback;
+    private double defaultgrade;
     private double penalty;
     private int hidden;
-    private String idNumber;
+    private String idnumber;
     private boolean single;
-    private boolean shuffleAnswers;
-    private String answerNumbering;
-    private int showStandardInstruction;
-    private CorrectFeedback correctFeedback;
-    private PartiallyCorrectFeedback partiallyCorrectFeedback;
-    private IncorrectFeedback incorrectFeedback;
+    private boolean shuffleanswers;
+    private String answernumbering;
+    private int showstandardinstruction;
+    private CorrectFeedback correctfeedback;
+    private PartiallyCorrectFeedback partiallycorrectfeedback;
+    private IncorrectFeedback incorrectfeedback;
+    private List<SubQuestion> subquestion;
     private List<Answer> answer;
+    private List<Dragbox> dragbox;
 
     public Question() {}
 
-    public Question(String type, Category category, Info info, String idNumber) {
+    public Question(String type, Category category, Info info, String idnumber) {
         this.category = category;
         this.info = info;
-        this.idNumber = idNumber;
+        this.idnumber = idnumber;
         this.type = type;
     }
 
-    public Question(String type, Name name, QuestionText questionText, GeneralFeedback generalFeedback,
-                    double defaultGrade, double penalty, int hidden, String idNumber,
-                    boolean single, boolean shuffleAnswers, String answerNumbering,
-                    int showStandardInstruction, CorrectFeedback correctFeedback,
+    public Question(String type, Name name, QuestionText questiontext, GeneralFeedback generalfeedback,
+                    double defaultgrade, double penalty, int hidden, String idnumber,
+                    boolean single, boolean shuffleanswers, String answernumbering,
+                    int showstandardinstruction, CorrectFeedback correctfeedback,
                     PartiallyCorrectFeedback partiallyCorrectFeedback,
                     IncorrectFeedback incorrectFeedback) {
         this.type = type;
         this.name = name;
-        this.questionText = questionText;
-        this.generalFeedback = generalFeedback;
-        this.defaultGrade = defaultGrade;
+        this.questiontext = questiontext;
+        this.generalfeedback = generalfeedback;
+        this.defaultgrade = defaultgrade;
         this.penalty = penalty;
         this.hidden = hidden;
-        this.idNumber = idNumber;
+        this.idnumber = idnumber;
         this.single = single;
-        this.shuffleAnswers = shuffleAnswers;
-        this.answerNumbering = answerNumbering;
-        this.showStandardInstruction = showStandardInstruction;
-        this.correctFeedback = correctFeedback;
-        this.partiallyCorrectFeedback = partiallyCorrectFeedback;
-        this.incorrectFeedback = incorrectFeedback;
+        this.shuffleanswers = shuffleanswers;
+        this.answernumbering = answernumbering;
+        this.showstandardinstruction = showstandardinstruction;
+        this.correctfeedback = correctfeedback;
+        this.partiallycorrectfeedback = partiallyCorrectFeedback;
+        this.incorrectfeedback = incorrectFeedback;
+        this.subquestion = new ArrayList<>();
         this.answer = new ArrayList<>();
+        this.dragbox = new ArrayList<>();
+    }
+
+
+    public List<Dragbox> getDragbox() {
+        return dragbox;
+    }
+
+    public void setDragbox(List<Dragbox> dragbox) {
+        this.dragbox = dragbox;
+    }
+
+    public List<SubQuestion> getSubquestion() {
+        return subquestion;
+    }
+
+    public void setSubquestion(List<SubQuestion> subquestion) {
+        this.subquestion = subquestion;
     }
 
     public Category getCategory() {
@@ -100,28 +121,28 @@ public class Question {
         this.name = name;
     }
 
-    public QuestionText getQuestionText() {
-        return questionText;
+    public QuestionText getQuestiontext() {
+        return questiontext;
     }
 
-    public void setQuestionText(QuestionText questionText) {
-        this.questionText = questionText;
+    public void setQuestiontext(QuestionText questiontext) {
+        this.questiontext = questiontext;
     }
 
-    public GeneralFeedback getGeneralFeedback() {
-        return generalFeedback;
+    public GeneralFeedback getGeneralfeedback() {
+        return generalfeedback;
     }
 
-    public void setGeneralFeedback(GeneralFeedback generalFeedback) {
-        this.generalFeedback = generalFeedback;
+    public void setGeneralfeedback(GeneralFeedback generalfeedback) {
+        this.generalfeedback = generalfeedback;
     }
 
-    public double getDefaultGrade() {
-        return defaultGrade;
+    public double getDefaultgrade() {
+        return defaultgrade;
     }
 
-    public void setDefaultGrade(double defaultGrade) {
-        this.defaultGrade = defaultGrade;
+    public void setDefaultgrade(double defaultgrade) {
+        this.defaultgrade = defaultgrade;
     }
 
     public double getPenalty() {
@@ -140,12 +161,12 @@ public class Question {
         this.hidden = hidden;
     }
 
-    public String getIdNumber() {
-        return idNumber;
+    public String getIdnumber() {
+        return idnumber;
     }
 
-    public void setIdNumber(String idNumber) {
-        this.idNumber = idNumber;
+    public void setIdnumber(String idnumber) {
+        this.idnumber = idnumber;
     }
 
     public boolean isSingle() {
@@ -156,52 +177,52 @@ public class Question {
         this.single = single;
     }
 
-    public boolean isShuffleAnswers() {
-        return shuffleAnswers;
+    public boolean isShuffleanswers() {
+        return shuffleanswers;
     }
 
-    public void setShuffleAnswers(boolean shuffleAnswers) {
-        this.shuffleAnswers = shuffleAnswers;
+    public void setShuffleanswers(boolean shuffleanswers) {
+        this.shuffleanswers = shuffleanswers;
     }
 
-    public String getAnswerNumbering() {
-        return answerNumbering;
+    public String getAnswernumbering() {
+        return answernumbering;
     }
 
-    public void setAnswerNumbering(String answerNumbering) {
-        this.answerNumbering = answerNumbering;
+    public void setAnswernumbering(String answernumbering) {
+        this.answernumbering = answernumbering;
     }
 
-    public int getShowStandardInstruction() {
-        return showStandardInstruction;
+    public int getShowstandardinstruction() {
+        return showstandardinstruction;
     }
 
-    public void setShowStandardInstruction(int showStandardInstruction) {
-        this.showStandardInstruction = showStandardInstruction;
+    public void setShowstandardinstruction(int showstandardinstruction) {
+        this.showstandardinstruction = showstandardinstruction;
     }
 
-    public CorrectFeedback getCorrectFeedback() {
-        return correctFeedback;
+    public CorrectFeedback getCorrectfeedback() {
+        return correctfeedback;
     }
 
-    public void setCorrectFeedback(CorrectFeedback correctFeedback) {
-        this.correctFeedback = correctFeedback;
+    public void setCorrectfeedback(CorrectFeedback correctfeedback) {
+        this.correctfeedback = correctfeedback;
     }
 
-    public PartiallyCorrectFeedback getPartiallyCorrectFeedback() {
-        return partiallyCorrectFeedback;
+    public PartiallyCorrectFeedback getPartiallycorrectfeedback() {
+        return partiallycorrectfeedback;
     }
 
-    public void setPartiallyCorrectFeedback(PartiallyCorrectFeedback partiallyCorrectFeedback) {
-        this.partiallyCorrectFeedback = partiallyCorrectFeedback;
+    public void setPartiallycorrectfeedback(PartiallyCorrectFeedback partiallycorrectfeedback) {
+        this.partiallycorrectfeedback = partiallycorrectfeedback;
     }
 
-    public IncorrectFeedback getIncorrectFeedback() {
-        return incorrectFeedback;
+    public IncorrectFeedback getIncorrectfeedback() {
+        return incorrectfeedback;
     }
 
-    public void setIncorrectFeedback(IncorrectFeedback incorrectFeedback) {
-        this.incorrectFeedback = incorrectFeedback;
+    public void setIncorrectfeedback(IncorrectFeedback incorrectfeedback) {
+        this.incorrectfeedback = incorrectfeedback;
     }
 
     public List<Answer> getAnswer() {
@@ -216,19 +237,19 @@ public class Question {
     public String toString() {
         return "Question{" +
                 "name=" + name +
-                ", questionText=" + questionText +
-                ", generalFeedback=" + generalFeedback +
-                ", defaultGrade=" + defaultGrade +
+                ", questionText=" + questiontext +
+                ", generalFeedback=" + generalfeedback +
+                ", defaultGrade=" + defaultgrade +
                 ", penalty=" + penalty +
                 ", hidden=" + hidden +
-                ", idNumber='" + idNumber + '\'' +
+                ", idNumber='" + idnumber + '\'' +
                 ", single=" + single +
-                ", shuffleAnswers=" + shuffleAnswers +
-                ", answerNumbering='" + answerNumbering + '\'' +
-                ", showStandardInstruction=" + showStandardInstruction +
-                ", correctFeedback=" + correctFeedback +
-                ", partiallyCorrectFeedback=" + partiallyCorrectFeedback +
-                ", incorrectFeedback=" + incorrectFeedback +
+                ", shuffleAnswers=" + shuffleanswers +
+                ", answerNumbering='" + answernumbering + '\'' +
+                ", showStandardInstruction=" + showstandardinstruction +
+                ", correctFeedback=" + correctfeedback +
+                ", partiallyCorrectFeedback=" + partiallycorrectfeedback +
+                ", incorrectFeedback=" + incorrectfeedback +
                 ", answers=" + answer +
                 '}';
     }
