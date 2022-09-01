@@ -10,9 +10,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.http.MediaType;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestPart;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 
@@ -27,6 +25,8 @@ public class TestRestController {
     @Value("${fileLocation}")
     private String fileLocation;
 
+    String filePath;
+
     private IQuestionService questionService;
     private IUploadService uploadService;
 
@@ -38,8 +38,16 @@ public class TestRestController {
 
     @RequestMapping("/")
     public String test() throws JAXBException, IOException {
+        File folder = new File(fileLocation);
+        File[] listOfFiles = folder.listFiles();
 
-        FileInputStream file = new FileInputStream(fileLocation);
+        for (File listOfFile : listOfFiles) {
+            if (listOfFile.getName().equals("datufile.xlsx")) {
+                filePath = listOfFile.getPath();
+            }
+        }
+
+        FileInputStream file = new FileInputStream(filePath);
         Workbook workbook = new XSSFWorkbook(file);
 
         Quiz currentQuiz = questionService.createObjectFromExcel(workbook);
@@ -47,13 +55,6 @@ public class TestRestController {
         return questionService.createXmlFromObject(currentQuiz);
     }
 
-
-
-    @RequestMapping(path = "/postupload", method = POST, consumes = { MediaType.MULTIPART_FORM_DATA_VALUE })
-    public String uploadResponse(Model m, @RequestPart MultipartFile file) throws IOException {
-        uploadService.handleExcelFile(file);
-        return "Szia";
-    }
 
 
 }

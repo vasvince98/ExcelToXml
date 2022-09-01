@@ -19,10 +19,9 @@ public class UploadService implements IUploadService {
     public void handleExcelFile(MultipartFile file) {
         try {
             InputStream in = file.getInputStream();
-            File currDir = new File(fileLocation);           //todo: filename
-            String path = currDir.getAbsolutePath();
-            fileLocation = path.substring(0, path.length() - 1) + file.getOriginalFilename();
-            FileOutputStream f = new FileOutputStream(fileLocation);
+            File currDir = new File(fileLocation + "/datum");           //todo: filename
+            String path = currDir.getAbsolutePath() + file.getOriginalFilename();
+            FileOutputStream f = new FileOutputStream(path);
             int ch = 0;
             while ((ch = in.read()) != -1) {
                 f.write(ch);
@@ -31,6 +30,7 @@ public class UploadService implements IUploadService {
             f.close();
         } catch (IOException e) {
             //fixme: exceptions
+            System.out.println(e);
         }
 
     }
