@@ -42,7 +42,7 @@ public class TestRestController {
         File[] listOfFiles = folder.listFiles();
 
         for (File listOfFile : listOfFiles) {
-            if (listOfFile.getName().equals("datufile.xlsx")) {
+            if (listOfFile.getName().equals("datumtesztk.xlsx")) {
                 filePath = listOfFile.getPath();
             }
         }
