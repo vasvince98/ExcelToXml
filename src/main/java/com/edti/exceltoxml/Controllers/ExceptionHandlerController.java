@@ -1,9 +1,6 @@
 package com.edti.exceltoxml.Controllers;
 
-import com.edti.exceltoxml.Exceptions.MissingDataException;
-import com.edti.exceltoxml.Exceptions.MissingHeaderException;
-import com.edti.exceltoxml.Exceptions.NullAnswerException;
-import com.edti.exceltoxml.Exceptions.OwnError;
+import com.edti.exceltoxml.Exceptions.*;
 import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -31,6 +28,13 @@ public class ExceptionHandlerController implements ErrorController {
     @ExceptionHandler({NullAnswerException.class})
     public String nullAnswerExceptionHandler(Model m) {
         OwnError error = new OwnError("Nem vont le pontot a rossz válaszért! Biztosan beküldi a tesztet?");
+        m.addAttribute("error", error);
+        return "error";
+    }
+
+    @ExceptionHandler({MissingFileException.class})
+    public String missingFileExceptionHandler(Model m) {
+        OwnError error = new OwnError("Nem töltött fel fájlt!");
         m.addAttribute("error", error);
         return "error";
     }
