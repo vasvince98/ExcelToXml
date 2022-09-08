@@ -2,6 +2,8 @@ package com.edti.exceltoxml.Controllers;
 
 import com.edti.exceltoxml.Exceptions.MissingFileException;
 import com.edti.exceltoxml.Models.Quiz;
+import com.edti.exceltoxml.Models.RenderAPI;
+import com.edti.exceltoxml.Services.IImageService;
 import com.edti.exceltoxml.Services.IQuestionService;
 import com.edti.exceltoxml.Services.IUploadService;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -12,7 +14,9 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.web.bind.annotation.*;
 
 
+import javax.imageio.ImageIO;
 import javax.xml.bind.JAXBException;
+import java.awt.image.BufferedImage;
 import java.io.*;
 import java.util.Arrays;
 import java.util.Base64;
@@ -26,10 +30,12 @@ public class MainRestController {
     String filePath;
 
     private final IQuestionService questionService;
+    private final IImageService imageService;
 
     @Autowired
-    public MainRestController(IQuestionService questionService) {
+    public MainRestController(IQuestionService questionService, IImageService imageService) {
         this.questionService = questionService;
+        this.imageService = imageService;
     }
 
     @RequestMapping("/")
@@ -64,9 +70,15 @@ public class MainRestController {
     }
 
     @RequestMapping("/base64")
-    public String base64() {
-        String originalInput = "test input";
-        return Base64.getEncoder().encodeToString(originalInput.getBytes());
+    public String base64() throws IOException {
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+
+        BufferedImage image = imageService.renderStringToImage("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.");
+
+        ImageIO.write(image, "png", baos);
+
+        ImageIO.write(image, "png", new File("/Users/vasvince/Desktop/image.png"));
+        return Base64.getEncoder().encodeToString(baos.toByteArray());
     }
 
 
