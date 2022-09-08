@@ -4,8 +4,12 @@ import com.edti.exceltoxml.Models.FormattedText;
 import com.edti.exceltoxml.Models.RenderAPI;
 import org.springframework.stereotype.Service;
 
+import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.List;
 
 @Service
@@ -14,11 +18,11 @@ public class ImageService implements IImageService {
     @Override
     public BufferedImage renderStringToImage(String text) {
         FormattedText formattedText = getHeightAndWidth(text);
-        RenderAPI renderer = new RenderAPI(formattedText.getWidth() * 7, formattedText.getHeight() * 25);
+        RenderAPI renderer = new RenderAPI(formattedText.getWidth() * 7, formattedText.getHeight() * 30);
 
         formattedText.getLines().forEach(System.out::println);
 
-        int y = 10;
+        int y = 15;
         for (String line : formattedText.getLines()) {
             renderer.addText(line, 0, y);
             y += 20;
@@ -27,8 +31,11 @@ public class ImageService implements IImageService {
     }
 
     @Override
-    public String imageToBase64(BufferedImage image) {
-        return null;
+    public String imageToBase64(BufferedImage image) throws IOException {
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        ImageIO.write(image, "png", baos);
+
+        return Base64.getEncoder().encodeToString(baos.toByteArray());
     }
 
     private FormattedText getHeightAndWidth(String text) {
@@ -42,7 +49,7 @@ public class ImageService implements IImageService {
         String[] parts = text.split(" ");
 
         for (String part : parts) {
-            if (i > 5) {
+            if (i > 7) {
                 longestLine = line.length();
                 lineBreak++;
                 lines.add(line);

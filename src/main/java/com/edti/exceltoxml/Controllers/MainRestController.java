@@ -71,14 +71,14 @@ public class MainRestController {
 
     @RequestMapping("/base64")
     public String base64() throws IOException {
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+
 
         BufferedImage image = imageService.renderStringToImage("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.");
 
-        ImageIO.write(image, "png", baos);
-
         ImageIO.write(image, "png", new File("/Users/vasvince/Desktop/image.png"));
-        return Base64.getEncoder().encodeToString(baos.toByteArray());
+
+        return imageService.imageToBase64(image);
+
     }
 
 
