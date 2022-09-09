@@ -21,7 +21,7 @@ public class QuestionText extends Text {
     }
 
     public QuestionText(String format, File file) {
-        super("<![CDATA[<p dir=\"ltr\" style=\"text-align: left;\"><img src=\"@@PLUGINFILE@@/imageName\" alt=\"\" role=\"presentation\" class=\"img-fluid\"><br></p>]]>");
+        super("<p dir=\"ltr\" style=\"text-align: left;\"><img src=\"@@PLUGINFILE@@/imageName\" alt=\"\" role=\"presentation\" class=\"img-fluid\"><br></p>");
         this.format = format;
         this.file = file;
     }

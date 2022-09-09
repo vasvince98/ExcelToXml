@@ -12,12 +12,14 @@ import com.edti.exceltoxml.Models.Quiz;
 import com.sun.xml.bind.marshaller.CharacterEscapeHandler;
 import com.sun.xml.bind.marshaller.NoEscapeHandler;
 import org.apache.poi.ss.usermodel.*;
+import org.jsoup.Jsoup;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
+import javax.xml.bind.Unmarshaller;
 import java.io.*;
 import java.util.*;
 
@@ -220,20 +222,27 @@ public class QuestionService implements IQuestionService {
 
         Quiz quiz = createQuizFromXml(inputXml);
 
-        String imagedXml = createXmlFromObject(quiz);
+
 
         //todo: implement logic for text replace
 
         for (Question question : quiz.getQuestion()) {
             switch (question.getType()) {
-                case "multichoice" -> System.out.println("multichoice");
+                case "multichoice" -> {
+                    String questionText = getStringFromHTML(question.getQuestiontext().getText());
+
+                    question.setQuestiontext(new QuestionText("html", new File("base64",
+                            imageService.imageToBase64(imageService.renderStringToImage(questionText)))));
+
+                    System.out.println("multichoice");
+                }
                 case "truefalse" -> System.out.println("truefalse");
                 case "matching" -> System.out.println("matching");
                 default -> System.out.println("Nem csinálok semmit");
             }
         }
 
-        return imagedXml;
+        return createXmlFromObject(quiz);
     }
 
     private List<Answer> createAnswers(String questionType, String solution) {
@@ -290,6 +299,16 @@ public class QuestionService implements IQuestionService {
 
     private Quiz createQuizFromXml(java.io.File xml) throws JAXBException {
         JAXBContext context = JAXBContext.newInstance(Quiz.class);
-        return (Quiz) context.createUnmarshaller().unmarshal(xml);
+
+        Unmarshaller unmarshaller = context.createUnmarshaller();
+
+
+
+
+        return (Quiz) unmarshaller.unmarshal(xml);
+    }
+
+    private String getStringFromHTML(String html) {
+        return Jsoup.parse(html).text();
     }
 }
