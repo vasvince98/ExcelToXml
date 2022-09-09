@@ -7,6 +7,8 @@ public class GeneralFeedback extends Text {
     @XmlAttribute
     private String format;
 
+    public GeneralFeedback() {}
+
     public GeneralFeedback(String format) {
         this.format = format;
     }

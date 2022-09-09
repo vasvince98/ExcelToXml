@@ -7,6 +7,8 @@ import javax.xml.bind.annotation.XmlAttribute;
 public class Info extends Text {
     private String format;
 
+    public Info() {}
+
     public Info(String format) {
         this.format = format;
     }

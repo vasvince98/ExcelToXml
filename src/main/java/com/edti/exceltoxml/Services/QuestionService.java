@@ -6,6 +6,7 @@ import com.edti.exceltoxml.Exceptions.NullAnswerException;
 import com.edti.exceltoxml.Models.Category.Category;
 import com.edti.exceltoxml.Models.Category.Info;
 import com.edti.exceltoxml.Models.Question.*;
+import com.edti.exceltoxml.Models.Question.File;
 import com.edti.exceltoxml.Models.Question.Name;
 import com.edti.exceltoxml.Models.Quiz;
 import com.sun.xml.bind.marshaller.CharacterEscapeHandler;
@@ -17,8 +18,7 @@ import org.springframework.stereotype.Service;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
-import java.io.IOException;
-import java.io.StringWriter;
+import java.io.*;
 import java.util.*;
 
 @Service
@@ -215,6 +215,27 @@ public class QuestionService implements IQuestionService {
         return xmlContent;
     }
 
+    @Override
+    public String createImageXmlFromStringXml(java.io.File inputXml) throws IOException, JAXBException {
+
+        Quiz quiz = createQuizFromXml(inputXml);
+
+        String imagedXml = createXmlFromObject(quiz);
+
+        //todo: implement logic for text replace
+
+        for (Question question : quiz.getQuestion()) {
+            switch (question.getType()) {
+                case "multichoice" -> System.out.println("multichoice");
+                case "truefalse" -> System.out.println("truefalse");
+                case "matching" -> System.out.println("matching");
+                default -> System.out.println("Nem csinálok semmit");
+            }
+        }
+
+        return imagedXml;
+    }
+
     private List<Answer> createAnswers(String questionType, String solution) {
         List<Answer> answers = new ArrayList<>();
         Answer firstAnswer = new Answer();
@@ -265,5 +286,10 @@ public class QuestionService implements IQuestionService {
 
         subQuestionList.add(subQuestion);
 
+    }
+
+    private Quiz createQuizFromXml(java.io.File xml) throws JAXBException {
+        JAXBContext context = JAXBContext.newInstance(Quiz.class);
+        return (Quiz) context.createUnmarshaller().unmarshal(xml);
     }
 }

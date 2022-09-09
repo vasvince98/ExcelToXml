@@ -7,6 +7,9 @@ public class PartiallyCorrectFeedback extends Text {
     @XmlAttribute
     private String format;
 
+    public PartiallyCorrectFeedback() {
+    }
+
     public PartiallyCorrectFeedback(String format) {
         this.format = format;
     }

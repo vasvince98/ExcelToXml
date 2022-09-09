@@ -7,6 +7,9 @@ public class CorrectFeedback extends Text {
     @XmlAttribute
     private String format;
 
+    public CorrectFeedback() {
+    }
+
     public CorrectFeedback(String format) {
         this.format = format;
     }

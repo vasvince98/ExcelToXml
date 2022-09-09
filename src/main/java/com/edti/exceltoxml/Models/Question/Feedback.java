@@ -8,6 +8,8 @@ public class Feedback extends Text {
     @XmlAttribute
     private String format;
 
+    public Feedback() {
+    }
 
     public Feedback(String format) {
         this.format = format;

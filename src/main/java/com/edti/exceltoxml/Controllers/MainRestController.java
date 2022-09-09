@@ -38,14 +38,14 @@ public class MainRestController {
         this.imageService = imageService;
     }
 
-    @RequestMapping("/")
-    public String test() throws JAXBException, IOException {
+    @RequestMapping("/excel")
+    public String generateXmlFromExcel() {
         try {
             File folder = new File(fileLocation);
             File[] listOfFiles = folder.listFiles();
             assert listOfFiles != null;
             for (File listOfFile : listOfFiles) {
-                if (listOfFile.getName().equals("datumtesztk.xlsx")) {
+                if (listOfFile.getName().equals("datumtesztk.xlsx")) {              //todo: több felhasználónál felkészülni tövv fájlra
                     filePath = listOfFile.getPath();
                 }
             }
@@ -61,6 +61,27 @@ public class MainRestController {
             throw new MissingFileException("Nem töltött fel fájlt!");
         }
 
+    }
+
+    @RequestMapping("/xml")
+    public String generateXmlFromXml() {
+        try {
+            File folder = new File(fileLocation);
+            File[] listOfFiles = folder.listFiles();
+            assert listOfFiles != null;
+            for (File listOfFile : listOfFiles) {
+                if (listOfFile.getName().equals("datumtesztxml.xml")) {             //todo: több felhasználónál felkészülni tövv fájlra (prototype)
+                    filePath = listOfFile.getPath();
+                }
+            }
+
+            File inputXml = new File(filePath);
+
+            return questionService.createImageXmlFromStringXml(inputXml);
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new MissingFileException("Nem töltött fel fájlt!");
+        }
     }
 
     @RequestMapping("/getos")
@@ -81,6 +102,7 @@ public class MainRestController {
         return imageService.imageToBase64(image);
 
     }
+
 
 
 

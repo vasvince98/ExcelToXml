@@ -14,6 +14,8 @@ public class QuestionText extends Text {
     @XmlTransient
     private boolean isPicture;
 
+    public QuestionText() {}
+
     public QuestionText(String format) {
         this.format = format;
     }
