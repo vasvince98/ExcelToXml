@@ -49,6 +49,7 @@ public class MainRestController {
                     filePath = listOfFile.getPath();
                 }
             }
+            System.out.println(filePath);
             FileInputStream file = new FileInputStream(filePath);
             Workbook workbook = new XSSFWorkbook(file);
 
@@ -57,7 +58,7 @@ public class MainRestController {
             return questionService.createXmlFromObject(currentQuiz);
         } catch (Exception e) {
             e.printStackTrace();
-            throw new MissingFileException("Nem töltött fel fájlt! Stack trace: ");
+            throw new MissingFileException("Nem töltött fel fájlt!");
         }
 
     }

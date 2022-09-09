@@ -5,9 +5,10 @@ import org.apache.poi.ss.usermodel.Workbook;
 
 import javax.xml.bind.JAXBException;
 import java.io.File;
+import java.io.IOException;
 
 public interface IQuestionService {
-    Quiz createObjectFromExcel(Workbook workbook);
+    Quiz createObjectFromExcel(Workbook workbook) throws IOException;
     String createXmlFromObject(Quiz quiz) throws JAXBException;
 
 }

@@ -17,10 +17,9 @@ public class ImageService implements IImageService {
 
     @Override
     public BufferedImage renderStringToImage(String text) {
+        System.out.println(text);
         FormattedText formattedText = getHeightAndWidth(text);
         RenderAPI renderer = new RenderAPI(formattedText.getWidth() * 7, formattedText.getHeight() * 30);
-
-        formattedText.getLines().forEach(System.out::println);
 
         int y = 15;
         for (String line : formattedText.getLines()) {
@@ -40,7 +39,7 @@ public class ImageService implements IImageService {
 
     private FormattedText getHeightAndWidth(String text) {
         FormattedText formattedTextClass = new FormattedText();
-        int lineBreak = 0;
+        int lineBreak = 1;
         int longestLine = 0;
         int i = 0;
         List<String> lines = new ArrayList<>();
@@ -50,13 +49,15 @@ public class ImageService implements IImageService {
 
         for (String part : parts) {
             if (i > 7) {
-                longestLine = line.length();
                 lineBreak++;
                 lines.add(line);
                 i = 0;
                 line = "";
             }
             line = line.concat(part + " ");
+            if (line.length() > longestLine) {
+                longestLine = line.length();
+            }
             i++;
         }
         lines.add(line);

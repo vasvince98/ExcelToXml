@@ -8,12 +8,16 @@ import com.edti.exceltoxml.Models.Category.Info;
 import com.edti.exceltoxml.Models.Question.*;
 import com.edti.exceltoxml.Models.Question.Name;
 import com.edti.exceltoxml.Models.Quiz;
+import com.sun.xml.bind.marshaller.CharacterEscapeHandler;
+import com.sun.xml.bind.marshaller.NoEscapeHandler;
 import org.apache.poi.ss.usermodel.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
+import java.io.IOException;
 import java.io.StringWriter;
 import java.util.*;
 
@@ -26,8 +30,15 @@ public class QuestionService implements IQuestionService {
 
     private String questionType;
 
+    private IImageService imageService;
+
+    @Autowired
+    public QuestionService(IImageService imageService) {
+        this.imageService = imageService;
+    }
+
     @Override
-    public Quiz createObjectFromExcel(Workbook workbook) {
+    public Quiz createObjectFromExcel(Workbook workbook) throws IOException {
         Quiz currentQuiz = new Quiz();
         Question category = new Question("category", new Category("$course$/top/Databases alapbeállítása/Bigtest1"), new Info(""), "");
         List<Question> questions = new ArrayList<>();
@@ -54,7 +65,8 @@ public class QuestionService implements IQuestionService {
                             switch (i) {
                                 case 0 -> question.setType("truefalse");
                                 case 1 -> question.setName(new Name(cell.getStringCellValue()));
-                                case 2 -> question.setQuestiontext(new QuestionText(cell.getStringCellValue(), "html"));
+                                case 2 -> question.setQuestiontext(new QuestionText("html",
+                                        new File("base64", imageService.imageToBase64(imageService.renderStringToImage(cell.getStringCellValue())))));
                                 case 3 -> question.setDefaultgrade(cell.getNumericCellValue());
                                 case 4 -> question.setAnswer(createAnswers(this.questionType, cell.toString().toLowerCase()));
                                 default -> System.out.println("It's over Anakin!");
@@ -76,11 +88,10 @@ public class QuestionService implements IQuestionService {
                         Question question = new Question();
                         subQuestionList = new ArrayList<>();
                         for (int i = 0; i < 13; i++) {
-
                             switch (i) {
                                 case 0 -> question.setType("matching");
                                 case 1 -> question.setName(new Name(row.getCell(i).getStringCellValue()));
-                                case 2 -> question.setQuestiontext(new QuestionText(row.getCell(i).getStringCellValue(), "html"));
+                                case 2 -> question.setQuestiontext(new QuestionText("html", new File("base64", imageService.imageToBase64(imageService.renderStringToImage(row.getCell(i).getStringCellValue())))));
                                 case 3 -> question.setDefaultgrade(row.getCell(i).getNumericCellValue());
                                 case 4, 6, 8, 10, 12 -> createSubQuestion(i, row);
                                 default -> System.out.println("It's over Anakin!");
@@ -93,6 +104,7 @@ public class QuestionService implements IQuestionService {
                         question.setIncorrectfeedback(new IncorrectFeedback("Válasza helytelen", "html"));
                         question.setSubquestion(subQuestionList);
                         questions.add(question);
+                        System.out.println(questions.get(1).getDefaultgrade());
                     }
                 }
 
@@ -109,7 +121,7 @@ public class QuestionService implements IQuestionService {
                             switch (i) {
                                 case 0 -> question.setType("multichoice");
                                 case 1 -> question.setName(new Name(row.getCell(i).getStringCellValue()));
-                                case 2 -> question.setQuestiontext(new QuestionText(row.getCell(i).getStringCellValue(), "html"));
+                                case 2 -> question.setQuestiontext(new QuestionText("html", new File("base64", imageService.imageToBase64(imageService.renderStringToImage(row.getCell(i).getStringCellValue())))));
                                 case 3 -> question.setDefaultgrade(row.getCell(i).getNumericCellValue());
                                 case 5, 7, 9, 11 -> {
                                     if (row.getCell(i+1).getNumericCellValue() == 0) {
@@ -152,7 +164,7 @@ public class QuestionService implements IQuestionService {
                             switch (i) {
                                 case 0 -> question.setType("ddwtos");
                                 case 1 -> question.setName(new Name(row.getCell(i).getStringCellValue()));
-                                case 2 -> question.setQuestiontext(new QuestionText(row.getCell(i).getStringCellValue(), "html"));
+                                case 2 -> question.setQuestiontext(new QuestionText("html", row.getCell(i).getStringCellValue()));
                                 case 3 -> question.setDefaultgrade(row.getCell(i).getNumericCellValue());
                                 case 4, 5, 6, 7, 8 -> {
                                     if (row.getCell(i) != null) {
@@ -190,6 +202,9 @@ public class QuestionService implements IQuestionService {
 
         Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
         jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+
+        CharacterEscapeHandler escapeHandler = NoEscapeHandler.theInstance;
+        jaxbMarshaller.setProperty("com.sun.xml.bind.characterEscapeHandler", escapeHandler);
 
         StringWriter sw = new StringWriter();
 
