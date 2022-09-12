@@ -5,6 +5,8 @@ import javax.xml.bind.annotation.XmlAttribute;
 public class Answer extends Text {
     private Feedback feedback;
 
+    private File file;
+
     @XmlAttribute
     private String fraction;
     @XmlAttribute
@@ -44,6 +46,14 @@ public class Answer extends Text {
 
     public void setFormat(String format) {
         this.format = format;
+    }
+
+    public void setFile(File file) {
+        this.file = file;
+    }
+
+    public File getFile() {
+        return file;
     }
 
     @Override

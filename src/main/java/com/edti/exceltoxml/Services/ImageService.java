@@ -48,7 +48,7 @@ public class ImageService implements IImageService {
         String[] parts = text.split(" ");
 
         for (String part : parts) {
-            if (i > 7) {
+            if (i > 9) {
                 lineBreak++;
                 lines.add(line);
                 i = 0;

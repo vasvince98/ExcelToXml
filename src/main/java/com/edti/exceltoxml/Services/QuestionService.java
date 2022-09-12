@@ -234,11 +234,17 @@ public class QuestionService implements IQuestionService {
                     question.setQuestiontext(new QuestionText("html", new File("base64",
                             imageService.imageToBase64(imageService.renderStringToImage(questionText)))));
 
-                    System.out.println("multichoice");
+
+
+                    for (Answer answer : question.getAnswer()) {
+                        String answerText = getStringFromHTML(answer.getText());
+                        answer.setText("<p dir=\"ltr\" style=\"text-align: left;\"><img src=\"@@PLUGINFILE@@/imageName\" alt=\"\" role=\"presentation\" class=\"img-fluid\"><br></p>");
+                        answer.setFile(new File("base64", imageService.imageToBase64(imageService.renderStringToImage(answerText))));
+                    }
                 }
                 case "truefalse" -> System.out.println("truefalse");
                 case "matching" -> System.out.println("matching");
-                default -> System.out.println("Nem csinálok semmit");
+                default -> System.out.println("Unhandled question type");
             }
         }
 
