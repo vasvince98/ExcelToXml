@@ -212,9 +212,7 @@ public class QuestionService implements IQuestionService {
 
         jaxbMarshaller.marshal(quiz, sw);
 
-        String xmlContent = sw.toString();
-        System.out.println(xmlContent);
-        return xmlContent;
+        return sw.toString();
     }
 
     @Override
@@ -223,27 +221,25 @@ public class QuestionService implements IQuestionService {
         Quiz quiz = createQuizFromXml(inputXml);
 
 
-
-        //todo: implement logic for text replace
-
         for (Question question : quiz.getQuestion()) {
             switch (question.getType()) {
-                case "multichoice" -> {
+                case "multichoice" -> replaceQuestionAndAnswer(question);
+                case "truefalse" -> {
+                    String questionText = getStringFromHTML(question.getQuestiontext().getText());
+
+                    question.setQuestiontext(new QuestionText("html", new File("base64",
+                            imageService.imageToBase64(imageService.renderStringToImage(questionText)))));
+                }
+                case "matching" -> {
                     String questionText = getStringFromHTML(question.getQuestiontext().getText());
 
                     question.setQuestiontext(new QuestionText("html", new File("base64",
                             imageService.imageToBase64(imageService.renderStringToImage(questionText)))));
 
-
-
-                    for (Answer answer : question.getAnswer()) {
-                        String answerText = getStringFromHTML(answer.getText());
-                        answer.setText("<p dir=\"ltr\" style=\"text-align: left;\"><img src=\"@@PLUGINFILE@@/imageName\" alt=\"\" role=\"presentation\" class=\"img-fluid\"><br></p>");
-                        answer.setFile(new File("base64", imageService.imageToBase64(imageService.renderStringToImage(answerText))));
+                    for (SubQuestion subQuestion : question.getSubquestion()) {
+                        subQuestion.setText(imageService.imageToBase64(imageService.renderStringToImage(subQuestion.getText())));
                     }
                 }
-                case "truefalse" -> System.out.println("truefalse");
-                case "matching" -> System.out.println("matching");
                 default -> System.out.println("Unhandled question type");
             }
         }
@@ -309,12 +305,23 @@ public class QuestionService implements IQuestionService {
         Unmarshaller unmarshaller = context.createUnmarshaller();
 
 
-
-
         return (Quiz) unmarshaller.unmarshal(xml);
     }
 
     private String getStringFromHTML(String html) {
         return Jsoup.parse(html).text();
+    }
+
+    private void replaceQuestionAndAnswer(Question question) throws IOException {
+        String questionText = getStringFromHTML(question.getQuestiontext().getText());
+
+        question.setQuestiontext(new QuestionText("html", new File("base64",
+                imageService.imageToBase64(imageService.renderStringToImage(questionText)))));
+
+        for (Answer answer : question.getAnswer()) {
+            String answerText = getStringFromHTML(answer.getText());
+            answer.setText("<p dir=\"ltr\" style=\"text-align: left;\"><img src=\"@@PLUGINFILE@@/imageName\" alt=\"\" role=\"presentation\" class=\"img-fluid\"><br></p>");
+            answer.setFile(new File("base64", imageService.imageToBase64(imageService.renderStringToImage(answerText))));
+        }
     }
 }

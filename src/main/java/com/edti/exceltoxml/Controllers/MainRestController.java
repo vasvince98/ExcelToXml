@@ -6,18 +6,30 @@ import com.edti.exceltoxml.Models.RenderAPI;
 import com.edti.exceltoxml.Services.IImageService;
 import com.edti.exceltoxml.Services.IQuestionService;
 import com.edti.exceltoxml.Services.IUploadService;
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.IOUtils;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.core.io.InputStreamResource;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.*;
 
 
 import javax.imageio.ImageIO;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletResponse;
 import javax.xml.bind.JAXBException;
 import java.awt.image.BufferedImage;
 import java.io.*;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+import java.rmi.server.RemoteRef;
 import java.util.Arrays;
 import java.util.Base64;
 
@@ -26,6 +38,9 @@ import java.util.Base64;
 public class MainRestController {
     @Value("${fileLocation}")
     private String fileLocation;
+
+    @Value("${serverStoreFolder}")
+    private String serverStoreFolder;
 
     String filePath;
 
@@ -70,7 +85,7 @@ public class MainRestController {
             File[] listOfFiles = folder.listFiles();
             assert listOfFiles != null;
             for (File listOfFile : listOfFiles) {
-                if (listOfFile.getName().equals("datumtesztxml.xml")) {             //todo: több felhasználónál felkészülni tövv fájlra (prototype)
+                if (listOfFile.getName().toLowerCase().endsWith(".xml")) {             //todo: több felhasználónál felkészülni tövv fájlra (prototype)
                     filePath = listOfFile.getPath();
                 }
             }
@@ -78,6 +93,50 @@ public class MainRestController {
             File inputXml = new File(filePath);
 
             return questionService.createImageXmlFromStringXml(inputXml);
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new MissingFileException("Nem töltött fel fájlt!");
+        }
+    }
+
+    @RequestMapping("/download")
+    public ResponseEntity<InputStreamResource> getFile(HttpServletResponse response) {
+        try {
+            File folder = new File(fileLocation);
+            File[] listOfFiles = folder.listFiles();
+            assert listOfFiles != null;
+            String fileName = null;
+            for (File listOfFile : listOfFiles) {
+                if (listOfFile.getName().toLowerCase().endsWith(".xml")) {             //todo: több felhasználónál felkészülni tövv fájlra (prototype)
+                    filePath = listOfFile.getPath();
+                    fileName = listOfFile.getName();
+                }
+            }
+
+            File inputXml = new File(filePath);
+
+            File localSaveFile = new File("/Users/vasvince/Desktop/" + fileName);
+
+            String finalXML = questionService.createImageXmlFromStringXml(inputXml);
+
+            InputStreamResource resource = new InputStreamResource(new FileInputStream(localSaveFile));
+
+            return ResponseEntity.ok()
+                    .header(HttpHeaders.CONTENT_DISPOSITION, "attachment;filename=" + fileName)
+                    .contentType(MediaType.APPLICATION_OCTET_STREAM)
+                    .body(resource);
+
+//            FileUtils.writeStringToFile(localSaveFile, finalXML, StandardCharsets.UTF_8);
+//í
+//
+//            InputStream is = new FileInputStream(localSaveFile);
+//            response.setContentType("application/xml");
+//            FileCopyUtils.copy(is, response.getOutputStream());
+//
+//            response.flushBuffer();
+
+
+//            return finalXML;
         } catch (Exception e) {
             e.printStackTrace();
             throw new MissingFileException("Nem töltött fel fájlt!");

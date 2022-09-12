@@ -1,0 +1,5692 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+<!-- question: 0  -->
+  <question type="category">
+    <category>
+      <text>$course$/top/Bioetika alapbeállítása</text>
+    </category>
+    <info format="moodle_auto_format">
+      <text>'Bioetika' környezet megosztott kérdéseinek alapkategóriája</text>
+    </info>
+    <idnumber></idnumber>
+  </question>
+
+<!-- question: 4284679  -->
+  <question type="multichoice">
+    <name>
+      <text>1. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Mit jelent a <span><i>szubhumán</i></span> kifejezés?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>méltóságon aluli</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>embertelen</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>az ember alkotta környezet</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>az embert körülvevő környezet</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284689  -->
+  <question type="multichoice">
+    <name>
+      <text>1. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Miben ismerhető fel a szekuláris gondolkodás hatása?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Következetes, logikus érvelés alapján.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Szakít a hagyományokkal, új értéket teremt.&nbsp;</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A hagyományokra alapozva keres új utakat.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A vallásos világnézetben mutatkozik meg eredetisége.. &nbsp;</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284699  -->
+  <question type="multichoice">
+    <name>
+      <text>1. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A Biblia tanítása szerint az értelemmel töltött élet számít teljes életnek. Mit jelent ez?<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Az értelmes élet a mindennapok élvezetében eltöltött élet.<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Tanulással töltött élet, mert a bölcsesség az értelem fokmérője.<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Az embernek életcélja, hogy Istenre tekintsen, mert ez ad értelmet fáradozásának.<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Az ember éljen minél tovább, mert ez ad életének értelmet.<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284599  -->
+  <question type="multichoice">
+    <name>
+      <text>1. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Válaszd ki a bioetika helyes meghatározását!</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A bioetika az egészséges életvitelhez szükséges bio-táplálkozást kutató tudomány.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>A bioetika egy interdiszciplináris tudomány, mely az élővilág aktuális kérdéseire keresi a választ.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A bioetika a gyógyítás modernkori tudományával foglalkozó speciális diszciplína. &nbsp;</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>A bioetika a biológia és etológia összevont tudománya.</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284619  -->
+  <question type="multichoice">
+    <name>
+      <text>1. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Mit nevezünk rejtett homoszexualitásnak?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Ha a felek rejtve találkoznak egymással.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Ha a felek titkolják vágyaik kifejezését publikus helyeken, de melegek közt nem.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Ha a személy titkolja és rejtve tartja az azonos nemű személyhez való vonzódását.&nbsp;</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Ha a személy rejtve tartja szexuális beállítódását a heteroszexuális közegben (munkahelyen, gyülekezetben, rokonságban).&nbsp;</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284629  -->
+  <question type="multichoice">
+    <name>
+      <text>1. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Melyik nyelvből származtatott szavunk az "abortusz"?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>görög</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>román</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>latin</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>olasz</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284639  -->
+  <question type="multichoice">
+    <name>
+      <text>1. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Mit jelent az inszemináció?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A megtermékenyített petesejt beültetését az anyaméhbe.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>A hímivarsejt eljuttatása a női petesejtbe - mesterséges úton.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A spermiumok számának mikroszkópos vizsgálata.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Az embrió ideiglenes lombikban tárolása.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284659  -->
+  <question type="multichoice">
+    <name>
+      <text>1. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Mi a célja a génsebészetnek?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Hibás gének beiktatása.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Hibás gének kiiktatása.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A tökéletes ember megteremtése.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Biológiailag tiszta élőlény kinevelése.&nbsp;</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284669  -->
+  <question type="multichoice">
+    <name>
+      <text>1. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Mi az eutanázia jelentése?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>jó halál</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>várt halál</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>helyes halál</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>hirtelen halál</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284678  -->
+  <question type="multichoice">
+    <name>
+      <text>10. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Az egyházak állásfoglalásai miért tiltják az eutanáziát?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Mert Isten törvénye ellen való.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Mert tartanak tőle, hogy sokan lesznek öngyilkosok.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A hozzátartozók miatt, akik szenvednek majd az elhunyt miatt.&nbsp;</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Mert a hospice szolgálat mellette sokkal fontosabb.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284698  -->
+  <question type="multichoice">
+    <name>
+      <text>10. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A keresztyén bioetika miben látja az élet-értéket megnyilvánulni?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="0" format="html">
+      <text>A teljesítményben.</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>Az emberi kapcsolatokban.</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A spiritualitás felfokozottságában.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Isten általi teremtettségében.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284708  -->
+  <question type="multichoice">
+    <name>
+      <text>10. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Mit használnak az őssejtkíérletekhez?&nbsp;<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>elhalt emberi szöveteket<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>embriót<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>élő magzatokat<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>köldökzsinórt<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284608  -->
+  <question type="multichoice">
+    <name>
+      <text>10. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Mit jelent az <i>autonómia elve</i>?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Az ember politikai és gazdasági függetlenségben akar élni.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Az ember eldöntheti, milyen kezelést kapjon orvosától.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Az ember joga ismerni saját állapotát és együttműködni orvosával.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Az orvos, mint kompetens szaktekintély önrendelkezése a beteg fölött.&nbsp;</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284638  -->
+  <question type="multichoice">
+    <name>
+      <text>10. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A poszt-abortusz szindrómát vizsgáló elemzések szerint az abortuszok száma magával vonja a társadalom ...</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>eseménytelenségét</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>reménytelenségét</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>igénytelenségét</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>kétségbeesését</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284648  -->
+  <question type="multichoice">
+    <name>
+      <text>10. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p><p><span lang="hu">A "Donum vitae" álláspontja megalapozott. Úgy tűnik túl sokat kell odaáldozni az embernek az emberségéből azért, hogy célját elérje. </span><span lang="hu"></span></p><br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Igaz</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>nem igaz</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>részben igaz</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>nem érintett a dologben</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284658  -->
+  <question type="multichoice">
+    <name>
+      <text>10. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p><p><span lang="hu">Az egyház alapvetően nem a mesterséges beavatkozás (pl. hormontabletták szedése) ellen akar fellépni, hanem a fogamzásgátlás, mint olyan, természete ellen.</span></p>
+
+<p><span lang="hu">&nbsp;</span></p><br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Igaz</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Hamis</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284668  -->
+  <question type="multichoice">
+    <name>
+      <text>10. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Miért veszélyes a CRISPR módszer az USA nemzetvédelmi képviselője szerint?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Mert még keveset tudnak róla.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Mert tömegpusztító fegyver készülhet általa.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Mert klónhadsereg képezhető általa.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Mert senki nem tudja ellenőrizni a másik országot, hogy mit tesz..</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284709  -->
+  <question type="multichoice">
+    <name>
+      <text>11. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p><div>Az egyház az abortusz megengedését először a 12. században kezdeményezte. Milyen feltétellel?</div><div><br>
+
+</div><br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Ha az anya élete veszélyben forgott.<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Ha megfelelő orvosi ellátás állt rendelkezésre.<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Ha csak rabszolgákon kellett végrehajtani.<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Ha az apa és anya egyformán beleegyeztek az abortusz végrehajtásába.&nbsp;<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284710  -->
+  <question type="multichoice">
+    <name>
+      <text>12. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p><div><p>A 20. századi magzatellenes női önrendelkezés a magzatot úgy tekinti, mint ...&nbsp;</p></div><div><br>
+
+</div><br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>személytelen anyag<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>agresszort<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>teljes értékű élet<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>regresszort<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284711  -->
+  <question type="multichoice">
+    <name>
+      <text>13. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p><div><p>Weber szerint mi lehetett az egyik oka a társadalomban eluralkodó eutanázia gondolatának?</p></div><div><br>
+
+</div><br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Az orvosi propaganda.<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A jövőtől való félelem.<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Nacionalista irányelvek.&nbsp;<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Az emberek vallástalansága és hitnélkülisége.&nbsp;<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284712  -->
+  <question type="multichoice">
+    <name>
+      <text>14. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Mit jelent a palliatív kifejezés?<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Gyors lefolyású halált.<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>&nbsp;Fájdalomcsillapítást.<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Minőségi orvosi ellátást.<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Barátságos környezetet<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284713  -->
+  <question type="multichoice">
+    <name>
+      <text>15. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p><div><p>Mit tekint az antropológiai vizsgálat a testi-biológiai nemi különbözőség alapjának?</p></div><div><br>
+
+</div><br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>&nbsp;a nemi identitást<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>a nemi szervek különbözőségét<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>a dominanciát<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>a női ciklikusságot<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284715  -->
+  <question type="multichoice">
+    <name>
+      <text>17. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p><div><p>Mit nevezünk rejtett homoszexualitásnak?</p></div><div><br>
+
+</div><br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p><div><p>Ha a felek titkolják vágyaik kifejezését publikus helyeken, de melegek közt nem.<br></p></div><br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Ha a személy rejtve tartja szexuális beállítódását a heteroszexuális közegben (munkahelyen, gyülekezetben, rokonságban).&nbsp;<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Ha a felek rejtve találkoznak egymással.<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Ha a személy titkolja és rejtve tartja az azonos nemű személyhez való vonzódását.&nbsp;<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284717  -->
+  <question type="multichoice">
+    <name>
+      <text>19. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p><p><span lang="hu">A teremtett világ védelme olyan erkölcsi követelmény, amely minden más értékmegvalósítás előfeltételét képezi. Miért?</span><span lang="hu"></span></p><br><br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Mert törvénybe ütköző a környezetszennyezés-<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Élet nélkül nincs ember, nincs kultúra.<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Ez a környezetvédőkre vonatkozik.<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Mert szégyen a környezetet szennyezni.<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284680  -->
+  <question type="multichoice">
+    <name>
+      <text>2. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Az ökológia jelentése két szóból tevődik össze. Mely nyelvből származtatott szavak ezek?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>latin</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>arab</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>görög</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>magyar</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284690  -->
+  <question type="multichoice">
+    <name>
+      <text>2. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p><p><span lang="hu">Mindig kész választ formálni a jelen etikai kérdéseire, de nincs tekintettel a lehetséges módosulásokra. Milyen morálról van szó?</span><span lang="hu"></span></p></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>tradicionális</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>szituációs</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>lelkiismereti</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284700  -->
+  <question type="multichoice">
+    <name>
+      <text>2. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p><div><p>"<i>Salus aegroti suprema lex esto"</i>&nbsp;jelentése:&nbsp;</p></div><div><br>
+
+</div><br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A beteg mellett halkuljon el a nevetés.<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A beteg üdve legyen a legfőbb erény.<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>A beteg üdve legyen a legfőbb törvény.<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A beteg üdvét szolgáld és ne árts!<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284600  -->
+  <question type="multichoice">
+    <name>
+      <text>2. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Miért jelentős Van Rensselaer Potter neve?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Mert onkológusként élharcosa volt a rákkutatásnak.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Mert elsőként alapított bioetikai kutatóközpontot.&nbsp;</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Mert elsőként alkalmazta a bioetika fogalmát az orvostudományban.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Mert onkológusként 1970-ben sikeres gerincvelő-átültetést hajtott végre az Egyesült Államokban.&nbsp;</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284610  -->
+  <question type="multichoice">
+    <name>
+      <text>2. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Mit tekint az antropológiai vizsgálat a testi-biológiai nemi különbözőség alapjának?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>a nemi szervek különbözőségét</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>a női ciklikusságot</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>a dominanciát</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>a nemi identitást</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284620  -->
+  <question type="multichoice">
+    <name>
+      <text>2. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Hány éve használatos a "homoszexuális" megnevezés (kb.)?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>115</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>125</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>135</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>145</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284630  -->
+  <question type="multichoice">
+    <name>
+      <text>2. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Mikortól számították az élet kezdetét az ókori görög kultúrában?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>a születés pillanatától</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>a 40. naptól</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>a fogantatástól</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>az értelem születésétől kezdve</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284640  -->
+  <question type="multichoice">
+    <name>
+      <text>2. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Ha a házas felek közt történik az inszemináció akkor ennek megnevezése...</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>homológ</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>heterológ</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284650  -->
+  <question type="multichoice">
+    <name>
+      <text>2. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Az intrauterin spirált lokálisan hol alkalmazzák?&nbsp;</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A hüvelyben.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>A méhben.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A petefészekben.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A petevezetékben.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284660  -->
+  <question type="multichoice">
+    <name>
+      <text>2. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Mit jelent a pozitív génsebészet?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Sikeres genetikai beavatkozást.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Gének beiktatását a DNS spirálba.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Engedélyezett genetikai beavatkozást.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Az organizmus alaptulajdonságainak fokozását.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284670  -->
+  <question type="multichoice">
+    <name>
+      <text>2. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Az orvostudomány ma mit tekint a halál beálltának?&nbsp;</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Ha beáll az agyhalál.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Ha leáll a szív.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Ha leáll a légzés.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Ha leáll a keringés.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284675  -->
+  <question type="multichoice">
+    <name>
+      <text>3. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Mit jelent a palliatív kifejezés?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Gyors lefolyású halált.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Minőségi orvosi ellátást.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Fájdalomcsillapítást.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Barátságos környezetet.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284681  -->
+  <question type="multichoice">
+    <name>
+      <text>3. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Az ökológia az élőlények és környezetük közt fennálló kölcsönhatást vizsgáló tudományág.&nbsp;</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>igaz</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>hamis</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284691  -->
+  <question type="multichoice">
+    <name>
+      <text>3. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Egy stáb a járókelők morális döntését vizsgálja. A stáb egy tagja jól öltözött sántító mankós embert alakít, aki "véletlenül" felbukik az úttesten. Sokan odasietnek, felsegítik, támogatják. Egy másik jelmezben a stábtag egy szakadt ruhájú, sántító, mankós hajléktalant alakít. A sántító ember többször elbukik az úttesten, de az emberek elmennek mellette, nem segítenek rajta. Milyen morált vizsgál a kísérlet? &nbsp;</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>tradicionális</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>lelkiismereti</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>szituációs</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284621  -->
+  <question type="multichoice">
+    <name>
+      <text>3. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Mit állapít meg Czeizel Endre genetikus: van felismerhető genetikai ismertetőjegye a homoszexuális hajlamnak?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Nincs</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Van</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Lehetséges</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Van, de még nem ismert</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284631  -->
+  <question type="multichoice">
+    <name>
+      <text>3. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Mikortól számítják az élet kezdetét a bibliai tanítás szerint a reformátorok (Kálvin és Luther)?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>a születés pillanatától</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>a fogantatás pillanatától</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>a 40. naptól</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>az értelem születésétől fogva</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284641  -->
+  <question type="multichoice">
+    <name>
+      <text>3. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Dr Czeizel Endre előadásában a lombikbébi program hányadik opciója legyen a gyermeket tervező párnak?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Az első.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A második.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>A legutolsó.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Mindegy.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284651  -->
+  <question type="multichoice">
+    <name>
+      <text>3. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Miért kérdéses etikai szempontból a spirál méhen belüli alkalmazása?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Mert kényelmetlen a viselése.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Mert mindig orvosi beavatkozás szükséges a felhelyezéshez.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Mert magzatelhajtó hatása van.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Mert belső sérülést okozhat.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284661  -->
+  <question type="multichoice">
+    <name>
+      <text>3. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>June Goodfield a génsebészetben nagy lehetőségeket lát, de óvatosságra is int. Melyik tudományág kutatóira céloz elrettentő példaként?&nbsp;</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A kémikusokra.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A biológusokra.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A genetikusokra.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>A fizikusokra.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284672  -->
+  <question type="multichoice">
+    <name>
+      <text>4. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Mi volt a szociáldarwinizmus, majd a nemzetszocializmus társadalmi látképe?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>A fogyatékos embereket ki kell iktatni a társadalomból.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Csak a passzív eutanáziát lehetett gyakorolni.&nbsp;</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Minden embert szükségesnek tekintett a társadalom számára. &nbsp;</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Egyházi nézőpontokat követett.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284602  -->
+  <question type="multichoice">
+    <name>
+      <text>4. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Az Emberi Jogok Egyetemes Nyilatkozata alapján az embernek joga van az élete és egészsége védelméhez....&nbsp;</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>de nem mindenki számára elérhető.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>de nem mindenki érdemli meg.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>de vannak akik ezt erőszakkal megszerzik.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>ha európai tagállam állampolgára.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284642  -->
+  <question type="multichoice">
+    <name>
+      <text>4. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Minimálisan hány ivarsejtje kell legyen a férfinak, hogy a megtermékenyülés jó eséllyel megtörténjen?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>10 millió</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>20 millió</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>30 millió</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>40 millió</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284652  -->
+  <question type="multichoice">
+    <name>
+      <text>4. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A sterilizálás mind a nőknél, mind a férfiaknál lehetséges. Miért nem elfogadható ez az egyházi állásfoglalás szerint?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Mert drága, nem mindenki tudja megengedni magának a beavatkozást.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Mert visszafordíthatatlan beavatkozás.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Mert fennáll a veszélye további komplikációknak.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284682  -->
+  <question type="multichoice">
+    <name>
+      <text>4.Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Albert Schweitzer szerint az "<span style="font-size: 1rem;">ember akkor erkölcsös, ha számára az élet, mint olyan ... "</span></p><p><span lang="hu"></span></p><p></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>fontos</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>szent</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>emberi&nbsp;</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>örök</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284673  -->
+  <question type="multichoice">
+    <name>
+      <text>5. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Weber szerint mi lehetett az egyik oka a társadalomban eluralkodó eutanázia gondolatának?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Az orvosi propaganda.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Nacionalista irányelvek.&nbsp;</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Az emberek vallástalansága és hitnélkülisége.&nbsp;</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A jövőtől való félelem.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284683  -->
+  <question type="multichoice">
+    <name>
+      <text>5. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p><p><span lang="hu">A teremtett világ védelme olyan erkölcsi követelmény, amely minden más értékmegvalósítás előfeltételét képezi. Miért?</span><span lang="hu"></span></p>&nbsp;</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Ez a környezetvédőkre vonatkozik.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Élet nélkül nincs ember, nincs kultúra.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Mert szégyen a környezetet szennyezni.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Mert törvénybe ütköző a környezetszennyezés-</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284693  -->
+  <question type="multichoice">
+    <name>
+      <text>5. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Mit jelent az "erkölcsi autonómia"?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Jogomban áll azt dönteni, amit a magam számára erkölcsileg helyesnek tartok.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Törvényszerűen mást mondok és döntök, mint amit a többség képvisel. .&nbsp;</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Szakítok a bevet szabályokkal és hagyománnyal, azt teszem, amit jónak látok.&nbsp;</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284703  -->
+  <question type="multichoice">
+    <name>
+      <text>5. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p><div><p>Mit jelent az inszemináció?</p></div><div><br>
+
+</div><br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>A hímivarsejt eljuttatása a női petesejtbe - mesterséges úton.<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A spermiumok számának mikroszkópos vizsgálata.<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Az embrió ideiglenes lombikban tárolása.<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A megtermékenyített petesejt beültetését az anyaméhbe.<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284603  -->
+  <question type="multichoice">
+    <name>
+      <text>5. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>"<i>Salus aegroti suprema lex esto"</i> jelentése:&nbsp;</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="100" format="html">
+      <text><![CDATA[A beteg üdve legyen a legfőbb törvény.&nbsp;]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A beteg üdve legyen a legfőbb erény.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A beteg mellett halkuljon el a nevetés.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A beteg üdvét szolgáld és ne árts!</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284613  -->
+  <question type="multichoice">
+    <name>
+      <text>5. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Melyik volt a patrisztikus kor kettős biblia-alapú tanítása a szexualitásról? (Két helyes válasz)</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="50" format="html">
+      <text><![CDATA[<p>a házasságban való élés</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="50" format="html">
+      <text><![CDATA[<p>szüzességben való élés</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>kolostorban való élés</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>poligámiában való élés</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284643  -->
+  <question type="multichoice">
+    <name>
+      <text>5. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Mi a különbség az <i>in vitro</i> és a <i>mikroinjekciós</i> eljárás közt?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A mikroinjekciós eljárást csak speciális betegségeknél alkalmazzák.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>A mikroinjekciós eljárás során csak egy petesejtet termékenyítenek meg, az in vitro eljárással akár többet is.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Az in vitro eljárás elavult, helyette a mikroinjekciós eljárás alkalmasabb.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Az in vitro eljárás méhen kívüli megtermékenyítést jelent, a mikroinjekciós eljárás pedig méhen belülit.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284653  -->
+  <question type="multichoice">
+    <name>
+      <text>5. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A megszakításos közösülés az egyik legrégebbi fogamzásgátló módszer. Miért nem ajánlott bioetikai szempontból?&nbsp;</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Mert nem tudni pontosan, mikor kell abbahagyni.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Mert megszakad a nemi együttlét természetes folyamata.&nbsp;</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>Mert gátolja a nőt az orgazmus elérésében.</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Hatékonyságát tekintve nem a legjobb módszer.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284663  -->
+  <question type="multichoice">
+    <name>
+      <text>5. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Mikor publikálták az első klónozott állat hírét a tudományos világban?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>1950</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>1976</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>1999</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>1996</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284674  -->
+  <question type="multichoice">
+    <name>
+      <text>6. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p></p><p><span><span><span lang="hu">A nem önkéntes</span><span lang="hu"> (non-voulntary) eutanázia az, amikor a hozzátartozók kérésére történik, mert a beteg nem tud nyilatkozni.</span></span></span></p><p><span lang="hu"></span></p><br><p></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>igaz</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>hamis</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284704  -->
+  <question type="multichoice">
+    <name>
+      <text>6. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p><div><p>Mi a különbség az&nbsp;<i>in vitro</i>&nbsp;és a&nbsp;<i>mikroinjekciós</i>&nbsp;eljárás közt?</p></div><div><br>
+
+</div><br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Az in vitro eljárás elavult, helyette a mikroinjekciós eljárás alkalmasabb.<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A mikroinjekciós eljárást csak speciális betegségeknél alkalmazzák.<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Az in vitro eljárás méhen kívüli megtermékenyítést jelent, a mikroinjekciós eljárás pedig méhen belülit.<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>A mikroinjekciós eljárás során csak egy petesejtet termékenyítenek meg, az in vitro eljárással akár többet is.<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284604  -->
+  <question type="multichoice">
+    <name>
+      <text>6. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Az orvosi etika szakmaiságához a vallásos tanítások is hozzájárultak:</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>teret biztosítottak az orvosoknak, hogy tanuljanak és kutassanak.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>a szentség és sérthetetlenség elvét hangsúlyozták és etikai kérdésekben foglaltak állást.&nbsp;</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>elítélték a boncolást, mert az tisztátalan cselekedet.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>nyomást gyakoroltak az orvostudományra, hogy megváltoztassák vallásellenes nézeteiket.&nbsp;</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284614  -->
+  <question type="multichoice">
+    <name>
+      <text>6. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A modern kor szexualitásról alkotott képe sokkal pozitívabb tendenciát mutat. A bibliai tanításokban felismerik a gyermeknemzésre vonatkozó tanítás mellett a szexualitás szépségét is. Melyik bibliai könyvről van szó?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Eszter Könyve</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Ruth Könyve</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A Zsoltárok Könyve</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Énekek Éneke</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284634  -->
+  <question type="multichoice">
+    <name>
+      <text>6. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text>Az egyház az abortusz megengedését először a 12. században kezdeményezte. Milyen feltétellel?</text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Ha csak rabszolgákon kellett végrehajtani.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Ha megfelelő orvosi ellátás állt rendelkezésre.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Ha az anya élete veszélyben forgott.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Ha az apa és anya egyformán beleegyeztek az abortusz végrehajtásába.&nbsp;</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284644  -->
+  <question type="multichoice">
+    <name>
+      <text>6. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A második videón a mikroinjekciós &nbsp;eljárás során mi történik a petesejttel?&nbsp;</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Megtermékenyítik az injekció segítségével.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Előkészítik a beültetésre.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Mélyhűtik.&nbsp;</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Beültetik az anyaméhbe.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284654  -->
+  <question type="multichoice">
+    <name>
+      <text>6. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Az időmérős fogamzásgátló módszer 1930-ban újításnak számított, mert emberbarát és etikai szempontból is elfogadható. Mi a hátránya?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A peteérési időszakban nehéz elviselni a nemi együttlét hiányát.&nbsp;</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Bizonytalan, mert minden nőnek más-más napon van peteérése.&nbsp;</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>A peteérés nem mindig kiszámítható, spontán peteérés is bekövetkezhet.&nbsp;</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A nő túl sok időt kell önmagára fordítson e módszer által.&nbsp;</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284664  -->
+  <question type="multichoice">
+    <name>
+      <text>6. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Mit használnak az őssejtkíérletekhez?&nbsp;</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>köldökzsinórt</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>embriót</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>elhalt emberi szöveteket</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>élő magzatokat</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284705  -->
+  <question type="multichoice">
+    <name>
+      <text>7. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p><div><p>Az intrauterin spirált lokálisan hol alkalmazzák?&nbsp;</p></div><div><br>
+
+</div><br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A hüvelyben.<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>A méhben.<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A petefészekben.<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A petevezetékben.<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284605  -->
+  <question type="multichoice">
+    <name>
+      <text>7. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Mikor fogalmazták meg az Emberi Jogok Egyetemes Nyilatkozatát?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>1948-ban</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>1970-ben</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>1945-ben</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>1989-ben</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284635  -->
+  <question type="multichoice">
+    <name>
+      <text>7. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A 20. századi magzatellenes női önrendelkezés a magzatot úgy tekinti, mint ...&nbsp;</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>regresszort</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>agresszort</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>személytelen anyag</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>teljes értékű élet</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284645  -->
+  <question type="multichoice">
+    <name>
+      <text>7. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Bioetikai szempontból miért kérdéses a mesterséges megtermékenyítés helyénvalósága?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Mert a meddőség problémáját végülis nem oldja meg..</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Mert sokat kell rá várni.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Sok anyagi ráfordítást igényel.&nbsp;</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Mert az anya teste könnyen kilökheti magából az embriót.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284665  -->
+  <question type="multichoice">
+    <name>
+      <text>7. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Miért számít jelentős kutatásnak az őssejtterápia?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Speciális sejtvonalak tenyészthetők ki</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Embriókat állítanak elő általa</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Az állatok szerveit teszik használhatóvá általa.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Hasonló génállományú élőlény fejleszthető ki általa.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284655  -->
+  <question type="multichoice">
+    <name>
+      <text>7.Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Melyik helyes?&nbsp;</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Nem minden etikus, ami jogos, és ami jogos, nem feltétlenül helyes.&nbsp;</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Nem minden helyes, ami etikus és jogos.&nbsp;</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Ami jogos az helyes, ami helyes, az etikus is.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Ami jogos, az jó is, ami etikus az helyes is.&nbsp;</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284676  -->
+  <question type="multichoice">
+    <name>
+      <text>8. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Mi segít a betegnek a hospice szolgálat szerint?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Ha maximális kényelemben van.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Ha meghallgatják, amikor beszélni kíván.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Értelmet találni a szenvedésben és a halálon túl is.&nbsp;</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A passzív eutanázia.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284686  -->
+  <question type="multichoice">
+    <name>
+      <text>8. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p><p><span lang="hu">Az ipari termelés fő mozgatórugója már nem a ............., hanem a globális igény, a gazdasági profit.</span><span lang="hu"></span></p><br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>lokális</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>kapitális</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>individuális</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>feudális</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284696  -->
+  <question type="multichoice">
+    <name>
+      <text>8. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Mire utal Czeizel Endre a jövőre vonatkozó prognózisában, milyen problémával kell szembenéznie a fiatal generációnak?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Gazdasági problémákkal.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Erkölcsi problémákkal.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text>Egészségügyi problémákkal.</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Az idősek eltartásának problémájával.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284706  -->
+  <question type="multichoice">
+    <name>
+      <text>8. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p><div>A&nbsp;<i>Humanae vitae&nbsp;</i>pápai nyilatkozat milyen új tanítást fogalmazott meg, ami eltért a középkori gyakorlattól?</div><div><br>
+
+</div><br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Kimondta, hogy a házastársi együttlét nem csupán a gyermeknemzés célját szolgálja.&nbsp;<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Megtiltotta a fogamzásgátlás eszközeinek használatát.&nbsp;<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Szexuális szabadságot hirdetett.<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Jóváhagyta a fogamzásgátlás módszeri beavatkozását.<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284606  -->
+  <question type="multichoice">
+    <name>
+      <text>8. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A Biblia tanítása szerint az értelemmel töltött élet számít teljes életnek. Mit jelent ez?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Tanulással töltött élet, mert a bölcsesség az értelem fokmérője.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Az embernek életcélja, hogy Istenre tekintsen, mert ez ad értelmet fáradozásának.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Az ember éljen minél tovább, mert ez ad életének értelmet.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Az értelmes élet a mindennapok élvezetében eltöltött élet.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284656  -->
+  <question type="multichoice">
+    <name>
+      <text>8. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p><p><span lang="hu">"A gyermeknemzés cselekedetében fontosnak tartja az vele együtt járó </span><span lang="hu">érzületet</span><span lang="hu"> is. A közösülés a nemzés akarása nélkül bűnös cselekedet marad." Kinek a tanítása ez?</span><span lang="hu"></span></p><br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Alexandriai Kelemen</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Athanasius</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Augusztinusz</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Aquinoi Tamás</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284677  -->
+  <question type="multichoice">
+    <name>
+      <text>9. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Miért válaszják sokan az Exit és a Dignitas klinikákat?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Mert Svájcban vannak és oda érdemes menni.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Mert a svájci törvények engedélyezik az eutanázia intézetek működését.&nbsp;</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Mert jó ellátást kapnak.&nbsp;</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Mert megunták már az életüket és ők akarnak dönteni.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284687  -->
+  <question type="multichoice">
+    <name>
+      <text>9. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Mi volt a keresztyén közösségek etikai tévedése a környező világgal szemben?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Nem tudták eléggé kihasználni.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>A teremtett világ fölé helyezték magukat.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Az iparosodás.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>A városra költözés.&nbsp;</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284697  -->
+  <question type="multichoice">
+    <name>
+      <text>9. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Czakó Gábort idézve, milyen nagyságrendű Magyarországon az '56 óta elkövetett abortuszok száma?&nbsp;</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>3 millió</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>6,3 millió</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>2,7 millió</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>4,5 millió</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284707  -->
+  <question type="multichoice">
+    <name>
+      <text>9. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p><div><p>Mit jelent a pozitív génsebészet?</p></div><div><br>
+
+</div><br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Az organizmus alaptulajdonságainak fokozását.<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Gének beiktatását a DNS spirálba<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Sikeres genetikai beavatkozást.<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Engedélyezett genetikai beavatkozást.<br></p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284607  -->
+  <question type="multichoice">
+    <name>
+      <text>9. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Ki hangsúlyozta az <i>individuális szabadságjogok</i> szükségességét az orvosi etikában?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Paul Ramsey</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Joseph Fletcher</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Van Rensselaer Potter&nbsp;</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Alasdair MacIntyre</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284637  -->
+  <question type="multichoice">
+    <name>
+      <text>9. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A magyarországi statisztikai adatok szerint az elmúlt ötven évben az abortuszok száma meghaladja a&nbsp;</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>1 milliót</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>2 milliót</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>3 milliót</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>4 milliót</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>5 milliót</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284647  -->
+  <question type="multichoice">
+    <name>
+      <text>9. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A katolikus egyház tanítása elveti és tiltja a mesterséges inszeminációt és béranyaságot.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>igaz</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>nem igaz</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>nincs álláspontja</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>nem egyértelmű</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284657  -->
+  <question type="multichoice">
+    <name>
+      <text>9. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[A <i>Humanae vitae </i>pápai nyilatkozat milyen új tanítást fogalmazott meg, ami eltért a középkori gyakorlattól?]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Szexuális szabadságot hirdetett.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Jóváhagyta a fogamzásgátlás módszeri beavatkozását.</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Kimondta, hogy a házastársi együttlét nem csupán a gyermeknemzés célját szolgálja.&nbsp;]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Megtiltotta a fogamzásgátlás eszközeinek használatát.&nbsp;</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284617  -->
+  <question type="multichoice">
+    <name>
+      <text>9.Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A szexuális magatartást vizsgálva 10.000 fős mintán végzett felmérést...&nbsp;</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Válasza helyes.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Válasza részben helyes.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Válasza helytelen.</text>
+    </incorrectfeedback>
+    <shownumcorrect/>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Margareth Meadow</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Alfred Kinsey</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Buda Béla</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Helmut Weber</p>]]></text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284609  -->
+  <question type="truefalse">
+    <name>
+      <text>1. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Mit nevezünk szexuális differenciálódásnak? Azt a folyamatot, mely során a férfi és női nemi szervek kifejlődtek, de egyik domináns. &nbsp;</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <answer fraction="0" format="moodle_auto_format">
+      <text>true</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>false</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284649  -->
+  <question type="truefalse">
+    <name>
+      <text>1. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p><p><span lang="hu">Fogamzásgátlásnak nevezünk minden olyan cselekedetet, melynek célja, hogy a szaporodást az új élet foganását megsegítse.</span><span lang="hu"></span></p><br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <answer fraction="0" format="moodle_auto_format">
+      <text>true</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>false</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284688  -->
+  <question type="truefalse">
+    <name>
+      <text>10. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p><p><span lang="hu">Az egyre szaporodó népesedés több élelmet, vizet, levegőt igényel. Ahhoz, hogy ez a feltétel adott legyen több és felelősebb eljárás szükségeltetik a politikum, a gazdasági szféra és az egyházi vezetés részéről. </span></p>
+
+<p><span lang="hu">&nbsp;</span></p><br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>true</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="moodle_auto_format">
+      <text>false</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284618  -->
+  <question type="truefalse">
+    <name>
+      <text>10. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Modern tudományos megállapítás során bizonyítást nyert, hogy a korai szexuális aktivitás elkezdése nem von maga után pszichikai utóhatást. &nbsp;</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <answer fraction="0" format="moodle_auto_format">
+      <text>true</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>false</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284628  -->
+  <question type="truefalse">
+    <name>
+      <text>10. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A keleti és nyugati keresztyén felekezetek közt konszenzus született a közelmúltban a melegházasság problémájának egyházi orvoslására.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <answer fraction="0" format="moodle_auto_format">
+      <text>true</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>false</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284714  -->
+  <question type="truefalse">
+    <name>
+      <text>16. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p><p>A társadalmi kutatások valószínűség-mutatói azt igazolják, hogy&nbsp;<i>ha huzamosabb ideig és nagy gyakorisággal történik az önkielégítés, annak szexuális&nbsp;</i><i>és személyre ható káros kihatása van.</i></p><p><span lang="hu"></span></p><br><br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <answer fraction="0" format="moodle_auto_format">
+      <text>true</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>false</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284716  -->
+  <question type="truefalse">
+    <name>
+      <text>18. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p><div><p>Ha valamely személyt 1950-ben Magyarországon a homoszexualitás vádja alá helyeztek - jogerősen elítélhették.</p></div><div><br>
+
+</div><br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>true</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="moodle_auto_format">
+      <text>false</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284718  -->
+  <question type="truefalse">
+    <name>
+      <text>20. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p><p><span lang="hu">Az egyre szaporodó népesedés több élelmet, vizet, levegőt igényel. Ahhoz, hogy ez a feltétel adott legyen több és felelősebb eljárás szükségeltetik a politikum, a gazdasági szféra és az egyházi vezetés részéről.</span></p><br><br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>true</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="moodle_auto_format">
+      <text>false</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284701  -->
+  <question type="truefalse">
+    <name>
+      <text>3. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p><span lang="hu">"A megvilágosodott lelkiismeret lehet az a fórum, mely képes összhangot találni a tradicionalizmus és szituációs morál közt úgy, hogy az érintettek autonómiája a legnagyobb mértékben érvényesüljön."</span><span lang="hu"></span><span lang="hu"></span><br><br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>true</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="moodle_auto_format">
+      <text>false</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284601  -->
+  <question type="truefalse">
+    <name>
+      <text>3. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A technika és az orvostudomány fejlődése nem az ember teljesebb megismerését, hanem az orvos-beteg kapcsolat elszemélytelenedését szolgálta.&nbsp;</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>true</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="moodle_auto_format">
+      <text>false</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284671  -->
+  <question type="truefalse">
+    <name>
+      <text>3. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A Magyar Orvosi Kamara elutasítja az aktív eutanáziát, a passzívat megengedi. &nbsp;</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <answer fraction="0" format="moodle_auto_format">
+      <text>true</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>false</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284611  -->
+  <question type="truefalse">
+    <name>
+      <text>3. kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A bibliai előfordulások alapján megállapíthatjuk, hogy a többnejűség vagy poligínia a törvény keretin belül helyes gyakorlatnak minősül.&nbsp;</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>true</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="moodle_auto_format">
+      <text>false</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284692  -->
+  <question type="truefalse">
+    <name>
+      <text>4. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p><p><span lang="hu">"A megvilágosodott lelkiismeret lehet az a fórum, mely képes összhangot találni a tradicionalizmus és szituációs morál közt úgy, hogy az érintettek autonómiája a legnagyobb mértékben érvényesüljön."</span><span lang="hu"></span><span lang="hu"></span></p><br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>true</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="moodle_auto_format">
+      <text>false</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284702  -->
+  <question type="truefalse">
+    <name>
+      <text>4. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A méltóság tartalma szavatolja, hogy embernek tekintendő az az embrió is, amelyik nem képes még szabad akaratot nyilvánítani és önállóan döntést hozni, valamint az az idős ember is, aki önmagát már ellátni nem képes.<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>true</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="moodle_auto_format">
+      <text>false</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284612  -->
+  <question type="truefalse">
+    <name>
+      <text>4. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Augustinus egyházatya <i>azt tartja a házasságról, hogy nehezebb az önmegtartóztatásnál, de olyan hely, mely állhatatosságra vezet és olyan érték, melyet szentnek kell tekinteni.</i></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <answer fraction="0" format="moodle_auto_format">
+      <text>true</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>false</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284622  -->
+  <question type="truefalse">
+    <name>
+      <text>4. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A természeti törzsek beavatási szertartásában gyakorta előfordul(t) a fiatal fiúk homoszexuális beavatási rítusa.&nbsp;</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>true</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="moodle_auto_format">
+      <text>false</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284632  -->
+  <question type="truefalse">
+    <name>
+      <text>4. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Az abortuszpárti politikai és aktivista platformok arra hivatkoznak, hogy az Ókorban sem létezett abortuszt tiltó törvény, tehát az abortusz megengedett volt.<br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>true</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="moodle_auto_format">
+      <text>false</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284662  -->
+  <question type="truefalse">
+    <name>
+      <text>4. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p><p><span lang="hu">A klónozás során egy már létező élőlény genetikai anyagát (DNS-ét) ültetik át egy speciálisan előkészített őssejtbe.</span><span lang="hu"></span></p><br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <answer fraction="0" format="moodle_auto_format">
+      <text>true</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>false</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284623  -->
+  <question type="truefalse">
+    <name>
+      <text>5. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A homoszexualitás társadalmi megítélése az Egyetemes Emberi Jogok Nyilatkozata (1948) következtében változik meg..</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>true</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="moodle_auto_format">
+      <text>false</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284633  -->
+  <question type="truefalse">
+    <name>
+      <text>5. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Az ókori kultúrákban, mint a babiloni, zsidó-keresztyén, görög, római találkozunk a magzatvédelem törvényével.&nbsp;</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>true</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="moodle_auto_format">
+      <text>false</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284684  -->
+  <question type="truefalse">
+    <name>
+      <text>6. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p><p><span lang="hu">Amikor a 14. század elején az ágyúöntés elkezdődött, az ökológiai hatás abban nyilvánult meg, hogy </span><span lang="hu">a környező erdők és hegyek fa, vasérc, kálisó, kén tartalékait kezdték kiaknázni.</span><span lang="hu"></span></p><br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>true</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="moodle_auto_format">
+      <text>false</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284694  -->
+  <question type="truefalse">
+    <name>
+      <text>6. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p><p><span lang="hu">A méltóság tartalma szavatolja, hogy embernek tekintendő az az embrió is, amelyik nem képes még szabad akaratot nyilvánítani és önállóan döntést hozni, valamint az az idős ember is, aki önmagát már ellátni nem képes.</span><span lang="hu"></span></p><br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>true</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="moodle_auto_format">
+      <text>false</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284624  -->
+  <question type="truefalse">
+    <name>
+      <text>6. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Ha valamely személyt 1950-ben Magyarországon a homoszexualitás vádja alá helyeztek - jogerősen elítélhették.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>true</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="moodle_auto_format">
+      <text>false</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284685  -->
+  <question type="truefalse">
+    <name>
+      <text>7. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p><p><span lang="hu">A technika fejlődése által a nyugati világ a 11. században jelentős gazdasági előnyre tett szert a Föld más régióihoz képest.</span><span lang="hu"></span></p><br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <answer fraction="0" format="moodle_auto_format">
+      <text>true</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>false</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284695  -->
+  <question type="truefalse">
+    <name>
+      <text>7. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Bolberitz szerint sokan azt mondják, hogy az erkölcs magánügy.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>true</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="moodle_auto_format">
+      <text>false</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284625  -->
+  <question type="truefalse">
+    <name>
+      <text>7. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A mai jogrend szerint Magyarországon jogilag megengedett a melegházasság de egyházilag nem elfogadott,&nbsp;</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <answer fraction="0" format="moodle_auto_format">
+      <text>true</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>false</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284626  -->
+  <question type="truefalse">
+    <name>
+      <text>8. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A Romániai Református Egyház Zsinati Főosztálya nyilatkozata szerint a homoszexuális hajlam nem bűn.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>true</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="moodle_auto_format">
+      <text>false</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284636  -->
+  <question type="truefalse">
+    <name>
+      <text>8. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A női önrendelkezés szerint a magzat agresszornak tekintendő, mert a szülőket arra kényszeríti, hogy foglalkozzanak vele, hogy ellássák őt.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>true</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="moodle_auto_format">
+      <text>false</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284646  -->
+  <question type="truefalse">
+    <name>
+      <text>8. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p><p><span lang="hu">Folscheid, és mtsai szerint a mesterséges megtermékenyítés valójában a választás lehetőségeit kínálja, ezzel szemben a természetes fogantatás sokkal „szegényebb”, korlátozóbb lehetőség—tehát akadály</span><span lang="hu"></span></p><br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>true</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="moodle_auto_format">
+      <text>false</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284666  -->
+  <question type="truefalse">
+    <name>
+      <text>8. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A CRISPR módszertől<span style="font-size: 1rem;">&nbsp;a daganatos betegségek leküzdését remélik megoldani.</span><p><span lang="hu"></span></p></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>true</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="moodle_auto_format">
+      <text>false</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284615  -->
+  <question type="truefalse">
+    <name>
+      <text>8.Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p><p><span lang="hu">Konszenzus uralkodik a történelmi egyházak közt a tekintetben, hogy a szexuális cselekvés csak akkor mondható felelősségteljesnek, ha két olyan különböző nemű felnőtt személy közösségében történik, akik szeretetben egymásnak adták magukat.</span><span lang="hu"></span></p><br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>true</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="moodle_auto_format">
+      <text>false</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284616  -->
+  <question type="truefalse">
+    <name>
+      <text>8.Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A társadalmi kutatások valószínűség-mutatói azt igazolják, hogy&nbsp;<span style="font-size: 1rem;"><i>ha huzamosabb ideig és nagy gyakorisággal történik az önkielégítés, annak szexuális </i><span><i>és személyre ható káros kihatása van.</i></span></span><p><span lang="hu"></span></p><br></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <answer fraction="0" format="moodle_auto_format">
+      <text>true</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>false</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284627  -->
+  <question type="truefalse">
+    <name>
+      <text>9. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Mit jelent az "<i>ontológiai mellékrend"</i> Dietmar Mieth szerint?</p><p>Azt jelenti, hogy a homoszexuális párkapcsolat minőségileg ugyanolyan érték, mint a heteroszexuális kapcsolat.&nbsp;</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>true</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="moodle_auto_format">
+      <text>false</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+<!-- question: 4284667  -->
+  <question type="truefalse">
+    <name>
+      <text>9. Kérdés</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Az egyházi állásfoglalás elutasítja az embriókon végzett őssejtterápiát, mert azokat élő embernek tekinti.&nbsp;</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>true</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="moodle_auto_format">
+      <text>false</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+  </question>
+
+</quiz>

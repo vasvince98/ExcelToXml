@@ -17,7 +17,6 @@ public class ImageService implements IImageService {
 
     @Override
     public BufferedImage renderStringToImage(String text) {
-        System.out.println(text);
         FormattedText formattedText = getHeightAndWidth(text);
         RenderAPI renderer = new RenderAPI(formattedText.getWidth() * 7, formattedText.getHeight() * 30);
 
