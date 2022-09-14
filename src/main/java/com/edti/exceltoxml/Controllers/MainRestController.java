@@ -36,10 +36,8 @@ import java.util.Base64;
 @RestController
 @PropertySource(value = "/global.properties")
 public class MainRestController {
-    @Value("${fileLocation}")
-    private String fileLocation;
 
-    @Value("${serverStoreFolder}")
+    @Value("${serverStorePath}")
     private String serverStoreFolder;
 
     String filePath;
@@ -56,7 +54,7 @@ public class MainRestController {
     @RequestMapping("/excel")
     public String generateXmlFromExcel() {
         try {
-            File folder = new File(fileLocation);
+            File folder = new File(serverStoreFolder);
             File[] listOfFiles = folder.listFiles();
             assert listOfFiles != null;
             for (File listOfFile : listOfFiles) {
@@ -81,7 +79,7 @@ public class MainRestController {
     @RequestMapping("/xml")
     public String generateXmlFromXml() {
         try {
-            File folder = new File(fileLocation);
+            File folder = new File(serverStoreFolder);
             File[] listOfFiles = folder.listFiles();
             assert listOfFiles != null;
             for (File listOfFile : listOfFiles) {
@@ -102,7 +100,7 @@ public class MainRestController {
     @RequestMapping("/download")
     public ResponseEntity<InputStreamResource> getFile(HttpServletResponse response) {
         try {
-            File folder = new File(fileLocation);
+            File folder = new File(serverStoreFolder);
             File[] listOfFiles = folder.listFiles();
             assert listOfFiles != null;
             String fileName = null;
@@ -115,7 +113,7 @@ public class MainRestController {
 
             File inputXml = new File(filePath);
 
-            File localSaveFile = new File("/Users/vasvince/Desktop/" + fileName);
+            File localSaveFile = new File(serverStoreFolder + "/" + fileName);
 
             String finalXML = questionService.createImageXmlFromStringXml(inputXml);
 
@@ -126,17 +124,6 @@ public class MainRestController {
                     .contentType(MediaType.APPLICATION_OCTET_STREAM)
                     .body(resource);
 
-//            FileUtils.writeStringToFile(localSaveFile, finalXML, StandardCharsets.UTF_8);
-//í
-//
-//            InputStream is = new FileInputStream(localSaveFile);
-//            response.setContentType("application/xml");
-//            FileCopyUtils.copy(is, response.getOutputStream());
-//
-//            response.flushBuffer();
-
-
-//            return finalXML;
         } catch (Exception e) {
             e.printStackTrace();
             throw new MissingFileException("Nem töltött fel fájlt!");

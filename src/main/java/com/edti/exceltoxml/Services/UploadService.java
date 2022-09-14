@@ -12,15 +12,15 @@ import java.time.LocalDateTime;
 @PropertySource(value = "/global.properties")
 public class UploadService implements IUploadService {
 
-    @Value("${fileLocation}")
-    private String fileLocation;
+    @Value("${serverStorePath}")
+    private String serverStoreFolder;
 
 
     @Override
     public void handleExcelFile(MultipartFile file) {
         try {
             InputStream in = file.getInputStream();
-            File currDir = new File(fileLocation + "/" + LocalDateTime.now());           //todo: filename
+            File currDir = new File(serverStoreFolder + "/" + LocalDateTime.now());           //todo: filename
             String serverPath = currDir.getAbsolutePath() + file.getOriginalFilename();
             FileOutputStream server = new FileOutputStream(serverPath);
 

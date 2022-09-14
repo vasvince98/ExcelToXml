@@ -13,16 +13,20 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.view.RedirectView;
 
+import java.io.File;
 import java.io.IOException;
 
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 @Controller
-@PropertySource(value = "/application.properties")
+@PropertySource(value = {"/application.properties", "/global.properties"})
 public class MainController {
 
     @Value("${server.port}")
     private int port;
+
+    @Value("${serverStorePath}")
+    private String serverStoreFolder;
 
     private IUploadService uploadService;
 
@@ -33,6 +37,15 @@ public class MainController {
 
     @RequestMapping("/upload")
     public String uploadFile() {
+        File outputFolder = new File(serverStoreFolder);
+        File[] files = outputFolder.listFiles();
+
+        if (files != null) {
+            for (File f : files) {
+                f.delete();
+            }
+        }
+
         return "index";
     }
 
@@ -48,5 +61,8 @@ public class MainController {
         return "redirect";
     }
 
-
+    @RequestMapping("/EDTI")
+    public String EDTI() {
+        return "EDTI";
+    }
 }
