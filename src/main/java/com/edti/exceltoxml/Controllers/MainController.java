@@ -37,7 +37,7 @@ public class MainController {
 
     @RequestMapping("/upload")
     public String uploadFile() {
-        File outputFolder = new File(serverStoreFolder);
+        File outputFolder = new File(".");
         File[] files = outputFolder.listFiles();
 
         if (files != null) {

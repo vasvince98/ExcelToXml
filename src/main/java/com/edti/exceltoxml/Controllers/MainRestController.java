@@ -40,6 +40,7 @@ public class MainRestController {
     @Value("${serverStorePath}")
     private String serverStoreFolder;
 
+
     String filePath;
 
     private final IQuestionService questionService;
@@ -54,11 +55,11 @@ public class MainRestController {
     @RequestMapping("/excel")
     public String generateXmlFromExcel() {
         try {
-            File folder = new File(serverStoreFolder);
+            File folder = new File("");
             File[] listOfFiles = folder.listFiles();
             assert listOfFiles != null;
             for (File listOfFile : listOfFiles) {
-                if (listOfFile.getName().equals("datumtesztk.xlsx")) {              //todo: több felhasználónál felkészülni tövv fájlra
+                if (listOfFile.getName().toLowerCase().endsWith(".xlsx")) {              //todo: több felhasználónál felkészülni tövv fájlra
                     filePath = listOfFile.getPath();
                 }
             }
@@ -79,7 +80,7 @@ public class MainRestController {
     @RequestMapping("/xml")
     public String generateXmlFromXml() {
         try {
-            File folder = new File(serverStoreFolder);
+            File folder = new File(".");
             File[] listOfFiles = folder.listFiles();
             assert listOfFiles != null;
             for (File listOfFile : listOfFiles) {
@@ -100,7 +101,7 @@ public class MainRestController {
     @RequestMapping("/download")
     public ResponseEntity<InputStreamResource> getFile(HttpServletResponse response) {
         try {
-            File folder = new File(serverStoreFolder);
+            File folder = new File(".");
             File[] listOfFiles = folder.listFiles();
             assert listOfFiles != null;
             String fileName = null;
@@ -113,7 +114,7 @@ public class MainRestController {
 
             File inputXml = new File(filePath);
 
-            File localSaveFile = new File(serverStoreFolder + "/" + fileName);
+            File localSaveFile = new File("." + "/" + fileName);
 
             String finalXML = questionService.createImageXmlFromStringXml(inputXml);
 
