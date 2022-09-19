@@ -106,7 +106,7 @@ public class MainRestController {
             assert listOfFiles != null;
             String fileName = null;
             for (File listOfFile : listOfFiles) {
-                if (listOfFile.getName().toLowerCase().endsWith(".xml")) {             //todo: több felhasználónál felkészülni tövv fájlra (prototype)
+                if (listOfFile.getName().toLowerCase().endsWith(".xml") && !listOfFile.getName().toLowerCase().endsWith("om.xml")) {             //todo: több felhasználónál felkészülni tövv fájlra (prototype)
                     filePath = listOfFile.getPath();
                     fileName = listOfFile.getName();
                 }

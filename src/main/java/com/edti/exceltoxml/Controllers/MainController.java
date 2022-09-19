@@ -42,7 +42,9 @@ public class MainController {
 
         if (files != null) {
             for (File f : files) {
-                f.delete();
+                if(f.getName().toLowerCase().endsWith(".xml") && !f.getName().endsWith("pom.xml")) {
+                    f.delete();
+                }
             }
         }
 
