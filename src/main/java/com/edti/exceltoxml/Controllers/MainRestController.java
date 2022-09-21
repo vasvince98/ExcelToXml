@@ -61,7 +61,7 @@ public class MainRestController {
 
             Quiz currentQuiz = questionService.createObjectFromExcel(workbook);
             System.out.println(currentQuiz);
-            return questionService.createXmlFromObject(currentQuiz);
+            return questionService.createXmlFromQuiz(currentQuiz);
         } catch (Exception e) {
             e.printStackTrace();
             throw new MissingFileException("Nem töltött fel fájlt!");

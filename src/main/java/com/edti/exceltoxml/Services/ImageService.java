@@ -57,6 +57,8 @@ public class ImageService implements IImageService {
         return Base64.getEncoder().encodeToString(baos.toByteArray());
     }
 
+    //todo: Create comments
+
     private FormattedText getHeightAndWidth(String text) {
         FormattedText formattedTextClass = new FormattedText();
         int lineBreak = 1;

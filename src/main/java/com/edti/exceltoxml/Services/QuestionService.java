@@ -58,6 +58,7 @@ public class QuestionService implements IQuestionService {
                     removeFirstRow(sheet);
                     this.questionType = "igaz-hamis";
                     for (Row row : sheet) {
+                        createTrueFalse(row);
                         int i = 0;
                         Question question = new Question();
                         for (Cell cell : row) {
@@ -70,7 +71,7 @@ public class QuestionService implements IQuestionService {
                                 case 0 -> question.setType("truefalse");
                                 case 1 -> question.setName(new Name(cell.getStringCellValue()));
                                 case 2 -> question.setQuestiontext(new QuestionText("html",
-                                        new File("base64", imageService.imageToBase64(imageService.renderStringToImage(cell.getStringCellValue())))));
+                                        new File("base64", imageService.transformStringToBase64(cell.getStringCellValue()))));
                                 case 3 -> question.setDefaultgrade(cell.getNumericCellValue());
                                 case 4 -> question.setAnswer(createAnswers(this.questionType, cell.toString().toLowerCase()));
                                 default -> System.out.println("It's over Anakin!");
@@ -200,7 +201,7 @@ public class QuestionService implements IQuestionService {
     }
 
     @Override
-    public String createXmlFromObject(Quiz quiz) throws JAXBException {
+    public String createXmlFromQuiz(Quiz quiz) throws JAXBException {
 
         JAXBContext jaxbContext = JAXBContext.newInstance(Quiz.class);
 
@@ -246,7 +247,7 @@ public class QuestionService implements IQuestionService {
             }
         }
 
-        return createXmlFromObject(quiz);
+        return createXmlFromQuiz(quiz);
     }
 
     private List<Answer> createAnswers(String questionType, String solution) {
@@ -325,5 +326,11 @@ public class QuestionService implements IQuestionService {
             answer.setText("<p dir=\"ltr\" style=\"text-align: left;\"><img src=\"@@PLUGINFILE@@/imageName\" alt=\"\" role=\"presentation\" class=\"img-fluid\"><br></p>");
             answer.setFile(new File("base64", imageService.imageToBase64(imageService.renderStringToImage(answerText))));
         }
+    }
+
+    private Question createTrueFalse(Row row) {
+        Question question = new Question();
+
+
     }
 }
