@@ -1,5 +1,6 @@
 package com.edti.exceltoxml.Controllers;
 
+import com.edti.exceltoxml.Exceptions.MissingFileException;
 import com.edti.exceltoxml.Services.ImageService;
 import com.edti.exceltoxml.Services.Interfaces.IUploadService;
 import com.edti.exceltoxml.Services.PathLocatorService;
@@ -18,6 +19,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URISyntaxException;
 
@@ -66,8 +68,15 @@ public class MainController {
                                        @Nullable @RequestParam("checkBox") String isPicture) throws IOException, URISyntaxException {
         if (isPicture == null || isPicture.equals("")) {
             System.out.println("off");
-        } else {
+        } else if (isPicture.equals("on")){
             System.out.println(isPicture);
+        } else {
+            System.out.println("Ne huncutkodj!");
+        }
+
+        System.out.println(file.getOriginalFilename().toLowerCase());
+        if (!file.getOriginalFilename().toLowerCase().endsWith(".xml") && !file.getOriginalFilename().toLowerCase().endsWith(".xlsx")) {
+            throw new MissingFileException("Nem töltött fel fájlt!");
         }
 
         uploadService.handleExcelFile(file);

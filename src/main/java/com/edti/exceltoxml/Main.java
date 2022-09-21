@@ -12,7 +12,7 @@ public class Main {
 
     public static void main(String[] args) {
         SpringApplication.run(Main.class, args);
-        System.out.println(new File("").getAbsolutePath());
+        System.out.println("Working directory: " + new File("").getAbsolutePath());
     }
 
 }

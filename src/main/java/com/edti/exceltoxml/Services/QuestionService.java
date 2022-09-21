@@ -58,135 +58,40 @@ public class QuestionService implements IQuestionService {
                     removeFirstRow(sheet);
                     this.questionType = "igaz-hamis";
                     for (Row row : sheet) {
-                        createTrueFalse(row);
-                        int i = 0;
-                        Question question = new Question();
-                        for (Cell cell : row) {
-
-                            if (cell.getColumnIndex() != i) {
-                                throw new MissingDataException("Every cell must be filled!");
-                            }
-
-                            switch (i) {
-                                case 0 -> question.setType("truefalse");
-                                case 1 -> question.setName(new Name(cell.getStringCellValue()));
-                                case 2 -> question.setQuestiontext(new QuestionText("html",
-                                        new File("base64", imageService.transformStringToBase64(cell.getStringCellValue()))));
-                                case 3 -> question.setDefaultgrade(cell.getNumericCellValue());
-                                case 4 -> question.setAnswer(createAnswers(this.questionType, cell.toString().toLowerCase()));
-                                default -> System.out.println("It's over Anakin!");
-                            }
-                            i++;
-                        }
-                        questions.add(question);
+                        questions.add(createTrueFalse(row));
                     }
                     System.out.println("Igaz hamis done");
                 }
 
                 case "párosító" -> {
                     System.out.println("Párosító started");
-                    this.questionType = "párosító";
                     removeFirstRow(sheet);
+                    this.questionType = "párosító";
 
                     for (Row row : sheet) {
-
-                        Question question = new Question();
-                        subQuestionList = new ArrayList<>();
-                        for (int i = 0; i < 13; i++) {
-                            switch (i) {
-                                case 0 -> question.setType("matching");
-                                case 1 -> question.setName(new Name(row.getCell(i).getStringCellValue()));
-                                case 2 -> question.setQuestiontext(new QuestionText("html", new File("base64", imageService.imageToBase64(imageService.renderStringToImage(row.getCell(i).getStringCellValue())))));
-                                case 3 -> question.setDefaultgrade(row.getCell(i).getNumericCellValue());
-                                case 4, 6, 8, 10, 12 -> createSubQuestion(i, row);
-                                default -> System.out.println("It's over Anakin!");
-                            }
-                        }
-                        question.setPenalty(0.33);
-                        question.setShuffleanswers(true);
-                        question.setCorrectfeedback(new CorrectFeedback("Válasza helyes", "html"));
-                        question.setPartiallycorrectfeedback(new PartiallyCorrectFeedback("Válasza részben helyes", "html"));
-                        question.setIncorrectfeedback(new IncorrectFeedback("Válasza helytelen", "html"));
-                        question.setSubquestion(subQuestionList);
-                        questions.add(question);
-                        System.out.println(questions.get(1).getDefaultgrade());
+                        questions.add(createMatching(row));
                     }
+                    System.out.println("Párosító done!");
                 }
 
                 case "feleletválasztó" -> {
-                    this.questionType = "feleletválasztó";
+                    System.out.println("Feleletválasztó started!");
                     removeFirstRow(sheet);
+                    this.questionType = "feleletválasztó";
 
                     for (Row row : sheet) {
-
-                        Question question = new Question();
-                        this.answerList = new ArrayList<>();
-                        for (int i = 0; i < 12; i++) {
-
-                            switch (i) {
-                                case 0 -> question.setType("multichoice");
-                                case 1 -> question.setName(new Name(row.getCell(i).getStringCellValue()));
-                                case 2 -> question.setQuestiontext(new QuestionText("html", new File("base64", imageService.imageToBase64(imageService.renderStringToImage(row.getCell(i).getStringCellValue())))));
-                                case 3 -> question.setDefaultgrade(row.getCell(i).getNumericCellValue());
-                                case 5, 7, 9, 11 -> {
-                                    if (row.getCell(i+1).getNumericCellValue() == 0) {
-                                        try {
-                                            throw new NullAnswerException("Nem vont le pontot a rossz válaszért! Biztosan beküldi a tesztet?");
-                                        } catch (Exception e) {
-                                            //helo
-                                        } continue;
-                                    }
-                                    if (row.getCell(i) != null) {
-                                        answerList.add(new Answer(row.getCell(i).getStringCellValue(),
-                                                new Feedback("",
-                                                        "html"),
-                                                Double.toString(row.getCell(i+1).getNumericCellValue()), "html"));
-                                    }
-                                }
-                                default -> System.out.println("It's over Anakin!");
-                            }
-                        }
-                        question.setPenalty(0.33);
-                        question.setShuffleanswers(true);
-                        question.setCorrectfeedback(new CorrectFeedback("Válasza helyes", "html"));
-                        question.setPartiallycorrectfeedback(new PartiallyCorrectFeedback("Válasza részben helyes", "html"));
-                        question.setIncorrectfeedback(new IncorrectFeedback("Válasza helytelen", "html"));
-                        question.setAnswer(answerList);
-                        questions.add(question);
+                        questions.add(createMultichoice(row));
                     }
+                    System.out.println("Feleletválasztó done!");
                 }
 
                 case "szövegbehúzás" -> {
-                    this.questionType = "szövegbehúzás";
+                    System.out.println("Szövegbehúzás started");
                     removeFirstRow(sheet);
+                    this.questionType = "szövegbehúzás";
 
                     for (Row row : sheet) {
-
-                        Question question = new Question();
-                        this.dragboxList = new ArrayList<>();
-                        for (int i = 0; i < 9; i++) {
-
-                            switch (i) {
-                                case 0 -> question.setType("ddwtos");
-                                case 1 -> question.setName(new Name(row.getCell(i).getStringCellValue()));
-                                case 2 -> question.setQuestiontext(new QuestionText("html", row.getCell(i).getStringCellValue()));
-                                case 3 -> question.setDefaultgrade(row.getCell(i).getNumericCellValue());
-                                case 4, 5, 6, 7, 8 -> {
-                                    if (row.getCell(i) != null) {
-                                        dragboxList.add(new Dragbox(row.getCell(i).getStringCellValue()));
-                                    }
-
-                                }
-                                default -> System.out.println("It's over Anakin!");
-                            }
-                        }
-                        question.setPenalty(0.33);
-                        question.setShuffleanswers(true);
-                        question.setCorrectfeedback(new CorrectFeedback("Válasza helyes", "html"));
-                        question.setPartiallycorrectfeedback(new PartiallyCorrectFeedback("Válasza részben helyes", "html"));
-                        question.setIncorrectfeedback(new IncorrectFeedback("Válasza helytelen", "html"));
-                        question.setDragbox(dragboxList);
-                        questions.add(question);
+                        questions.add(createDdwtos(row));
                     }
                 }
 
@@ -231,16 +136,16 @@ public class QuestionService implements IQuestionService {
                     String questionText = getStringFromHTML(question.getQuestiontext().getText());
 
                     question.setQuestiontext(new QuestionText("html", new File("base64",
-                            imageService.imageToBase64(imageService.renderStringToImage(questionText)))));
+                            imageService.transformStringToBase64(questionText))));
                 }
                 case "matching" -> {
                     String questionText = getStringFromHTML(question.getQuestiontext().getText());
 
                     question.setQuestiontext(new QuestionText("html", new File("base64",
-                            imageService.imageToBase64(imageService.renderStringToImage(questionText)))));
+                            imageService.transformStringToBase64(questionText))));
 
                     for (SubQuestion subQuestion : question.getSubquestion()) {
-                        subQuestion.setText(imageService.imageToBase64(imageService.renderStringToImage(subQuestion.getText())));
+                        subQuestion.setText(imageService.transformStringToBase64(subQuestion.getText()));
                     }
                 }
                 default -> System.out.println("Unhandled question type");
@@ -319,18 +224,126 @@ public class QuestionService implements IQuestionService {
         String questionText = getStringFromHTML(question.getQuestiontext().getText());
 
         question.setQuestiontext(new QuestionText("html", new File("base64",
-                imageService.imageToBase64(imageService.renderStringToImage(questionText)))));
+                imageService.transformStringToBase64(questionText))));
 
         for (Answer answer : question.getAnswer()) {
             String answerText = getStringFromHTML(answer.getText());
             answer.setText("<p dir=\"ltr\" style=\"text-align: left;\"><img src=\"@@PLUGINFILE@@/imageName\" alt=\"\" role=\"presentation\" class=\"img-fluid\"><br></p>");
-            answer.setFile(new File("base64", imageService.imageToBase64(imageService.renderStringToImage(answerText))));
+            answer.setFile(new File("base64", imageService.transformStringToBase64(answerText)));
         }
     }
 
-    private Question createTrueFalse(Row row) {
+    private Question createTrueFalse(Row row) throws IOException {
+        int i = 0;
         Question question = new Question();
+        for (Cell cell : row) {
 
+            if (cell.getColumnIndex() != i) {
+                throw new MissingDataException("Every cell must be filled!");
+            }
 
+            switch (i) {
+                case 0 -> question.setType("truefalse");
+                case 1 -> question.setName(new Name(cell.getStringCellValue()));
+                case 2 -> question.setQuestiontext(new QuestionText("html",
+                        new File("base64", imageService.transformStringToBase64(cell.getStringCellValue()))));
+                case 3 -> question.setDefaultgrade(cell.getNumericCellValue());
+                case 4 -> question.setAnswer(createAnswers(this.questionType, cell.toString().toLowerCase()));
+                default -> System.out.println("It's over Anakin!");
+            }
+            i++;
+        }
+        return question;
+    }
+
+    private Question createMatching(Row row) throws IOException {
+        Question question = new Question();
+        subQuestionList = new ArrayList<>();
+        for (int i = 0; i < 13; i++) {
+            switch (i) {
+                case 0 -> question.setType("matching");
+                case 1 -> question.setName(new Name(row.getCell(i).getStringCellValue()));
+                case 2 -> question.setQuestiontext(new QuestionText("html", new File("base64", imageService.transformStringToBase64(row.getCell(i).getStringCellValue()))));
+                case 3 -> question.setDefaultgrade(row.getCell(i).getNumericCellValue());
+                case 4, 6, 8, 10, 12 -> createSubQuestion(i, row);
+                default -> System.out.println("It's over Anakin!");
+            }
+        }
+        question.setPenalty(0.33);
+        question.setShuffleanswers(true);
+        question.setCorrectfeedback(new CorrectFeedback("Válasza helyes", "html"));
+        question.setPartiallycorrectfeedback(new PartiallyCorrectFeedback("Válasza részben helyes", "html"));
+        question.setIncorrectfeedback(new IncorrectFeedback("Válasza helytelen", "html"));
+        question.setSubquestion(subQuestionList);
+
+        return question;
+    }
+
+    private Question createMultichoice(Row row) throws IOException {
+        Question question = new Question();
+        this.answerList = new ArrayList<>();
+        for (int i = 0; i < 12; i++) {
+
+            switch (i) {
+                case 0 -> question.setType("multichoice");
+                case 1 -> question.setName(new Name(row.getCell(i).getStringCellValue()));
+                case 2 -> question.setQuestiontext(new QuestionText("html", new File("base64", imageService.transformStringToBase64(row.getCell(i).getStringCellValue()))));
+                case 3 -> question.setDefaultgrade(row.getCell(i).getNumericCellValue());
+                case 5, 7, 9, 11 -> {
+                    if (row.getCell(i+1).getNumericCellValue() == 0) {
+                        try {
+                            throw new NullAnswerException("Nem vont le pontot a rossz válaszért! Biztosan beküldi a tesztet?");
+                        } catch (Exception e) {
+                            //helo
+                        } continue;
+                    }
+                    if (row.getCell(i) != null) {
+                        answerList.add(new Answer(row.getCell(i).getStringCellValue(),
+                                new Feedback("",
+                                        "html"),
+                                Double.toString(row.getCell(i+1).getNumericCellValue()), "html"));
+                    }
+                }
+                default -> System.out.println("It's over Anakin!");
+            }
+        }
+        question.setPenalty(0.33);
+        question.setShuffleanswers(true);
+        question.setCorrectfeedback(new CorrectFeedback("Válasza helyes", "html"));
+        question.setPartiallycorrectfeedback(new PartiallyCorrectFeedback("Válasza részben helyes", "html"));
+        question.setIncorrectfeedback(new IncorrectFeedback("Válasza helytelen", "html"));
+        question.setAnswer(answerList);
+
+        return question;
+
+    }
+
+    private Question createDdwtos(Row row) {
+        Question question = new Question();
+        this.dragboxList = new ArrayList<>();
+        for (int i = 0; i < 9; i++) {
+
+            switch (i) {
+                case 0 -> question.setType("ddwtos");
+                case 1 -> question.setName(new Name(row.getCell(i).getStringCellValue()));
+                case 2 -> question.setQuestiontext(new QuestionText("html", row.getCell(i).getStringCellValue()));
+                case 3 -> question.setDefaultgrade(row.getCell(i).getNumericCellValue());
+                case 4, 5, 6, 7, 8 -> {
+                    if (row.getCell(i) != null) {
+                        dragboxList.add(new Dragbox(row.getCell(i).getStringCellValue()));
+                    }
+
+                }
+                default -> System.out.println("It's over Anakin!");
+            }
+        }
+        question.setPenalty(0.33);
+        question.setShuffleanswers(true);
+        question.setCorrectfeedback(new CorrectFeedback("Válasza helyes", "html"));
+        question.setPartiallycorrectfeedback(new PartiallyCorrectFeedback("Válasza részben helyes", "html"));
+        question.setIncorrectfeedback(new IncorrectFeedback("Válasza helytelen", "html"));
+        question.setDragbox(dragboxList);
+
+        return question;
     }
 }

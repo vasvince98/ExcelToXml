@@ -44,54 +44,8 @@ public class MainRestController {
         this.pathLocatorService = pathLocatorService;
     }
 
-    @RequestMapping("/excel")
-    public String generateXmlFromExcel() {
-        try {
-            File folder = new File("");
-            File[] listOfFiles = folder.listFiles();
-            assert listOfFiles != null;
-            for (File listOfFile : listOfFiles) {
-                if (listOfFile.getName().toLowerCase().endsWith(".xlsx")) {              //todo: több felhasználónál felkészülni tövv fájlra
-                    filePath = listOfFile.getPath();
-                }
-            }
-            System.out.println(filePath);
-            FileInputStream file = new FileInputStream(filePath);
-            Workbook workbook = new XSSFWorkbook(file);
-
-            Quiz currentQuiz = questionService.createObjectFromExcel(workbook);
-            System.out.println(currentQuiz);
-            return questionService.createXmlFromQuiz(currentQuiz);
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new MissingFileException("Nem töltött fel fájlt!");
-        }
-
-    }
-
-    @RequestMapping("/xml")
-    public String generateXmlFromXml() throws URISyntaxException {
-        try {
-            File folder = new File(pathLocatorService.getPath());
-            File[] listOfFiles = folder.listFiles();
-            assert listOfFiles != null;
-            for (File listOfFile : listOfFiles) {
-                if (listOfFile.getName().toLowerCase().endsWith(".xml")) {
-                    filePath = listOfFile.getPath();
-                }
-            }
-
-            File inputXml = new File(filePath);
-
-            return questionService.createImageXmlFromStringXml(inputXml);
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new MissingFileException("Nem töltött fel fájlt!");
-        }
-    }
-
     @RequestMapping("/download")
-    public ResponseEntity<InputStreamResource> getFile(HttpServletResponse response) throws URISyntaxException {
+    public ResponseEntity<InputStreamResource> getFile() throws URISyntaxException {
         try {
             File folder = new File(pathLocatorService.getPath());
             File[] listOfFiles = folder.listFiles();
@@ -104,11 +58,7 @@ public class MainRestController {
                 }
             }
 
-            File inputXml = new File(filePath);
-
             File localSaveFile = new File(filePath);
-
-            String finalXML = questionService.createImageXmlFromStringXml(inputXml);
 
             InputStreamResource resource = new InputStreamResource(new FileInputStream(localSaveFile));
 
@@ -129,20 +79,6 @@ public class MainRestController {
          System.out.println("Using System Property: " + os);
         return os;
     }
-
-    @RequestMapping("/base64")
-    public String base64() throws IOException {
-
-
-        BufferedImage image = imageService.renderStringToImage("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.");
-
-        ImageIO.write(image, "png", new File("/Users/vasvince/Desktop/image.png"));
-
-        return imageService.imageToBase64(image);
-
-    }
-
-
 
 
 }
