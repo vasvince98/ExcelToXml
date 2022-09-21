@@ -1,7 +1,6 @@
 package com.edti.exceltoxml.Controllers;
 
-import com.edti.exceltoxml.Main;
-import com.edti.exceltoxml.Services.IUploadService;
+import com.edti.exceltoxml.Services.Interfaces.IUploadService;
 import com.edti.exceltoxml.Services.PathLocatorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

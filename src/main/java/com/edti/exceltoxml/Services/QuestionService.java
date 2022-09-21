@@ -9,6 +9,8 @@ import com.edti.exceltoxml.Models.Question.*;
 import com.edti.exceltoxml.Models.Question.File;
 import com.edti.exceltoxml.Models.Question.Name;
 import com.edti.exceltoxml.Models.Quiz;
+import com.edti.exceltoxml.Services.Interfaces.IImageService;
+import com.edti.exceltoxml.Services.Interfaces.IQuestionService;
 import com.sun.xml.bind.marshaller.CharacterEscapeHandler;
 import com.sun.xml.bind.marshaller.NoEscapeHandler;
 import org.apache.poi.ss.usermodel.*;

@@ -1,15 +1,10 @@
 package com.edti.exceltoxml.Controllers;
 
 import com.edti.exceltoxml.Exceptions.MissingFileException;
-import com.edti.exceltoxml.Main;
 import com.edti.exceltoxml.Models.Quiz;
-import com.edti.exceltoxml.Models.RenderAPI;
-import com.edti.exceltoxml.Services.IImageService;
-import com.edti.exceltoxml.Services.IQuestionService;
-import com.edti.exceltoxml.Services.IUploadService;
+import com.edti.exceltoxml.Services.Interfaces.IImageService;
+import com.edti.exceltoxml.Services.Interfaces.IQuestionService;
 import com.edti.exceltoxml.Services.PathLocatorService;
-import org.apache.commons.io.FileUtils;
-import org.apache.commons.io.IOUtils;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,22 +14,14 @@ import org.springframework.core.io.InputStreamResource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.*;
 
 
 import javax.imageio.ImageIO;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletResponse;
-import javax.xml.bind.JAXBException;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.net.URISyntaxException;
-import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
-import java.rmi.server.RemoteRef;
-import java.util.Arrays;
-import java.util.Base64;
 
 @RestController
 @PropertySource(value = "/global.properties")
@@ -89,7 +76,7 @@ public class MainRestController {
             File[] listOfFiles = folder.listFiles();
             assert listOfFiles != null;
             for (File listOfFile : listOfFiles) {
-                if (listOfFile.getName().toLowerCase().endsWith(".xml")) {             //todo: több felhasználónál felkészülni tövv fájlra (prototype)
+                if (listOfFile.getName().toLowerCase().endsWith(".xml")) {
                     filePath = listOfFile.getPath();
                 }
             }

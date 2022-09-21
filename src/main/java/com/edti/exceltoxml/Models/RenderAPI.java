@@ -51,7 +51,6 @@ public class RenderAPI {
      * @param url The url of the image.
      */
     public void addBackgroundImage(String url) {
-        //TODO Apply caching.
         try {
             layers.get("default").drawImage(ImageIO.read(new URL(url)), 0, 0, this.width, this.height, null);
         } catch (IOException e) {
@@ -122,7 +121,6 @@ public class RenderAPI {
      * @param y      The y position of the text (-1 is one to the bottom, +1 is one to the top)
      */
     public void addImage(String id, String url, int width, int height, int x, int y) {
-        //TODO Apply caching.
         try {
             layers.get(id).drawImage(ImageIO.read(new URL(url)), x, y, width, height, null);
         } catch (IOException e) {

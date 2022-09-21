@@ -2,6 +2,7 @@ package com.edti.exceltoxml.Services;
 
 import com.edti.exceltoxml.Models.FormattedText;
 import com.edti.exceltoxml.Models.RenderAPI;
+import com.edti.exceltoxml.Services.Interfaces.IImageService;
 import org.springframework.stereotype.Service;
 
 import javax.imageio.ImageIO;
