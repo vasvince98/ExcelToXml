@@ -1,8 +1,12 @@
 package com.edti.exceltoxml.Services;
 
 import com.edti.exceltoxml.Models.FormattedText;
+import com.edti.exceltoxml.Models.GlobalProperties;
 import com.edti.exceltoxml.Models.RenderAPI;
 import com.edti.exceltoxml.Services.Interfaces.IImageService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Service;
 
 import javax.imageio.ImageIO;
@@ -14,23 +18,39 @@ import java.util.Base64;
 import java.util.List;
 
 @Service
+@PropertySource(value = "/global.properties")
 public class ImageService implements IImageService {
 
-    @Override
-    public BufferedImage renderStringToImage(String text) {
-        FormattedText formattedText = getHeightAndWidth(text);
-        RenderAPI renderer = new RenderAPI(formattedText.getWidth() * 7, formattedText.getHeight() * 30);
+    GlobalProperties globalProperties;
 
-        int y = 15;
-        for (String line : formattedText.getLines()) {
-            renderer.addText(line, 0, y);
-            y += 20;
-        }
-        return renderer.getRenderedImage();
+    @Autowired
+    public ImageService(GlobalProperties globalProperties) {
+        this.globalProperties = globalProperties;
     }
 
+    /**
+     *
+     * @param text The text of the question or the answer you want to transform to picture
+     * @return Base64 encoded string
+     * @throws IOException thrown, because answers and questions are connected together,
+     * and needed to be handled as a group
+     */
     @Override
-    public String imageToBase64(BufferedImage image) throws IOException {
+    public String transformStringToBase64(String text) throws IOException {
+        FormattedText formattedText = getHeightAndWidth(text);
+        RenderAPI renderer = new RenderAPI(formattedText.getWidth() * globalProperties.getCharacterWidthInPixels(),
+                formattedText.getHeight() * globalProperties.getCharacterHeightInPixels());
+
+        int heightOffset = globalProperties.getPictureMargin();
+        for (String line : formattedText.getLines()) {
+            renderer.addText(line, 0, heightOffset);
+            heightOffset += globalProperties.getLinePadding();
+        }
+        return imageToBase64(renderer.getRenderedImage());
+    }
+
+
+    private String imageToBase64(BufferedImage image) throws IOException {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         ImageIO.write(image, "png", baos);
 
@@ -67,4 +87,6 @@ public class ImageService implements IImageService {
 
         return formattedTextClass;
     }
+
+
 }
