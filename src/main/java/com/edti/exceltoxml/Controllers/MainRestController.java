@@ -1,11 +1,13 @@
 package com.edti.exceltoxml.Controllers;
 
 import com.edti.exceltoxml.Exceptions.MissingFileException;
+import com.edti.exceltoxml.Main;
 import com.edti.exceltoxml.Models.Quiz;
 import com.edti.exceltoxml.Models.RenderAPI;
 import com.edti.exceltoxml.Services.IImageService;
 import com.edti.exceltoxml.Services.IQuestionService;
 import com.edti.exceltoxml.Services.IUploadService;
+import com.edti.exceltoxml.Services.PathLocatorService;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -27,6 +29,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.xml.bind.JAXBException;
 import java.awt.image.BufferedImage;
 import java.io.*;
+import java.net.URISyntaxException;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.rmi.server.RemoteRef;
@@ -45,11 +48,13 @@ public class MainRestController {
 
     private final IQuestionService questionService;
     private final IImageService imageService;
+    private PathLocatorService pathLocatorService;
 
     @Autowired
-    public MainRestController(IQuestionService questionService, IImageService imageService) {
+    public MainRestController(IQuestionService questionService, IImageService imageService, PathLocatorService pathLocatorService) throws URISyntaxException {
         this.questionService = questionService;
         this.imageService = imageService;
+        this.pathLocatorService = pathLocatorService;
     }
 
     @RequestMapping("/excel")
@@ -78,9 +83,9 @@ public class MainRestController {
     }
 
     @RequestMapping("/xml")
-    public String generateXmlFromXml() {
+    public String generateXmlFromXml() throws URISyntaxException {
         try {
-            File folder = new File(".");
+            File folder = new File(pathLocatorService.getPath());
             File[] listOfFiles = folder.listFiles();
             assert listOfFiles != null;
             for (File listOfFile : listOfFiles) {
@@ -99,9 +104,9 @@ public class MainRestController {
     }
 
     @RequestMapping("/download")
-    public ResponseEntity<InputStreamResource> getFile(HttpServletResponse response) {
+    public ResponseEntity<InputStreamResource> getFile(HttpServletResponse response) throws URISyntaxException {
         try {
-            File folder = new File(".");
+            File folder = new File(pathLocatorService.getPath());
             File[] listOfFiles = folder.listFiles();
             assert listOfFiles != null;
             String fileName = null;
@@ -114,7 +119,7 @@ public class MainRestController {
 
             File inputXml = new File(filePath);
 
-            File localSaveFile = new File("." + "/" + fileName);
+            File localSaveFile = new File(filePath);
 
             String finalXML = questionService.createImageXmlFromStringXml(inputXml);
 

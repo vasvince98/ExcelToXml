@@ -1,6 +1,8 @@
 package com.edti.exceltoxml.Controllers;
 
+import com.edti.exceltoxml.Main;
 import com.edti.exceltoxml.Services.IUploadService;
+import com.edti.exceltoxml.Services.PathLocatorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
@@ -15,6 +17,7 @@ import org.springframework.web.servlet.view.RedirectView;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URISyntaxException;
 
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
@@ -29,15 +32,17 @@ public class MainController {
     private String serverStoreFolder;
 
     private IUploadService uploadService;
+    private PathLocatorService pathLocatorService;
 
     @Autowired
-    public MainController(IUploadService uploadService) {
+    public MainController(IUploadService uploadService, PathLocatorService pathLocatorService) {
         this.uploadService = uploadService;
+        this.pathLocatorService = pathLocatorService;
     }
 
     @RequestMapping("/upload")
-    public String uploadFile() {
-        File outputFolder = new File(".");
+    public String uploadFile() throws URISyntaxException {
+        File outputFolder = new File(pathLocatorService.getPath());
         File[] files = outputFolder.listFiles();
 
         if (files != null) {
@@ -53,7 +58,7 @@ public class MainController {
 
     @RequestMapping(path = "/postupload", method = POST, consumes = { MediaType.MULTIPART_FORM_DATA_VALUE })
     @ResponseBody
-    public RedirectView uploadResponse(Model m, @RequestParam("file") MultipartFile file) throws IOException {
+    public RedirectView uploadResponse(Model m, @RequestParam("file") MultipartFile file) throws IOException, URISyntaxException {
         uploadService.handleExcelFile(file);
         return new RedirectView(String.format("http://localhost:%s/redirect", port));
     }

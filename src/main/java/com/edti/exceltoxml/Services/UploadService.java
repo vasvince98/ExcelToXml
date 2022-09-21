@@ -1,11 +1,15 @@
 package com.edti.exceltoxml.Services;
 
+import com.edti.exceltoxml.Controllers.MainController;
+import com.edti.exceltoxml.Main;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.*;
+import java.net.URISyntaxException;
 import java.time.LocalDateTime;
 
 @Service
@@ -15,16 +19,22 @@ public class UploadService implements IUploadService {
     @Value("${serverStorePath}")
     private String serverStoreFolder;
 
+    private PathLocatorService pathLocatorService;
+
+    @Autowired
+    public UploadService(PathLocatorService pathLocatorService) {
+        this.pathLocatorService = pathLocatorService;
+    }
 
     @Override
-    public void handleExcelFile(MultipartFile file) {
+    public void handleExcelFile(MultipartFile file) throws URISyntaxException {
         try {
             InputStream in = file.getInputStream();
-            File currDir = new File("." + "/" + LocalDateTime.now());           //todo: filename
-            String serverPath = currDir.getAbsolutePath() + file.getOriginalFilename();
-            FileOutputStream server = new FileOutputStream(serverPath);
+            String serverPath = pathLocatorService.getPath();
+            File currDir = new File(serverPath + "/" + LocalDateTime.now() + file.getOriginalFilename());           //todo: filename
+            FileOutputStream server = new FileOutputStream(currDir);
 
-//            String localPath = System.getProperty("os.name").equals("Windows 10") ? (System.getProperty("user.home") + "/Desktop") : ("/Users/vasvince/Desktop");
+//            String localPath = System.getProperty("os.name").contains("windows") ? (System.getProperty("user.home") + "/Desktop") : ("/Users/vasvince/Desktop");
 //            FileOutputStream local = new FileOutputStream(localPath + "/heloooo" + file.getOriginalFilename());
 
             int ch = 0;
