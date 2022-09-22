@@ -29,6 +29,8 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
 @PropertySource(value = {"/application.properties", "/global.properties"})
 public class MainController {
 
+    private int checkboxState;
+
     @Value("${server.port}")
     private int port;
 
@@ -44,7 +46,7 @@ public class MainController {
         this.pathLocatorService = pathLocatorService;
     }
 
-    @RequestMapping("/upload")
+    @RequestMapping("/")
     public String uploadFile() {
         File outputFolder = new File(pathLocatorService.getPath());
         File[] files = outputFolder.listFiles();
@@ -68,13 +70,15 @@ public class MainController {
                                        @Nullable @RequestParam("checkBox") String isPicture) throws IOException, URISyntaxException {
         if (isPicture == null || isPicture.equals("")) {
             System.out.println("off");
+            checkboxState = 0;
         } else if (isPicture.equals("on")){
             System.out.println(isPicture);
+            checkboxState = 1;
         } else {
             System.out.println("Ne huncutkodj!");
         }
 
-        System.out.println(file.getOriginalFilename().toLowerCase());
+
         if (!file.getOriginalFilename().toLowerCase().endsWith(".xml") && !file.getOriginalFilename().toLowerCase().endsWith(".xlsx")) {
             throw new MissingFileException("Nem töltött fel fájlt!");
         }
@@ -88,5 +92,16 @@ public class MainController {
     @RequestMapping("/EDTI")
     public String EDTI() {
         return "EDTI";
+    }
+
+
+
+
+    public int getCheckboxState() {
+        return checkboxState;
+    }
+
+    public void setCheckboxState(int checkboxState) {
+        this.checkboxState = checkboxState;
     }
 }

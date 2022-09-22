@@ -30,6 +30,7 @@ public class MainRestController {
     @Value("${serverStorePath}")
     private String serverStoreFolder;
 
+    private MainController state;
 
     String filePath;
 
@@ -38,10 +39,14 @@ public class MainRestController {
     private PathLocatorService pathLocatorService;
 
     @Autowired
-    public MainRestController(IQuestionService questionService, IImageService imageService, PathLocatorService pathLocatorService) throws URISyntaxException {
+    public MainRestController(IQuestionService questionService,
+                              IImageService imageService,
+                              PathLocatorService pathLocatorService,
+                              MainController state) throws URISyntaxException {
         this.questionService = questionService;
         this.imageService = imageService;
         this.pathLocatorService = pathLocatorService;
+        this.state = state;
     }
 
     @RequestMapping("/download")
@@ -60,7 +65,7 @@ public class MainRestController {
 
             File localSaveFile = new File(filePath);
 
-            InputStreamResource resource = new InputStreamResource(new FileInputStream(localSaveFile));
+            InputStreamResource resource = new InputStreamResource(new ByteArrayInputStream(questionService.createImageXmlFromStringXml(localSaveFile).getBytes()));
 
             return ResponseEntity.ok()
                     .header(HttpHeaders.CONTENT_DISPOSITION, "attachment;filename=" + fileName)

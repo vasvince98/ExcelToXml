@@ -236,21 +236,26 @@ public class Question {
     @Override
     public String toString() {
         return "Question{" +
-                "name=" + name +
-                ", questionText=" + questiontext +
-                ", generalFeedback=" + generalfeedback +
-                ", defaultGrade=" + defaultgrade +
+                "category=" + category +
+                ", info=" + info +
+                ", type='" + type + '\'' +
+                ", name=" + name +
+                ", questiontext=" + questiontext +
+                ", generalfeedback=" + generalfeedback +
+                ", defaultgrade=" + defaultgrade +
                 ", penalty=" + penalty +
                 ", hidden=" + hidden +
-                ", idNumber='" + idnumber + '\'' +
+                ", idnumber='" + idnumber + '\'' +
                 ", single=" + single +
-                ", shuffleAnswers=" + shuffleanswers +
-                ", answerNumbering='" + answernumbering + '\'' +
-                ", showStandardInstruction=" + showstandardinstruction +
-                ", correctFeedback=" + correctfeedback +
-                ", partiallyCorrectFeedback=" + partiallycorrectfeedback +
-                ", incorrectFeedback=" + incorrectfeedback +
-                ", answers=" + answer +
+                ", shuffleanswers=" + shuffleanswers +
+                ", answernumbering='" + answernumbering + '\'' +
+                ", showstandardinstruction=" + showstandardinstruction +
+                ", correctfeedback=" + correctfeedback +
+                ", partiallycorrectfeedback=" + partiallycorrectfeedback +
+                ", incorrectfeedback=" + incorrectfeedback +
+                ", subquestion=" + subquestion +
+                ", answer=" + answer +
+                ", dragbox=" + dragbox +
                 '}';
     }
 }

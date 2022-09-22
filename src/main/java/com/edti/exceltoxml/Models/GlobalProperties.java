@@ -1,5 +1,6 @@
 package com.edti.exceltoxml.Models;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
@@ -14,6 +15,7 @@ public class GlobalProperties {
 
     public GlobalProperties() {}
 
+    @Autowired
     public GlobalProperties(@Value("${linePadding}") int linePadding,
                             @Value("${pictureMargin}") int pictureMargin,
                             @Value("${characterWidthInPixels}") int characterWidthInPixels,

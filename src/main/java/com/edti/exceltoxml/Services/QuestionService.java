@@ -52,6 +52,8 @@ public class QuestionService implements IQuestionService {
 
 
         for (Sheet sheet : workbook) {
+            HashMap<String, Question> questionTypes = new HashMap<>();
+
             switch (sheet.getSheetName()) {
                 case "igaz-hamis" -> {
                     System.out.println("Igaz hamis started");
@@ -127,6 +129,9 @@ public class QuestionService implements IQuestionService {
     public String createImageXmlFromStringXml(java.io.File inputXml) throws IOException, JAXBException {
 
         Quiz quiz = createQuizFromXml(inputXml);
+
+
+        HashMap<String, Question> questions = new HashMap<>();
 
 
         for (Question question : quiz.getQuestion()) {

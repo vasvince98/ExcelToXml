@@ -38,6 +38,7 @@ public class ImageService implements IImageService {
     @Override
     public String transformStringToBase64(String text) throws IOException {
         FormattedText formattedText = getHeightAndWidth(text);
+
         RenderAPI renderer = new RenderAPI(formattedText.getWidth() * globalProperties.getCharacterWidthInPixels(),
                 formattedText.getHeight() * globalProperties.getCharacterHeightInPixels());
 
