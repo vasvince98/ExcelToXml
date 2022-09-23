@@ -1,8 +1,16 @@
 package com.edti.exceltoxml.Models.Q.AuxClasses;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement()
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Answer extends AbsFeedback{
     Feedback feedback;
-    private String _fraction;
+    @XmlAttribute(name="fraction")
+    private String fraction;
 
     public Feedback getFeedback() {
         return feedback;
@@ -12,11 +20,11 @@ public class Answer extends AbsFeedback{
         this.feedback = feedback;
     }
 
-    public String get_fraction() {
-        return _fraction;
+    public String getFraction() {
+        return fraction;
     }
 
-    public void set_fraction(String _fraction) {
-        this._fraction = _fraction;
+    public void setFraction(String fraction) {
+        this.fraction = fraction;
     }
 }

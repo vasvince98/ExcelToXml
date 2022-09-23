@@ -161,8 +161,6 @@ public class Multichoice extends RealQuestion {
         inf.setText(data.get("incorrectfeedback"));
         this.setIncorrectfeedback(inf);
         this.setShownumcorrect("");
-
-
     }
 
 }

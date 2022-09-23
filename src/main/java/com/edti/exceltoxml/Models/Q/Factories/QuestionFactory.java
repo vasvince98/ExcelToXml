@@ -1,11 +1,8 @@
 package com.edti.exceltoxml.Models.Q.Factories;
 
 import com.edti.exceltoxml.Models.Q.Enums.QType;
-import com.edti.exceltoxml.Models.Q.QuestionTypes.IQuestion;
 import com.edti.exceltoxml.Models.Q.QuestionTypes.Multichoice;
 import com.edti.exceltoxml.Models.Q.QuestionTypes.Question;
-import com.edti.exceltoxml.Models.Q.QuestionTypes.Truefalse;
-
 import java.util.HashMap;
 
 public class QuestionFactory {
