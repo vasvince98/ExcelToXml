@@ -27,9 +27,6 @@ import java.net.URISyntaxException;
 @PropertySource(value = "/global.properties")
 public class MainRestController {
 
-    @Value("${serverStorePath}")
-    private String serverStoreFolder;
-
     private MainController state;
 
     String filePath;

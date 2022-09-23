@@ -2,6 +2,7 @@ package com.edti.exceltoxml.Controllers;
 
 import com.edti.exceltoxml.Exceptions.MissingFileException;
 import com.edti.exceltoxml.Services.ImageService;
+import com.edti.exceltoxml.Services.Interfaces.IStateService;
 import com.edti.exceltoxml.Services.Interfaces.IUploadService;
 import com.edti.exceltoxml.Services.PathLocatorService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,21 +30,20 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
 @PropertySource(value = {"/application.properties", "/global.properties"})
 public class MainController {
 
-    private int checkboxState;
-
     @Value("${server.port}")
     private int port;
 
-    @Value("${serverStorePath}")
-    private String serverStoreFolder;
-
-    private IUploadService uploadService;
-    private PathLocatorService pathLocatorService;
+    private final IUploadService uploadService;
+    private final PathLocatorService pathLocatorService;
+    private final IStateService stateService;
 
     @Autowired
-    public MainController(IUploadService uploadService, PathLocatorService pathLocatorService) {
+    public MainController(IUploadService uploadService,
+                          PathLocatorService pathLocatorService,
+                          IStateService stateService) {
         this.uploadService = uploadService;
         this.pathLocatorService = pathLocatorService;
+        this.stateService = stateService;
     }
 
     @RequestMapping("/")
@@ -70,10 +70,10 @@ public class MainController {
                                        @Nullable @RequestParam("checkBox") String isPicture) throws IOException, URISyntaxException {
         if (isPicture == null || isPicture.equals("")) {
             System.out.println("off");
-            checkboxState = 0;
+            stateService.setState(0);
         } else if (isPicture.equals("on")){
             System.out.println(isPicture);
-            checkboxState = 1;
+            stateService.setState(1);
         } else {
             System.out.println("Ne huncutkodj!");
         }
@@ -94,14 +94,4 @@ public class MainController {
         return "EDTI";
     }
 
-
-
-
-    public int getCheckboxState() {
-        return checkboxState;
-    }
-
-    public void setCheckboxState(int checkboxState) {
-        this.checkboxState = checkboxState;
-    }
 }

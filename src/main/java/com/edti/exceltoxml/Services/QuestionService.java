@@ -11,6 +11,7 @@ import com.edti.exceltoxml.Models.Question.Name;
 import com.edti.exceltoxml.Models.Quiz;
 import com.edti.exceltoxml.Services.Interfaces.IImageService;
 import com.edti.exceltoxml.Services.Interfaces.IQuestionService;
+import com.edti.exceltoxml.Services.Interfaces.IStateService;
 import com.sun.xml.bind.marshaller.CharacterEscapeHandler;
 import com.sun.xml.bind.marshaller.NoEscapeHandler;
 import org.apache.poi.ss.usermodel.*;
@@ -34,11 +35,13 @@ public class QuestionService implements IQuestionService {
 
     private String questionType;
 
-    private IImageService imageService;
+    private final IImageService imageService;
+    private final IStateService stateService;
 
     @Autowired
-    public QuestionService(IImageService imageService) {
+    public QuestionService(IImageService imageService, IStateService stateService) {
         this.imageService = imageService;
+        this.stateService = stateService;
     }
 
     @Override
@@ -135,7 +138,9 @@ public class QuestionService implements IQuestionService {
 
 
         for (Question question : quiz.getQuestion()) {
+
             switch (question.getType()) {
+
                 case "multichoice" -> replaceQuestionAndAnswer(question);
                 case "truefalse" -> {
                     String questionText = getStringFromHTML(question.getQuestiontext().getText());

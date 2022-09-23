@@ -12,11 +12,7 @@ import java.net.URISyntaxException;
 import java.time.LocalDateTime;
 
 @Service
-@PropertySource(value = "/global.properties")
 public class UploadService implements IUploadService {
-
-    @Value("${serverStorePath}")
-    private String serverStoreFolder;
 
     private final PathLocatorService pathLocatorService;
 
