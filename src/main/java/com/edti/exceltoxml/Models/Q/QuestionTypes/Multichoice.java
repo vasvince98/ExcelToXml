@@ -1,13 +1,16 @@
 package com.edti.exceltoxml.Models.Q.QuestionTypes;
 
 import com.edti.exceltoxml.Models.Q.AuxClasses.*;
+import org.apache.poi.ss.formula.functions.Na;
+
 import javax.xml.bind.*;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 //@XmlRootElement
-public class Multichoice extends RealQuestion{
+public class Multichoice extends RealQuestion {
     //region Fields
     private String single;
     private String shuffleanswers;
@@ -17,6 +20,10 @@ public class Multichoice extends RealQuestion{
     Partiallycorrectfeedback partiallycorrectfeedback;
     Incorrectfeedback incorrectfeedback;
     private String shownumcorrect;
+
+    public Multichoice(HashMap<String, String> data) {
+        initInstance(data);
+    }
     //endregion
 
     //region Getters && Setters
@@ -113,4 +120,49 @@ public class Multichoice extends RealQuestion{
     public String getXmlForm() throws JAXBException, FileNotFoundException {
         return this.generateXmlForm(Multichoice.class, this.getClass().getSuperclass().getSuperclass().getSimpleName().toLowerCase(), this);
     }
+
+    private void initInstance(HashMap<String, String> data){
+        this.setType("multichoice");
+        Name n = new Name();
+        n.setText(data.get("name"));
+        this.setName(n);
+
+        Questiontext qt = new Questiontext();
+        qt.setFormat("html");
+        qt.setText(data.get("questiontext"));
+        this.setQuestiontext(qt);
+
+        Generalfeedback gf = new Generalfeedback();
+        gf.setFormat("html");
+        gf.setText(data.get("generalfeedback"));
+        this.setGeneralfeedback(gf);
+
+        this.setDefaultgrade(data.get("defaultgrade"));
+        this.setPenalty(data.get("penalty"));
+        this.setHidden(data.get("hidden"));
+        this.setIdnumber("");
+        this.setSingle(data.get("single"));
+        this.setShuffleanswers(data.get("shuffleanswers"));
+        this.setAnswernumbering(data.get("answernumbering"));
+        this.setShowstandardinstruction(data.get("showstandardinstruction"));
+
+        Correctfeedback cf = new Correctfeedback();
+        cf.setFormat("html");
+        cf.setText(data.get("correctfeedback"));
+        this.setCorrectfeedback(cf);
+
+        Partiallycorrectfeedback pf = new Partiallycorrectfeedback();
+        pf.setFormat("html");
+        pf.setText(data.get("partiallycorrectfeedback"));
+        this.setPartiallycorrectfeedback(pf);
+
+        Incorrectfeedback inf = new Incorrectfeedback();
+        inf.setFormat("html");
+        inf.setText(data.get("incorrectfeedback"));
+        this.setIncorrectfeedback(inf);
+        this.setShownumcorrect("");
+
+
+    }
+
 }

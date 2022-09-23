@@ -15,11 +15,13 @@ import javax.xml.namespace.QName;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.StringWriter;
+import java.util.HashMap;
 
 @XmlRootElement()
 @XmlAccessorType(XmlAccessType.FIELD)
 public abstract class Question {
 
+    //region Description
     @XmlAttribute(name="type")
     private String type;
 
@@ -41,6 +43,7 @@ public abstract class Question {
     public void setIdnumber(String idnumber) {
         this.idnumber = idnumber;
     }
+    //endregion
 
     public abstract String getXmlForm() throws JAXBException, FileNotFoundException;
 

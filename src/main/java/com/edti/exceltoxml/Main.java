@@ -14,7 +14,7 @@ import java.io.FileNotFoundException;
 public class Main {
 
     public static void main(String[] args) throws JAXBException, FileNotFoundException {
-
+/*
         Multichoice m = new Multichoice();
         m.setType("multichoice");
 
@@ -61,7 +61,7 @@ public class Main {
 
 
         //m.getXmlForm();
-
+*/
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         Cat cat = new Cat();
