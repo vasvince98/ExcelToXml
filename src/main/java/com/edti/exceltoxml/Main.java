@@ -19,6 +19,8 @@ public class Main {
     public static void main(String[] args) throws JAXBException, FileNotFoundException {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+        //Feeding our Factory
+
         Multichoice m = (Multichoice) QuestionFactory.getQuestion(QType.multichoice, SimulateDataLoadingProcess());
         m.setAnswer(SimulateAnswerLoadingProcess());
         m.getXmlForm();
@@ -48,7 +50,7 @@ public class Main {
         return tmp;
     }
 
-    //A válaszokat nyilván szintén az excel adataival kellene feltölteni.
+    //A válaszokat nyilván szintén az excel adataival kellene feltölteni. NEM EGYESÉVEL -> Metódusokba szervezni mindent!!!
     private static ArrayList<Answer> SimulateAnswerLoadingProcess(){
 
         ArrayList<Answer> answers = new ArrayList<>();
