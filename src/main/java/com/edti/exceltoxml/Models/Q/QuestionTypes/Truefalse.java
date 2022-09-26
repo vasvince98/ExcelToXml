@@ -12,6 +12,11 @@ import java.util.HashMap;
 
 public class Truefalse extends RealQuestion{
 
+    //region Constructor
+    public Truefalse(HashMap<String, String> data) {
+        initInstance(data);
+    }
+    //endregion
 
     @Override
     public String getXmlForm() throws JAXBException, FileNotFoundException {
