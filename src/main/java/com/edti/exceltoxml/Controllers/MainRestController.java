@@ -5,7 +5,10 @@ import com.edti.exceltoxml.Models.Quiz;
 import com.edti.exceltoxml.Services.Interfaces.IImageService;
 import com.edti.exceltoxml.Services.Interfaces.IQuestionService;
 import com.edti.exceltoxml.Services.PathLocatorService;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.poifs.filesystem.POIFSFileSystem;
 import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -73,6 +76,32 @@ public class MainRestController {
             e.printStackTrace();
             throw new MissingFileException("Nem töltött fel fájlt!");
         }
+    }
+
+    @RequestMapping("/exceltest")
+    public String excelTest() {
+        try {
+            File folder = new File(pathLocatorService.getPath());
+            File[] listOfFiles = folder.listFiles();
+            assert listOfFiles != null;
+            String fileName = null;
+            for (File listOfFile : listOfFiles) {
+                if (listOfFile.getName().toLowerCase().endsWith(".xlsx")) {
+                    filePath = listOfFile.getPath();
+                    fileName = listOfFile.getName();
+                }
+            }
+
+            File localSaveFile = new File(filePath);
+
+            questionService.createObjectFromExcel(WorkbookFactory.create(localSaveFile));
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new MissingFileException("Nem töltött fel fájlt!");
+        }
+
+        return "Szia";
     }
 
     @RequestMapping("/getos")

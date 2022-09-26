@@ -51,61 +51,17 @@ public class QuestionService implements IQuestionService {
         List<Question> questions = new ArrayList<>();
         questions.add(category);
 
-        workbook.setActiveSheet(0);
+//        workbook.setActiveSheet(0);
 
+        System.out.println(workbook.getActiveSheetIndex());
+        System.out.println(workbook.getSheetName(0));
+
+        System.out.println("Itt vagyok");
 
         for (Sheet sheet : workbook) {
-            HashMap<String, Question> questionTypes = new HashMap<>();
-
-            switch (sheet.getSheetName()) {
-                case "igaz-hamis" -> {
-                    System.out.println("Igaz hamis started");
-                    removeFirstRow(sheet);
-                    this.questionType = "igaz-hamis";
-                    for (Row row : sheet) {
-                        questions.add(createTrueFalse(row));
-                    }
-                    System.out.println("Igaz hamis done");
-                }
-
-                case "párosító" -> {
-                    System.out.println("Párosító started");
-                    removeFirstRow(sheet);
-                    this.questionType = "párosító";
-
-                    for (Row row : sheet) {
-                        questions.add(createMatching(row));
-                    }
-                    System.out.println("Párosító done!");
-                }
-
-                case "feleletválasztó" -> {
-                    System.out.println("Feleletválasztó started!");
-                    removeFirstRow(sheet);
-                    this.questionType = "feleletválasztó";
-
-                    for (Row row : sheet) {
-                        questions.add(createMultichoice(row));
-                    }
-                    System.out.println("Feleletválasztó done!");
-                }
-
-                case "szövegbehúzás" -> {
-                    System.out.println("Szövegbehúzás started");
-                    removeFirstRow(sheet);
-                    this.questionType = "szövegbehúzás";
-
-                    for (Row row : sheet) {
-                        questions.add(createDdwtos(row));
-                    }
-                }
-
-                default -> {
-                    System.out.println("It's over Anakin!");
-                }
+            for (Row row : sheet) {
+                System.out.println(row.getCell(0));
             }
-
-            currentQuiz.setQuestion(questions);
         }
         return currentQuiz;
     }
