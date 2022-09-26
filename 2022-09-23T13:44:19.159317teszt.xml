@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+<!-- question: 0  -->
+  <question type="category">
+    <category>
+      <text>$course$/top/10//24</text>
+    </category>
+    <info format="html">
+      <text></text>
+    </info>
+    <idnumber></idnumber>
+  </question>
+  
+  <question type="truefalse">
+    <name>
+      <text>4.</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<img src="data:image/png;base64, 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"/>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>1.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <answer fraction="0" format="moodle_auto_format">
+      <text>true</text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>false</text>
+      <feedback format="html">
+        <text><![CDATA[<p>A „The Bohemian Girl” opera szerzője Michael William Balfe.</p>]]></text>
+      </feedback>
+    </answer>
+  </question>
+</quiz>

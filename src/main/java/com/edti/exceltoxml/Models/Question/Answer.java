@@ -5,7 +5,6 @@ import javax.xml.bind.annotation.XmlAttribute;
 public class Answer extends Text {
     private Feedback feedback;
 
-    private File file;
 
     @XmlAttribute
     private String fraction;
@@ -48,13 +47,12 @@ public class Answer extends Text {
         this.format = format;
     }
 
-    public void setFile(File file) {
-        this.file = file;
-    }
+//    @Override
+//    public void setText(String text) {
+//        super.setText(String.format("<img src=\"data:image/png;base64,%s\"/>", text));
+//    }
 
-    public File getFile() {
-        return file;
-    }
+
 
     @Override
     public String toString() {

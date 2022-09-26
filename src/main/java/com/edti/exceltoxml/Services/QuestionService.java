@@ -6,7 +6,6 @@ import com.edti.exceltoxml.Exceptions.NullAnswerException;
 import com.edti.exceltoxml.Models.Category.Category;
 import com.edti.exceltoxml.Models.Category.Info;
 import com.edti.exceltoxml.Models.Question.*;
-import com.edti.exceltoxml.Models.Question.File;
 import com.edti.exceltoxml.Models.Question.Name;
 import com.edti.exceltoxml.Models.Quiz;
 import com.edti.exceltoxml.Services.Interfaces.IImageService;
@@ -24,6 +23,7 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import java.io.*;
+import java.io.File;
 import java.util.*;
 
 @Service
@@ -134,28 +134,42 @@ public class QuestionService implements IQuestionService {
         Quiz quiz = createQuizFromXml(inputXml);
 
 
-        HashMap<String, Question> questions = new HashMap<>();
 
 
         for (Question question : quiz.getQuestion()) {
+            JAXBContext context = JAXBContext.newInstance(Question.class);
+            Marshaller marshaller = context.createMarshaller();
+            marshaller.setProperty(Marshaller.JAXB_FRAGMENT, true);
+            File file = new File("/Users/vasvince/Desktop/teszt.txt");
+            marshaller.marshal(question, file);
+
+            BufferedReader br = new BufferedReader(new FileReader("/Users/vasvince/Desktop/teszt.txt"));
+            String line;
+            while ((line = br.readLine()) != null) {
+                System.out.println(line);
+            }
 
             switch (question.getType()) {
 
                 case "multichoice" -> replaceQuestionAndAnswer(question);
                 case "truefalse" -> {
-                    String questionText = getStringFromHTML(question.getQuestiontext().getText());
+                    String questionText = question.getQuestiontext().getText();
 
-                    question.setQuestiontext(new QuestionText("html", new File("base64",
-                            imageService.transformStringToBase64(questionText))));
+                    if (!questionText.startsWith("<img")) {
+                        question.setQuestiontext(new QuestionText("html",
+                                imageService.transformStringToBase64(questionText)));
+                    }
+
                 }
                 case "matching" -> {
                     String questionText = getStringFromHTML(question.getQuestiontext().getText());
 
-                    question.setQuestiontext(new QuestionText("html", new File("base64",
-                            imageService.transformStringToBase64(questionText))));
+                    question.setQuestiontext(new QuestionText("html",
+                            imageService.transformStringToBase64(questionText)));
 
                     for (SubQuestion subQuestion : question.getSubquestion()) {
-                        subQuestion.setText(imageService.transformStringToBase64(subQuestion.getText()));
+                        subQuestion.setText(String.format("<img src=\"data:image/png;base64,%s\"/>",
+                                imageService.transformStringToBase64(getStringFromHTML(subQuestion.getText()))));
                     }
                 }
                 default -> System.out.println("Unhandled question type");
@@ -233,13 +247,11 @@ public class QuestionService implements IQuestionService {
     private void replaceQuestionAndAnswer(Question question) throws IOException {
         String questionText = getStringFromHTML(question.getQuestiontext().getText());
 
-        question.setQuestiontext(new QuestionText("html", new File("base64",
-                imageService.transformStringToBase64(questionText))));
+        question.setQuestiontext(new QuestionText("html", imageService.transformStringToBase64(questionText)));
 
         for (Answer answer : question.getAnswer()) {
             String answerText = getStringFromHTML(answer.getText());
-            answer.setText("<p dir=\"ltr\" style=\"text-align: left;\"><img src=\"@@PLUGINFILE@@/imageName\" alt=\"\" role=\"presentation\" class=\"img-fluid\"><br></p>");
-            answer.setFile(new File("base64", imageService.transformStringToBase64(answerText)));
+            answer.setText(String.format("<img src=\"data:image/png;base64,%s\"/>",imageService.transformStringToBase64(answerText)));
         }
     }
 
@@ -256,7 +268,7 @@ public class QuestionService implements IQuestionService {
                 case 0 -> question.setType("truefalse");
                 case 1 -> question.setName(new Name(cell.getStringCellValue()));
                 case 2 -> question.setQuestiontext(new QuestionText("html",
-                        new File("base64", imageService.transformStringToBase64(cell.getStringCellValue()))));
+                        imageService.transformStringToBase64(cell.getStringCellValue())));
                 case 3 -> question.setDefaultgrade(cell.getNumericCellValue());
                 case 4 -> question.setAnswer(createAnswers(this.questionType, cell.toString().toLowerCase()));
                 default -> System.out.println("It's over Anakin!");
@@ -273,7 +285,8 @@ public class QuestionService implements IQuestionService {
             switch (i) {
                 case 0 -> question.setType("matching");
                 case 1 -> question.setName(new Name(row.getCell(i).getStringCellValue()));
-                case 2 -> question.setQuestiontext(new QuestionText("html", new File("base64", imageService.transformStringToBase64(row.getCell(i).getStringCellValue()))));
+                case 2 -> question.setQuestiontext(new QuestionText("html",
+                        imageService.transformStringToBase64(row.getCell(i).getStringCellValue())));
                 case 3 -> question.setDefaultgrade(row.getCell(i).getNumericCellValue());
                 case 4, 6, 8, 10, 12 -> createSubQuestion(i, row);
                 default -> System.out.println("It's over Anakin!");
@@ -297,7 +310,8 @@ public class QuestionService implements IQuestionService {
             switch (i) {
                 case 0 -> question.setType("multichoice");
                 case 1 -> question.setName(new Name(row.getCell(i).getStringCellValue()));
-                case 2 -> question.setQuestiontext(new QuestionText("html", new File("base64", imageService.transformStringToBase64(row.getCell(i).getStringCellValue()))));
+                case 2 -> question.setQuestiontext(new QuestionText("html",
+                        imageService.transformStringToBase64(row.getCell(i).getStringCellValue())));
                 case 3 -> question.setDefaultgrade(row.getCell(i).getNumericCellValue());
                 case 5, 7, 9, 11 -> {
                     if (row.getCell(i+1).getNumericCellValue() == 0) {

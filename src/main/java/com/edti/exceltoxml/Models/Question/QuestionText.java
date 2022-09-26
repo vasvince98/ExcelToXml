@@ -9,8 +9,6 @@ public class QuestionText extends Text {
     @XmlAttribute
     private String format;
 
-    private File file;
-
     @XmlTransient
     private boolean isPicture;
 
@@ -20,24 +18,9 @@ public class QuestionText extends Text {
         this.format = format;
     }
 
-    public QuestionText(String format, File file) {
-        super("<p dir=\"ltr\" style=\"text-align: left;\"><img src=\"@@PLUGINFILE@@/imageName\" alt=\"\" role=\"presentation\" class=\"img-fluid\"><br></p>");
-        this.format = format;
-        this.file = file;
-    }
-
     public QuestionText(String format, String text) {
-        super(text);
+        super(String.format("<img src=\"data:image/png;base64,%s\"/>", text));
         this.format = format;
-    }
-
-
-    public void setFile(File file) {
-        this.file = file;
-    }
-
-    public File getFile() {
-        return file;
     }
 
     public void setFormat(String format) {

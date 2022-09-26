@@ -7,7 +7,7 @@ import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
-
+@XmlRootElement
 @XmlType(propOrder = {"category", "info", "name", "questiontext", "generalfeedback", "defaultgrade", "penalty",
 "hidden", "idnumber", "single", "shuffleanswers", "answernumbering", "showstandardinstruction", "correctfeedback",
 "partiallycorrectfeedback", "incorrectfeedback", "subquestion","answer", "dragbox"})
