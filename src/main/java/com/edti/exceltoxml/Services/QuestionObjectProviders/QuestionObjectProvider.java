@@ -18,7 +18,7 @@ public abstract class QuestionObjectProvider {
 
     protected abstract HashMap<String, String> createQuestionMap();
 
-    protected abstract List<Answer> createQuestionList();
+    protected abstract List<Answer> createAnswerList();
 
 
     protected Sheet getSheet() {
