@@ -10,6 +10,11 @@ public class Info extends Auxiliary{
     @XmlAttribute(name="format")
     private String format;
 
+    public Info(String text) {
+        this.format = "moodle_auto_format";
+        setText(text);
+    }
+
     public String getFormat() {
         return format;
     }

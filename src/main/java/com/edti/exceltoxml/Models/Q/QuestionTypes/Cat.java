@@ -11,6 +11,11 @@ public class Cat extends Question {
     private Category category;
     private Info info;
 
+    public Cat(Category category, Info info) {
+        this.category = category;
+        this.info = info;
+    }
+
     public Category getCategory() {
         return category;
     }

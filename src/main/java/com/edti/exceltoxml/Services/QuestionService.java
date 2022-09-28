@@ -11,6 +11,7 @@ import com.edti.exceltoxml.Models.Quiz;
 import com.edti.exceltoxml.Services.Interfaces.IImageService;
 import com.edti.exceltoxml.Services.Interfaces.IQuestionService;
 import com.edti.exceltoxml.Services.Interfaces.IStateService;
+import com.edti.exceltoxml.Services.QuestionObjectProviders.MultichoiceQuestionProvider;
 import com.sun.xml.bind.marshaller.CharacterEscapeHandler;
 import com.sun.xml.bind.marshaller.NoEscapeHandler;
 import org.apache.poi.ss.usermodel.*;
@@ -51,12 +52,13 @@ public class QuestionService implements IQuestionService {
         List<Question> questions = new ArrayList<>();
         questions.add(category);
 
-//        workbook.setActiveSheet(0);
+        workbook.setActiveSheet(0);
 
 
+        MultichoiceQuestionProvider multichoiceQuestionProvider = new MultichoiceQuestionProvider();
 
         for (Sheet sheet : workbook) {
-
+            multichoiceQuestionProvider.objectListFromSheet(sheet);
         }
         return currentQuiz;
     }

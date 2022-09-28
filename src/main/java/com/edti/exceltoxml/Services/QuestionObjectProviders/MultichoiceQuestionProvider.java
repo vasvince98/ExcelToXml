@@ -4,33 +4,33 @@ import com.edti.exceltoxml.Models.Q.AuxClasses.Answer;
 import com.edti.exceltoxml.Models.Q.AuxClasses.Category;
 import com.edti.exceltoxml.Models.Q.QuestionTypes.Multichoice;
 import com.edti.exceltoxml.Models.Q.QuestionTypes.RealQuestion;
+import org.apache.poi.ss.formula.functions.Column;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+
 public class MultichoiceQuestionProvider extends QuestionObjectProvider {
 
     private int categoryNumber;
-    
+
     @Override
     public Map<Category, List<RealQuestion>> objectListFromSheet(Sheet sheet) {
-        setSheet(sheet);
-        for (Row row : getSheet()) {
-            if (row.getCell(0).getStringCellValue().equals("Kategória")) {
-                System.out.println("Ez egy kategória");
-            }
-        }
+        this.sheet = sheet;
+        setNumberOfFields(11);
+        createQuestionMap();
         return null;
     }
 
     @Override
-    protected HashMap<String, String> createQuestionMap() {
-        for (Row row : getSheet()) {
-        }
+    protected HashMap<String, String> getQuestionMap() {
         return null;
     }
 
