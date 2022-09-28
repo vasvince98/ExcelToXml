@@ -53,15 +53,10 @@ public class QuestionService implements IQuestionService {
 
 //        workbook.setActiveSheet(0);
 
-        System.out.println(workbook.getActiveSheetIndex());
-        System.out.println(workbook.getSheetName(0));
 
-        System.out.println("Itt vagyok");
 
         for (Sheet sheet : workbook) {
-            for (Row row : sheet) {
-                System.out.println(row.getCell(0));
-            }
+
         }
         return currentQuiz;
     }
