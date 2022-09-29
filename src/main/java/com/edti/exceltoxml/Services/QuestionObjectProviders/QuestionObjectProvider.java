@@ -18,34 +18,36 @@ public abstract class QuestionObjectProvider {
     protected int firstRow = 2;
     protected int lastRow;
     protected int dataColumn = 1;
-    protected int answerFields = 2;
+    protected int answerFields = 3;
+    protected int categoryFields = 2;
 
 
     //todo: override equals method of category
     public abstract Map<Category, List<RealQuestion>> objectListFromSheet(Sheet sheet);
 
     protected HashMap<Integer, HashMap<String, String>> createQuestionMap() {
-        int i = 0;
+        int i = 2;
+        int questionCounter = 0;
 
-        System.out.println(sheet.getPhysicalNumberOfRows());
         lastRow = numberOfFields + firstRow;
 
-        while (i < 2) {
+        while (i < sheet.getPhysicalNumberOfRows()) {
+            questionCounter++;
+            System.out.println("Question: " + questionCounter);
             HashMap<String, String> questionMap = new HashMap<>();
             CellRangeAddress range = new CellRangeAddress(firstRow, lastRow - 1, dataColumn, dataColumn);
-            System.out.println(i);
+            System.out.println("Current row:" + i);
             if (isQuestion(new CellAddress(firstRow, dataColumn))) {
                 range.forEach((a) -> questionMap.put(getMapKeyFromAddress(a), getMapValueFromAddress(a)));
+                i += numberOfFields + answerFields;
             } else {
                 System.out.println("This is a category");
                 skipCategory();
+                i += categoryFields;
             }
             questionMap.forEach((k, v) -> System.out.println("Key: " + k + "\nValue: " + v));
             nextQuestion();
-            i++;
         }
-
-
         return null;
     }
 
@@ -93,6 +95,7 @@ public abstract class QuestionObjectProvider {
     }
 
     private void skipCategory() {
+        firstRow += categoryFields;
     }
 
 
