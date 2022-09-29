@@ -36,17 +36,20 @@ public abstract class QuestionObjectProvider {
             System.out.println("Question: " + questionCounter);
             HashMap<String, String> questionMap = new HashMap<>();
             CellRangeAddress range = new CellRangeAddress(firstRow, lastRow - 1, dataColumn, dataColumn);
+            System.out.println("First row: " + firstRow);
             System.out.println("Current row:" + i);
             if (isQuestion(new CellAddress(firstRow, dataColumn))) {
                 range.forEach((a) -> questionMap.put(getMapKeyFromAddress(a), getMapValueFromAddress(a)));
                 i += numberOfFields + answerFields;
+                nextQuestion();
             } else {
                 System.out.println("This is a category");
+                questionCounter = 0;
                 skipCategory();
                 i += categoryFields;
             }
             questionMap.forEach((k, v) -> System.out.println("Key: " + k + "\nValue: " + v));
-            nextQuestion();
+
         }
         return null;
     }
@@ -96,6 +99,7 @@ public abstract class QuestionObjectProvider {
 
     private void skipCategory() {
         firstRow += categoryFields;
+        lastRow += categoryFields;
     }
 
 
