@@ -3,8 +3,6 @@ package com.edti.exceltoxml.Services.QuestionObjectProviders;
 import com.edti.exceltoxml.Models.Q.AuxClasses.Answer;
 import com.edti.exceltoxml.Models.Q.AuxClasses.Category;
 import com.edti.exceltoxml.Models.Q.QuestionTypes.RealQuestion;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.util.CellAddress;
 import org.apache.poi.ss.util.CellRangeAddress;
@@ -17,9 +15,10 @@ public abstract class QuestionObjectProvider {
 
     protected Sheet sheet;
     protected int numberOfFields;
-    protected int firstRow = 5;
+    protected int firstRow = 2;
+    protected int lastRow;
     protected int dataColumn = 1;
-    protected int answerFields = 3;
+    protected int answerFields = 2;
 
 
     //todo: override equals method of category
@@ -28,21 +27,21 @@ public abstract class QuestionObjectProvider {
     protected HashMap<Integer, HashMap<String, String>> createQuestionMap() {
         int i = 0;
 
-        sheet.setActiveCell(new CellAddress("B5"));
         System.out.println(sheet.getPhysicalNumberOfRows());
+        lastRow = numberOfFields + firstRow;
 
         while (i < 2) {
             HashMap<String, String> questionMap = new HashMap<>();
-            for (int j = 0; j < numberOfFields; j++){
-                CellRangeAddress range = new CellRangeAddress(firstRow, numberOfFields, dataColumn, dataColumn);
-                if (isQuestion(new CellAddress(firstRow, dataColumn))) {
-                    range.forEach((a) -> questionMap.put(getMapKeyFromAddress(a), getMapValueFromAddress(a)));
-                } else {
-                    System.out.println("This is a category");
-                }
+            CellRangeAddress range = new CellRangeAddress(firstRow, lastRow - 1, dataColumn, dataColumn);
+            System.out.println(i);
+            if (isQuestion(new CellAddress(firstRow, dataColumn))) {
+                range.forEach((a) -> questionMap.put(getMapKeyFromAddress(a), getMapValueFromAddress(a)));
+            } else {
+                System.out.println("This is a category");
+                skipCategory();
             }
-            firstRow += numberOfFields;
             questionMap.forEach((k, v) -> System.out.println("Key: " + k + "\nValue: " + v));
+            nextQuestion();
             i++;
         }
 
@@ -68,7 +67,7 @@ public abstract class QuestionObjectProvider {
     }
 
     public void setNumberOfFields(int numberOfFields) {
-        this.numberOfFields = numberOfFields + 4;
+        this.numberOfFields = numberOfFields;
     }
 
     private String getMapKeyFromAddress(CellAddress address) {
@@ -80,7 +79,20 @@ public abstract class QuestionObjectProvider {
     }
 
     private boolean isQuestion(CellAddress address) {
-        return !sheet.getRow(address.getRow()).getCell(address.getColumn() - 1).toString().equals("Kategória");
+        try {
+            return !sheet.getRow(address.getRow()).getCell(address.getColumn() - 1).toString().equals("Kategória");
+        } catch (Exception e) {
+            return true;
+        }
+
+    }
+
+    private void nextQuestion() {
+        firstRow += numberOfFields + answerFields;
+        lastRow += numberOfFields + answerFields;
+    }
+
+    private void skipCategory() {
     }
 
 
