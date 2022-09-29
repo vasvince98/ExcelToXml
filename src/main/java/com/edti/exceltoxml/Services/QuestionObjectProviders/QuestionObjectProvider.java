@@ -2,6 +2,8 @@ package com.edti.exceltoxml.Services.QuestionObjectProviders;
 
 import com.edti.exceltoxml.Models.Q.AuxClasses.Answer;
 import com.edti.exceltoxml.Models.Q.AuxClasses.Category;
+import com.edti.exceltoxml.Models.Q.AuxClasses.Info;
+import com.edti.exceltoxml.Models.Q.QuestionTypes.Cat;
 import com.edti.exceltoxml.Models.Q.QuestionTypes.RealQuestion;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.util.CellAddress;
@@ -21,11 +23,14 @@ public abstract class QuestionObjectProvider {
     protected int answerFields = 3;
     protected int categoryFields = 2;
 
+    private HashMap<String, HashMap<String, String>> resultMap = new HashMap<>();
+
 
     //todo: override equals method of category
-    public abstract Map<Category, List<RealQuestion>> objectListFromSheet(Sheet sheet);
+    public abstract Map<Cat, List<RealQuestion>> objectListFromSheet(Sheet sheet);
 
-    protected HashMap<Integer, HashMap<String, String>> createQuestionMap() {
+    protected HashMap<String, HashMap<String, String>> createQuestionMap() {
+
         int i = 2;
         int questionCounter = 0;
 
@@ -33,25 +38,19 @@ public abstract class QuestionObjectProvider {
 
         while (i < sheet.getPhysicalNumberOfRows()) {
             questionCounter++;
-            System.out.println("Question: " + questionCounter);
             HashMap<String, String> questionMap = new HashMap<>();
             CellRangeAddress range = new CellRangeAddress(firstRow, lastRow - 1, dataColumn, dataColumn);
-            System.out.println("First row: " + firstRow);
-            System.out.println("Current row:" + i);
             if (isQuestion(new CellAddress(firstRow, dataColumn))) {
                 range.forEach((a) -> questionMap.put(getMapKeyFromAddress(a), getMapValueFromAddress(a)));
                 i += numberOfFields + answerFields;
                 nextQuestion();
             } else {
-                System.out.println("This is a category");
                 questionCounter = 0;
-                skipCategory();
+                addCategory(new CellAddress(firstRow, dataColumn), questionMap);
                 i += categoryFields;
             }
-            questionMap.forEach((k, v) -> System.out.println("Key: " + k + "\nValue: " + v));
-
         }
-        return null;
+        return resultMap;
     }
 
     protected abstract HashMap<String, String> getQuestionMap();
@@ -97,7 +96,8 @@ public abstract class QuestionObjectProvider {
         lastRow += numberOfFields + answerFields;
     }
 
-    private void skipCategory() {
+    private void addCategory(CellAddress address, HashMap<String, String> questions) {
+        resultMap.put(, questions);
         firstRow += categoryFields;
         lastRow += categoryFields;
     }

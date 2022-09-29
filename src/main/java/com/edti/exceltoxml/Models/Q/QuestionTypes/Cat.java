@@ -36,4 +36,9 @@ public class Cat extends Question {
     public String getXmlForm() throws JAXBException, FileNotFoundException {
         return this.generateXmlForm(Cat.class, this.getClass().getSuperclass().getSimpleName().toLowerCase(), this);
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
 }
