@@ -9,6 +9,7 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.util.CellAddress;
 import org.apache.poi.ss.util.CellRangeAddress;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -17,11 +18,13 @@ public abstract class QuestionObjectProvider {
 
     protected Sheet sheet;
     protected int numberOfFields;
-    protected int firstRow = 2;
+    protected int firstRow = 0;
     protected int lastRow;
     protected int dataColumn = 1;
     protected int answerFields = 3;
     protected int categoryFields = 2;
+    private String topCategory;
+    private List<HashMap<String, String>> questionList;
 
     private HashMap<String, HashMap<String, String>> resultMap = new HashMap<>();
 
@@ -29,27 +32,37 @@ public abstract class QuestionObjectProvider {
     //todo: override equals method of category
     public abstract Map<Cat, List<RealQuestion>> objectListFromSheet(Sheet sheet);
 
-    protected HashMap<String, HashMap<String, String>> createQuestionMap() {
+    protected HashMap<String, List<HashMap<String, String>>> createQuestionMap() {
 
-        int i = 2;
+        HashMap<String, List<HashMap<String, String>>> resultMap = new HashMap<>();
+
+        int i = 0;
         int questionCounter = 0;
 
         lastRow = numberOfFields + firstRow;
 
+
+
         while (i < sheet.getPhysicalNumberOfRows()) {
-            questionCounter++;
-            HashMap<String, String> questionMap = new HashMap<>();
             CellRangeAddress range = new CellRangeAddress(firstRow, lastRow - 1, dataColumn, dataColumn);
             if (isQuestion(new CellAddress(firstRow, dataColumn))) {
+                HashMap<String, String> questionMap = new HashMap<>();
+                questionCounter++;
                 range.forEach((a) -> questionMap.put(getMapKeyFromAddress(a), getMapValueFromAddress(a)));
+                questionList.add(questionMap);
                 i += numberOfFields + answerFields;
                 nextQuestion();
             } else {
+                if (firstRow != 0) {
+                    resultMap.put(this.topCategory, questionList);
+                }
+                this.questionList = new ArrayList<>();
                 questionCounter = 0;
-                addCategory(new CellAddress(firstRow, dataColumn), questionMap);
+                setCategory(new CellAddress(firstRow, dataColumn));
                 i += categoryFields;
             }
         }
+        resultMap.put(this.topCategory, questionList);
         return resultMap;
     }
 
@@ -96,8 +109,8 @@ public abstract class QuestionObjectProvider {
         lastRow += numberOfFields + answerFields;
     }
 
-    private void addCategory(CellAddress address, HashMap<String, String> questions) {
-        resultMap.put(, questions);
+    private void setCategory(CellAddress address) {
+        this.topCategory = sheet.getRow(address.getRow()).getCell(address.getColumn() + 1).toString();
         firstRow += categoryFields;
         lastRow += categoryFields;
     }

@@ -31,10 +31,11 @@ public class MultichoiceQuestionProvider extends QuestionObjectProvider {
     //4. Bejárom az összes kategóriát, és az azon belül lévő mező párokból Multichoice objektumokat készítek, amiket a visszatérő listához adok
     @Override
     public Map<Cat, List<RealQuestion>> objectListFromSheet(Sheet sheet) {
-        HashMap<Cat, List<RealQuestion>> resultMap = new HashMap<>();
+//        HashMap<Cat, List<RealQuestion>> resultMap = new HashMap<>();
         this.sheet = sheet;
         setNumberOfFields(11);
-        resultMap
+        createQuestionMap();
+//        resultMap
         return null;
     }
 
@@ -55,5 +56,6 @@ public class MultichoiceQuestionProvider extends QuestionObjectProvider {
 
     private HashMap<String, String> createQuestionBaseDataMap() {
         this.createQuestionMap().get("1.1");
+        return null;
     }
 }
