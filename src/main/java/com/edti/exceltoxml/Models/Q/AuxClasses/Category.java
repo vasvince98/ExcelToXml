@@ -5,4 +5,6 @@ public class Category extends Auxiliary {
     public Category(String text) {
         setText(text);
     }
+
+
 }

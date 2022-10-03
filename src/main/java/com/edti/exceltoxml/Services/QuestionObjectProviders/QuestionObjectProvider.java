@@ -23,7 +23,7 @@ public abstract class QuestionObjectProvider {
     protected int dataColumn = 1;
     protected int answerFields = 3;
     protected int categoryFields = 2;
-    private String topCategory;
+    private Cat category;
     private List<HashMap<String, String>> questionList;
 
     private HashMap<String, HashMap<String, String>> resultMap = new HashMap<>();
@@ -32,9 +32,14 @@ public abstract class QuestionObjectProvider {
     //todo: override equals method of category
     public abstract Map<Cat, List<RealQuestion>> objectListFromSheet(Sheet sheet);
 
-    protected HashMap<String, List<HashMap<String, String>>> createQuestionMap() {
+    /**
+     *
+     * @return a map with a key: Category name, and a value: A list with a question hash map, where the
+     *          key value pairs represents the question fields
+     */
+    protected HashMap<Cat, List<HashMap<String, String>>> createQuestionListWithCategoryName() {
 
-        HashMap<String, List<HashMap<String, String>>> resultMap = new HashMap<>();
+        HashMap<Cat, List<HashMap<String, String>>> resultMap = new HashMap<>();
 
         int i = 0;
         int questionCounter = 0;
@@ -54,7 +59,7 @@ public abstract class QuestionObjectProvider {
                 nextQuestion();
             } else {
                 if (firstRow != 0) {
-                    resultMap.put(this.topCategory, questionList);
+                    resultMap.put(this.category, questionList);
                 }
                 this.questionList = new ArrayList<>();
                 questionCounter = 0;
@@ -62,7 +67,13 @@ public abstract class QuestionObjectProvider {
                 i += categoryFields;
             }
         }
-        resultMap.put(this.topCategory, questionList);
+        resultMap.put(this.category, questionList);
+        resultMap.forEach(((cat, hashMaps) -> {
+            System.out.println(cat.getCategory());
+            System.out.println(cat.getInfo());
+            System.out.println(cat.getType());
+            System.out.println(cat.getIdnumber());
+        }));
         return resultMap;
     }
 
@@ -110,7 +121,9 @@ public abstract class QuestionObjectProvider {
     }
 
     private void setCategory(CellAddress address) {
-        this.topCategory = sheet.getRow(address.getRow()).getCell(address.getColumn() + 1).toString();
+        this.category = new Cat();
+        this.category.setCategory(new Category(sheet.getRow(address.getRow()).getCell(address.getColumn() + 1).toString()));
+        this.category.setInfo(new Info(sheet.getRow(address.getRow() + 1).getCell(address.getColumn() + 1).toString()));
         firstRow += categoryFields;
         lastRow += categoryFields;
     }

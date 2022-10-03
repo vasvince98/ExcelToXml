@@ -7,7 +7,7 @@ import com.edti.exceltoxml.Models.Q.AuxClasses.Questiontext;
 
 import java.util.ArrayList;
 
-public abstract class RealQuestion extends Question{
+public abstract class RealQuestion extends Question {
     Name name;
     Questiontext questiontext;
     Generalfeedback generalfeedback;
@@ -71,5 +71,18 @@ public abstract class RealQuestion extends Question{
 
     public void setAnswer(ArrayList<Answer> answer) {
         this.answer = answer;
+    }
+
+    @Override
+    public String toString() {
+        return "RealQuestion{" +
+                "name=" + name +
+                ", questiontext=" + questiontext +
+                ", generalfeedback=" + generalfeedback +
+                ", defaultgrade='" + defaultgrade + '\'' +
+                ", penalty='" + penalty + '\'' +
+                ", hidden='" + hidden + '\'' +
+                ", answer=" + answer +
+                '}';
     }
 }

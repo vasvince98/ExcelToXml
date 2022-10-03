@@ -11,6 +11,9 @@ public class Cat extends Question {
     private Category category;
     private Info info;
 
+    public Cat() {
+    }
+
     public Cat(Category category, Info info) {
         this.category = category;
         this.info = info;
@@ -40,5 +43,13 @@ public class Cat extends Question {
     @Override
     public boolean equals(Object obj) {
         return super.equals(obj);
+    }
+
+    @Override
+    public String toString() {
+        return "Cat{" +
+                "category=" + category +
+                ", info=" + info +
+                '}';
     }
 }

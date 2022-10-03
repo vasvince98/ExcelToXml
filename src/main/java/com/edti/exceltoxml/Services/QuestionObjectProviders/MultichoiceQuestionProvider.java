@@ -2,17 +2,12 @@ package com.edti.exceltoxml.Services.QuestionObjectProviders;
 
 import com.edti.exceltoxml.Models.Q.AuxClasses.Answer;
 import com.edti.exceltoxml.Models.Q.AuxClasses.Category;
-import com.edti.exceltoxml.Models.Q.AuxClasses.Name;
-import com.edti.exceltoxml.Models.Q.AuxClasses.Questiontext;
+import com.edti.exceltoxml.Models.Q.AuxClasses.Info;
 import com.edti.exceltoxml.Models.Q.Enums.QType;
 import com.edti.exceltoxml.Models.Q.Factories.QuestionFactory;
 import com.edti.exceltoxml.Models.Q.QuestionTypes.Cat;
 import com.edti.exceltoxml.Models.Q.QuestionTypes.Multichoice;
 import com.edti.exceltoxml.Models.Q.QuestionTypes.RealQuestion;
-import org.apache.poi.ss.formula.functions.Column;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.CellType;
-import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.springframework.stereotype.Service;
 
@@ -31,12 +26,14 @@ public class MultichoiceQuestionProvider extends QuestionObjectProvider {
     //4. Bejárom az összes kategóriát, és az azon belül lévő mező párokból Multichoice objektumokat készítek, amiket a visszatérő listához adok
     @Override
     public Map<Cat, List<RealQuestion>> objectListFromSheet(Sheet sheet) {
-//        HashMap<Cat, List<RealQuestion>> resultMap = new HashMap<>();
+        HashMap<Cat, List<RealQuestion>> resultMap = new HashMap<>();
+//        List<RealQuestion> questionList = new ArrayList<>();
         this.sheet = sheet;
         setNumberOfFields(11);
-        createQuestionMap();
-//        resultMap
-        return null;
+        createQuestionListWithCategoryName();
+//        questionList.add(getQuestion());
+
+        return resultMap;
     }
 
     @Override
@@ -55,7 +52,6 @@ public class MultichoiceQuestionProvider extends QuestionObjectProvider {
     }
 
     private HashMap<String, String> createQuestionBaseDataMap() {
-        this.createQuestionMap().get("1.1");
         return null;
     }
 }
