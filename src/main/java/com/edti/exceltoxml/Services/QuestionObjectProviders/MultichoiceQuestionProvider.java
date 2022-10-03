@@ -20,19 +20,24 @@ import java.util.Map;
 @Service
 public class MultichoiceQuestionProvider extends QuestionObjectProvider {
 
-    //1. beállítom az ősosztály sheet mezejét
-    //2. beállítom a multichoice kérdéstípusra jellemző mezők számát
-    //3. A sheetből kiszedem egy gyűjteménybe a kérdéseket kategóriánként
-    //4. Bejárom az összes kategóriát, és az azon belül lévő mező párokból Multichoice objektumokat készítek, amiket a visszatérő listához adok
     @Override
     public Map<Cat, List<RealQuestion>> objectListFromSheet(Sheet sheet) {
         HashMap<Cat, List<RealQuestion>> resultMap = new HashMap<>();
-//        List<RealQuestion> questionList = new ArrayList<>();
+
         this.sheet = sheet;
         setNumberOfFields(11);
         createQuestionListWithCategoryName();
 //        questionList.add(getQuestion());
 
+        questionListWithCategoryName.forEach(((cat, questionMaps) -> {
+            List<RealQuestion> questionList = new ArrayList<>();
+            questionMaps.forEach((question) -> questionList.add(getQuestion(question)));
+            resultMap.put(cat, questionList);
+        }));
+        resultMap.forEach(((cat, realQuestions) -> {
+            System.out.println(cat);
+            realQuestions.forEach((System.out::println));
+        }));
         return resultMap;
     }
 
@@ -46,12 +51,7 @@ public class MultichoiceQuestionProvider extends QuestionObjectProvider {
         return null;
     }
 
-    private Multichoice getQuestion() {
-        HashMap<String, String> questionBaseDataMap = createQuestionBaseDataMap();
-        return (Multichoice) QuestionFactory.getQuestion(QType.multichoice, questionBaseDataMap);
-    }
-
-    private HashMap<String, String> createQuestionBaseDataMap() {
-        return null;
+    private Multichoice getQuestion(HashMap<String, String> dataMap) {
+        return (Multichoice) QuestionFactory.getQuestion(QType.multichoice, dataMap);
     }
 }

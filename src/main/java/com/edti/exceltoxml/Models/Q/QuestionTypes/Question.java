@@ -55,4 +55,12 @@ public abstract class Question {
         m.marshal(new JAXBElement<>(new QName(qname), c, object), new FileOutputStream("example.xml"));
         return sw.toString();
     }
+
+    @Override
+    public String toString() {
+        return "Question{" +
+                "type='" + type + '\'' +
+                ", idnumber='" + idnumber + '\'' +
+                '}';
+    }
 }

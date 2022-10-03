@@ -25,6 +25,7 @@ public abstract class QuestionObjectProvider {
     protected int categoryFields = 2;
     private Cat category;
     private List<HashMap<String, String>> questionList;
+    protected HashMap<Cat, List<HashMap<String, String>>> questionListWithCategoryName;
 
     private HashMap<String, HashMap<String, String>> resultMap = new HashMap<>();
 
@@ -74,6 +75,7 @@ public abstract class QuestionObjectProvider {
             System.out.println(cat.getType());
             System.out.println(cat.getIdnumber());
         }));
+        this.questionListWithCategoryName = resultMap;
         return resultMap;
     }
 

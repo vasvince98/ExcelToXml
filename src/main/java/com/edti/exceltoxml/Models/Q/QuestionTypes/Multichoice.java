@@ -129,43 +129,72 @@ public class Multichoice extends RealQuestion {
     private void initInstance(HashMap<String, String> data){
         this.setType("multichoice");
         Name n = new Name();
-        n.setText(data.get("name"));
+        //question name
+        n.setText(data.get("Kérdés neve"));
         this.setName(n);
 
         Questiontext qt = new Questiontext();
         qt.setFormat("html");
-        qt.setText(data.get("questiontext"));
+        //questiontext
+        qt.setText(data.get("Kérdés szövege"));
         this.setQuestiontext(qt);
 
         Generalfeedback gf = new Generalfeedback();
         gf.setFormat("html");
-        gf.setText(data.get("generalfeedback"));
+        //general feedback
+        gf.setText(data.get("Általános visszajelzés"));
         this.setGeneralfeedback(gf);
 
-        this.setDefaultgrade(data.get("defaultgrade"));
-        this.setPenalty(data.get("penalty"));
-        this.setHidden(data.get("hidden"));
+        //Pont
+        this.setDefaultgrade(data.get("Pont"));
+        //Penalty
+        this.setPenalty(data.get("Rossz válasz esetén mínusz pont"));
+        //Hidden
+        this.setHidden(data.get("Elrejtve?"));
         this.setIdnumber("");
-        this.setSingle(data.get("single"));
-        this.setShuffleanswers(data.get("shuffleanswers"));
-        this.setAnswernumbering(data.get("answernumbering"));
+        //Single
+        this.setSingle(data.get("Egy válasz a jó?"));
+        //Shuffleanswers
+        this.setShuffleanswers(data.get("Keverje a válaszokat?"));
+        //Answernumbering
+        //todo: get from excel, but I think this should be default like this:
+        this.setAnswernumbering("abc");
         this.setShowstandardinstruction(data.get("showstandardinstruction"));
 
         Correctfeedback cf = new Correctfeedback();
         cf.setFormat("html");
-        cf.setText(data.get("correctfeedback"));
+        //Correct feedback
+        cf.setText(data.get("Visszajelzés helyes válasz esetén"));
         this.setCorrectfeedback(cf);
 
         Partiallycorrectfeedback pf = new Partiallycorrectfeedback();
         pf.setFormat("html");
-        pf.setText(data.get("partiallycorrectfeedback"));
+        //Partially correct feedback
+        pf.setText(data.get("Visszajelzés részben helyes válasz esetén"));
         this.setPartiallycorrectfeedback(pf);
 
         Incorrectfeedback inf = new Incorrectfeedback();
         inf.setFormat("html");
-        inf.setText(data.get("incorrectfeedback"));
+        //Incorrect feedback
+        inf.setText(data.get("Visszajelzés rossz válasz esetén"));
         this.setIncorrectfeedback(inf);
         this.setShownumcorrect("");
     }
 
+    @Override
+    public String toString() {
+        return "Multichoice{" +
+                "single='" + single + '\'' +
+                ", shuffleanswers='" + shuffleanswers + '\'' +
+                ", answernumbering='" + answernumbering + '\'' +
+                ", showstandardinstruction='" + showstandardinstruction + '\'' +
+                ", correctfeedback=" + correctfeedback +
+                ", partiallycorrectfeedback=" + partiallycorrectfeedback +
+                ", incorrectfeedback=" + incorrectfeedback +
+                ", shownumcorrect='" + shownumcorrect + '\'' +
+                ", name=" + name +
+                ", questiontext=" + questiontext +
+                ", generalfeedback=" + generalfeedback +
+                '}';
+    }
 }
