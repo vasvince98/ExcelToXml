@@ -1,17 +1,11 @@
 package com.edti.exceltoxml.Controllers;
 
 import com.edti.exceltoxml.Exceptions.MissingFileException;
-import com.edti.exceltoxml.Models.Quiz;
 import com.edti.exceltoxml.Services.Interfaces.IImageService;
 import com.edti.exceltoxml.Services.Interfaces.IQuestionService;
 import com.edti.exceltoxml.Services.PathLocatorService;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.poifs.filesystem.POIFSFileSystem;
-import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.http.HttpHeaders;
@@ -20,9 +14,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 
-import javax.imageio.ImageIO;
-import javax.servlet.http.HttpServletResponse;
-import java.awt.image.BufferedImage;
 import java.io.*;
 import java.net.URISyntaxException;
 
@@ -94,14 +85,12 @@ public class MainRestController {
 
             File localSaveFile = new File(filePath);
 
-            questionService.createObjectFromExcel(WorkbookFactory.create(localSaveFile));
+            return questionService.createXmlFromExcel(WorkbookFactory.create(localSaveFile));
 
         } catch (Exception e) {
             e.printStackTrace();
             throw new MissingFileException("Nem töltött fel fájlt!");
         }
-
-        return "Szia";
     }
 
     @RequestMapping("/getos")

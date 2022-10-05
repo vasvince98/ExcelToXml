@@ -27,16 +27,11 @@ public class MultichoiceQuestionProvider extends QuestionObjectProvider {
         this.sheet = sheet;
         setNumberOfFields(11);
         createQuestionListWithCategoryName();
-//        questionList.add(getQuestion());
 
         questionListWithCategoryName.forEach(((cat, questionMaps) -> {
             List<RealQuestion> questionList = new ArrayList<>();
             questionMaps.forEach((question) -> questionList.add(getQuestion(question)));
             resultMap.put(cat, questionList);
-        }));
-        resultMap.forEach(((cat, realQuestions) -> {
-            System.out.println(cat);
-            realQuestions.forEach((System.out::println));
         }));
         return resultMap;
     }

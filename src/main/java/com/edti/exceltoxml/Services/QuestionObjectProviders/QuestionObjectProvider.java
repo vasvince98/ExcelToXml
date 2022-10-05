@@ -126,6 +126,7 @@ public abstract class QuestionObjectProvider {
         this.category = new Cat();
         this.category.setCategory(new Category(sheet.getRow(address.getRow()).getCell(address.getColumn() + 1).toString()));
         this.category.setInfo(new Info(sheet.getRow(address.getRow() + 1).getCell(address.getColumn() + 1).toString()));
+        this.category.setType("category");
         firstRow += categoryFields;
         lastRow += categoryFields;
     }

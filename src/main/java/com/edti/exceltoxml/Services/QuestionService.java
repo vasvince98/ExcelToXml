@@ -5,6 +5,8 @@ import com.edti.exceltoxml.Exceptions.MissingHeaderException;
 import com.edti.exceltoxml.Exceptions.NullAnswerException;
 import com.edti.exceltoxml.Models.Category.Category;
 import com.edti.exceltoxml.Models.Category.Info;
+import com.edti.exceltoxml.Models.Q.QuestionTypes.Cat;
+import com.edti.exceltoxml.Models.Q.QuestionTypes.RealQuestion;
 import com.edti.exceltoxml.Models.Question.*;
 import com.edti.exceltoxml.Models.Question.Name;
 import com.edti.exceltoxml.Models.Quiz;
@@ -36,6 +38,8 @@ public class QuestionService implements IQuestionService {
 
     private String questionType;
 
+    private String finalXml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<quiz>\n";
+
     private final IImageService imageService;
     private final IStateService stateService;
 
@@ -46,21 +50,15 @@ public class QuestionService implements IQuestionService {
     }
 
     @Override
-    public Quiz createObjectFromExcel(Workbook workbook) throws IOException {
-        Quiz currentQuiz = new Quiz();
-        Question category = new Question("category", new Category("$course$/top/Databases alapbeállítása/Bigtest1"), new Info(""), "");
-        List<Question> questions = new ArrayList<>();
-        questions.add(category);
-
+    public String createXmlFromExcel(Workbook workbook) throws IOException {
         workbook.setActiveSheet(0);
-
-
         MultichoiceQuestionProvider multichoiceQuestionProvider = new MultichoiceQuestionProvider();
+        Map<Cat, List<RealQuestion>> multichoiceMap = new HashMap<>();
 
         for (Sheet sheet : workbook) {
-            multichoiceQuestionProvider.objectListFromSheet(sheet);
+            multichoiceMap = multichoiceQuestionProvider.objectListFromSheet(sheet);
         }
-        return currentQuiz;
+        return createFinalXml(multichoiceMap);
     }
 
     @Override
@@ -130,6 +128,27 @@ public class QuestionService implements IQuestionService {
         }
 
         return createXmlFromQuiz(quiz);
+    }
+
+
+    private String createFinalXml(Map<Cat, List<RealQuestion>> map) {
+
+        map.forEach(((cat, realQuestions) -> {
+            try {
+                finalXml = finalXml.concat(cat.getXmlForm());
+                realQuestions.forEach((realQuestion -> {
+                    try {
+                        finalXml = finalXml.concat(realQuestion.getXmlForm());
+                    } catch (JAXBException | FileNotFoundException e) {
+                        throw new RuntimeException(e);
+                    }
+                }));
+            } catch (JAXBException | FileNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+        }));
+        finalXml = finalXml.concat("\n</quiz>");
+        return finalXml;
     }
 
     private List<Answer> createAnswers(String questionType, String solution) {

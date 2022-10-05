@@ -47,12 +47,11 @@ public abstract class Question {
 
     public abstract String getXmlForm() throws JAXBException, FileNotFoundException;
 
-    protected String generateXmlForm(Class c, String qname, Object object) throws JAXBException, FileNotFoundException {
+    protected String generateXmlForm(Class c, String qname, Object object) throws JAXBException {
         StringWriter sw = new StringWriter();
         JAXBContext ctx = JAXBContext.newInstance(c);
         Marshaller m = ctx.createMarshaller();
         m.setProperty(Marshaller.JAXB_FRAGMENT, true);
-//        m.marshal(new JAXBElement<>(new QName(qname), c, object), new FileOutputStream("example.xml"));
         m.marshal(new JAXBElement<>(new QName(qname), c, object), sw);
         return sw.toString();
     }
