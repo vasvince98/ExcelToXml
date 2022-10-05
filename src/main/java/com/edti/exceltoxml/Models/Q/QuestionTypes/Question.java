@@ -52,7 +52,8 @@ public abstract class Question {
         JAXBContext ctx = JAXBContext.newInstance(c);
         Marshaller m = ctx.createMarshaller();
         m.setProperty(Marshaller.JAXB_FRAGMENT, true);
-        m.marshal(new JAXBElement<>(new QName(qname), c, object), new FileOutputStream("example.xml"));
+//        m.marshal(new JAXBElement<>(new QName(qname), c, object), new FileOutputStream("example.xml"));
+        m.marshal(new JAXBElement<>(new QName(qname), c, object), sw);
         return sw.toString();
     }
 
