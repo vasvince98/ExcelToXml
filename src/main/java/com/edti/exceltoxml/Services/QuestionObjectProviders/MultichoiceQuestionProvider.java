@@ -37,11 +37,6 @@ public class MultichoiceQuestionProvider extends QuestionObjectProvider {
     }
 
     @Override
-    protected HashMap<String, String> getQuestionMap() {
-        return null;
-    }
-
-    @Override
     protected List<Answer> createAnswerList() {
         return null;
     }

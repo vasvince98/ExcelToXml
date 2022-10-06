@@ -53,14 +53,13 @@ public class MainController {
 
     @RequestMapping(path = "/postupload", method = POST, consumes = { MediaType.MULTIPART_FORM_DATA_VALUE })
     @ResponseBody
-    public ModelAndView uploadResponse(Model m,
-                                       @RequestParam("file") MultipartFile file,
+    public ModelAndView uploadResponse(@RequestParam("file") MultipartFile file,
                                        @Nullable @RequestParam("checkBox") String isPicture) throws IOException, URISyntaxException {
 
         stateService.setState(isPicture);
 
         uploadAndDownloadService.handleExcelFile(file);
-        
+
         ModelAndView mav = new ModelAndView();
         mav.setViewName("redirect");
         return mav;

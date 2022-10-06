@@ -42,7 +42,16 @@ public class Cat extends Question {
 
     @Override
     public boolean equals(Object obj) {
-        return super.equals(obj);
+        if (obj == this) {
+            return true;
+        }
+
+        if(!(obj instanceof Cat category)) {
+            return false;
+        }
+
+        return category.getCategory().equals(this.category) &&
+                category.getInfo().equals(this.info);
     }
 
     @Override

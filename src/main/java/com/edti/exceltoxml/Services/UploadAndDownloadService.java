@@ -70,10 +70,18 @@ public class UploadAndDownloadService implements IUploadAndDownloadService {
             InputStreamResource resource = new InputStreamResource(
                     new ByteArrayInputStream(questionService.createXmlFromExcel(WorkbookFactory.create(localSaveFile)).getBytes()));
 
-            return ResponseEntity.ok()
-                    .header(HttpHeaders.CONTENT_DISPOSITION, "attachment;filename=" + fileName)
-                    .contentType(MediaType.APPLICATION_OCTET_STREAM)
-                    .body(resource);
+            if (fileName.toLowerCase().endsWith(".xml")) {
+                return ResponseEntity.ok()
+                        .header(HttpHeaders.CONTENT_DISPOSITION, "attachment;filename=" + fileName)
+                        .contentType(MediaType.APPLICATION_OCTET_STREAM)
+                        .body(resource);
+            } else {
+                return ResponseEntity.ok()
+                        .header(HttpHeaders.CONTENT_DISPOSITION, "attachment;filename=" + "CONVERTED.xml")
+                        .contentType(MediaType.APPLICATION_OCTET_STREAM)
+                        .body(resource);
+            }
+
 
         } catch (Exception e) {
             e.printStackTrace();

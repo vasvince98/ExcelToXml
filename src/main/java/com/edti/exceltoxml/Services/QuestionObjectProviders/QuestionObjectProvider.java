@@ -47,8 +47,6 @@ public abstract class QuestionObjectProvider {
 
         lastRow = numberOfFields + firstRow;
 
-
-
         while (i < sheet.getPhysicalNumberOfRows()) {
             CellRangeAddress range = new CellRangeAddress(firstRow, lastRow - 1, dataColumn, dataColumn);
             if (isQuestion(new CellAddress(firstRow, dataColumn))) {
@@ -68,18 +66,9 @@ public abstract class QuestionObjectProvider {
                 i += categoryFields;
             }
         }
-        resultMap.put(this.category, questionList);
-        resultMap.forEach(((cat, hashMaps) -> {
-            System.out.println(cat.getCategory());
-            System.out.println(cat.getInfo());
-            System.out.println(cat.getType());
-            System.out.println(cat.getIdnumber());
-        }));
         this.questionListWithCategoryName = resultMap;
         return resultMap;
     }
-
-    protected abstract HashMap<String, String> getQuestionMap();
 
     protected abstract List<Answer> createAnswerList();
 
