@@ -9,6 +9,5 @@ import java.io.IOException;
 public interface IQuestionService {
     String createXmlFromExcel(Workbook workbook) throws IOException;
     String createXmlFromQuiz(Quiz quiz) throws JAXBException;
-    String createImageXmlFromStringXml(java.io.File inputXml) throws IOException, JAXBException;
 
 }

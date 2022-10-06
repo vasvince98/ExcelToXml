@@ -49,6 +49,8 @@ public class QuestionService implements IQuestionService {
         this.stateService = stateService;
     }
 
+
+
     @Override
     public String createXmlFromExcel(Workbook workbook) throws IOException {
         workbook.setActiveSheet(0);
@@ -77,57 +79,6 @@ public class QuestionService implements IQuestionService {
         jaxbMarshaller.marshal(quiz, sw);
 
         return sw.toString();
-    }
-
-    @Override
-    public String createImageXmlFromStringXml(java.io.File inputXml) throws IOException, JAXBException {
-
-        Quiz quiz = createQuizFromXml(inputXml);
-
-
-
-
-        for (Question question : quiz.getQuestion()) {
-            JAXBContext context = JAXBContext.newInstance(Question.class);
-            Marshaller marshaller = context.createMarshaller();
-            marshaller.setProperty(Marshaller.JAXB_FRAGMENT, true);
-            File file = new File("/Users/vasvince/Desktop/teszt.txt");
-            marshaller.marshal(question, file);
-
-            BufferedReader br = new BufferedReader(new FileReader("/Users/vasvince/Desktop/teszt.txt"));
-            String line;
-            while ((line = br.readLine()) != null) {
-                System.out.println(line);
-            }
-
-            switch (question.getType()) {
-
-                case "multichoice" -> replaceQuestionAndAnswer(question);
-                case "truefalse" -> {
-                    String questionText = question.getQuestiontext().getText();
-
-                    if (!questionText.startsWith("<img")) {
-                        question.setQuestiontext(new QuestionText("html",
-                                imageService.transformStringToBase64(questionText)));
-                    }
-
-                }
-                case "matching" -> {
-                    String questionText = getStringFromHTML(question.getQuestiontext().getText());
-
-                    question.setQuestiontext(new QuestionText("html",
-                            imageService.transformStringToBase64(questionText)));
-
-                    for (SubQuestion subQuestion : question.getSubquestion()) {
-                        subQuestion.setText(String.format("<img src=\"data:image/png;base64,%s\"/>",
-                                imageService.transformStringToBase64(getStringFromHTML(subQuestion.getText()))));
-                    }
-                }
-                default -> System.out.println("Unhandled question type");
-            }
-        }
-
-        return createXmlFromQuiz(quiz);
     }
 
 
