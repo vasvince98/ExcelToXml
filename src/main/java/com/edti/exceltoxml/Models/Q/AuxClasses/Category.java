@@ -7,4 +7,16 @@ public class Category extends Auxiliary {
     }
 
 
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+
+        if(!(obj instanceof Category category)) {
+            return false;
+        }
+
+        return category.getText().equals(this.getText());
+    }
 }
