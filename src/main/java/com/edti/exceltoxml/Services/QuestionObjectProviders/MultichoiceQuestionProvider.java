@@ -30,14 +30,17 @@ public class MultichoiceQuestionProvider extends QuestionObjectProvider {
 
         questionListWithCategoryName.forEach(((cat, questionMaps) -> {
             List<RealQuestion> questionList = new ArrayList<>();
-            questionMaps.forEach((question) -> questionList.add(getQuestion(question)));
+            questionMaps.forEach((question) -> {
+                createAnswerList(cat);
+                questionList.add(getQuestion(question));
+            });
             resultMap.put(cat, questionList);
         }));
         return resultMap;
     }
 
     @Override
-    protected List<Answer> createAnswerList() {
+    protected List<Answer> createAnswerList(Cat category) {
         return null;
     }
 

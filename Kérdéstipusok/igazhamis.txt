@@ -1,0 +1,89 @@
+
+-<question type="truefalse">
+
+
+-<name>
+
+<text>Igaz-hamis kérdés neve</text>
+
+</name>
+
+
+-<questiontext format="html">
+
+
+-<text>
+
+-<![CDATA[<p dir="ltr" style="text-align: left;"></p><h2>Igaz-hamis kérdés szövege?</h2><br><p></p>]]>
+</text>
+
+</questiontext>
+
+
+-<generalfeedback format="html">
+
+<text/>
+
+</generalfeedback>
+
+<defaultgrade>100.0000000</defaultgrade>
+
+<penalty>1.0000000</penalty>
+
+<hidden>0</hidden>
+
+<idnumber/>
+
+
+-<answer format="moodle_auto_format" fraction="100">
+
+<text>true</text>
+
+
+-<feedback format="html">
+
+<text/>
+
+</feedback>
+
+</answer>
+
+
+-<answer format="moodle_auto_format" fraction="0">
+
+<text>false</text>
+
+
+-<feedback format="html">
+
+<text/>
+
+</feedback>
+
+</answer>
+
+</question>
+
+<!-- question: 0 -->
+
+
+
+-<question type="category">
+
+
+-<category>
+
+<text>$course$/top/teszt6 alapbeállítása/téma 2</text>
+
+</category>
+
+
+-<info format="html">
+
+<text/>
+
+</info>
+
+<idnumber/>
+
+</question>

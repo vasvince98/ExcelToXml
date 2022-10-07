@@ -70,7 +70,7 @@ public abstract class QuestionObjectProvider {
         return resultMap;
     }
 
-    protected abstract List<Answer> createAnswerList();
+    protected abstract List<Answer> createAnswerList(Cat category);
 
 
     protected Sheet getSheet() {
