@@ -38,7 +38,8 @@ public class QuestionService implements IQuestionService {
 
     private String questionType;
 
-    private String finalXml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<quiz>\n";
+    private String finalXml;
+
 
     private final IImageService imageService;
     private final IStateService stateService;
@@ -53,6 +54,7 @@ public class QuestionService implements IQuestionService {
 
     @Override
     public String createXmlFromExcel(Workbook workbook) throws IOException {
+        finalXml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<quiz>\n";
         workbook.setActiveSheet(0);
         MultichoiceQuestionProvider multichoiceQuestionProvider = new MultichoiceQuestionProvider();
         Map<Cat, List<RealQuestion>> multichoiceMap = new HashMap<>();

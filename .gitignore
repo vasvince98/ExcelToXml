@@ -35,4 +35,7 @@ build/
 ### Mac files ###
 .DS_Store
 
+### xlsx és xml ###
+.xlsx
+
 /FolderForExcelFiles
