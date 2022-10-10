@@ -4,12 +4,14 @@ import com.edti.exceltoxml.Models.Q.AuxClasses.Info;
 import com.edti.exceltoxml.Models.Q.AuxClasses.Category;
 
 import javax.xml.bind.JAXBException;
+import javax.xml.bind.annotation.XmlTransient;
 import java.io.FileNotFoundException;
 
 public class Cat extends Question {
 
     private Category category;
     private Info info;
+
 
     public Cat() {
     }
@@ -19,6 +21,7 @@ public class Cat extends Question {
         this.info = info;
     }
 
+    //region Getters and setters ######################################
     public Category getCategory() {
         return category;
     }
@@ -34,6 +37,8 @@ public class Cat extends Question {
     public void setInfo(Info info) {
         this.info = info;
     }
+
+    //endregion
 
     @Override
     public String getXmlForm() throws JAXBException, FileNotFoundException {

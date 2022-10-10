@@ -160,6 +160,7 @@ public class Multichoice extends RealQuestion {
         //todo: get from excel, but I think this should be default like this:
         this.setAnswernumbering("abc");
         this.setShowstandardinstruction(data.get("showstandardinstruction"));
+        this.setIdnumber(data.get("id"));
 
         Correctfeedback cf = new Correctfeedback();
         cf.setFormat("html");

@@ -58,7 +58,12 @@ public class QuestionService implements IQuestionService {
         Map<Cat, List<RealQuestion>> multichoiceMap = new HashMap<>();
 
         for (Sheet sheet : workbook) {
-            multichoiceMap = multichoiceQuestionProvider.objectListFromSheet(sheet);
+            switch (sheet.getSheetName()) {
+                case "feleletválasztó" ->  multichoiceMap = multichoiceQuestionProvider.objectListFromSheet(sheet);
+//                case "igazhamis" -> truefalseMap = truefalseQuestionProvider.objectListFromSheet(sheet);
+                default -> System.out.println("Nincs még lekezelve");
+            }
+
         }
         return createFinalXml(multichoiceMap);
     }

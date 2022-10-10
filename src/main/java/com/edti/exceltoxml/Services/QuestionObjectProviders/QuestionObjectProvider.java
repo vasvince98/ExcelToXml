@@ -2,6 +2,7 @@ package com.edti.exceltoxml.Services.QuestionObjectProviders;
 
 import com.edti.exceltoxml.Models.Q.AuxClasses.Answer;
 import com.edti.exceltoxml.Models.Q.AuxClasses.Category;
+import com.edti.exceltoxml.Models.Q.AuxClasses.Feedback;
 import com.edti.exceltoxml.Models.Q.AuxClasses.Info;
 import com.edti.exceltoxml.Models.Q.QuestionTypes.Cat;
 import com.edti.exceltoxml.Models.Q.QuestionTypes.RealQuestion;
@@ -21,13 +22,20 @@ public abstract class QuestionObjectProvider {
     protected int firstRow = 0;
     protected int lastRow;
     protected int dataColumn = 1;
-    protected int answerFields = 3;
+
+    protected int answerRows;
+    protected int firstColumn = 2;
+    protected int answerColumns;
+
     protected int categoryFields = 2;
     private Cat category;
     private List<HashMap<String, String>> questionList;
     protected HashMap<Cat, List<HashMap<String, String>>> questionListWithCategoryName;
 
     private HashMap<String, HashMap<String, String>> resultMap = new HashMap<>();
+
+    private int questionCounter = 0;
+    private int categoryCounter = 0;
 
 
     //todo: override equals method of category
@@ -43,7 +51,7 @@ public abstract class QuestionObjectProvider {
         HashMap<Cat, List<HashMap<String, String>>> resultMap = new HashMap<>();
 
         int i = 0;
-        int questionCounter = 0;
+
 
         lastRow = numberOfFields + firstRow;
 
@@ -53,8 +61,9 @@ public abstract class QuestionObjectProvider {
                 HashMap<String, String> questionMap = new HashMap<>();
                 questionCounter++;
                 range.forEach((a) -> questionMap.put(getMapKeyFromAddress(a), getMapValueFromAddress(a)));
+                questionMap.put("id", categoryCounter + ", " + questionCounter);
                 questionList.add(questionMap);
-                i += numberOfFields + answerFields;
+                i += numberOfFields + answerRows;
                 nextQuestion();
             } else {
                 if (firstRow != 0) {
@@ -62,15 +71,50 @@ public abstract class QuestionObjectProvider {
                 }
                 this.questionList = new ArrayList<>();
                 questionCounter = 0;
+                categoryCounter++;
                 setCategory(new CellAddress(firstRow, dataColumn));
                 i += categoryFields;
             }
         }
+        resultMap.put(this.category, questionList);
         this.questionListWithCategoryName = resultMap;
         return resultMap;
     }
 
-    protected abstract List<Answer> createAnswerList(Cat category);
+    protected HashMap<String, ArrayList<Answer>> createAnswerList() {
+        this.firstRow = 0;
+        this.categoryCounter = 0;
+        this.questionCounter = 0;
+        int i = 0;
+
+        HashMap<String, ArrayList<Answer>> answerMapWithId = new HashMap<>();
+
+        while (i < sheet.getPhysicalNumberOfRows()) {
+
+            CellRangeAddress range;
+
+            if (isQuestion(new CellAddress(firstRow, dataColumn))) {
+                questionCounter++;
+                firstRow += numberOfFields;
+                i += numberOfFields;
+
+                range = new CellRangeAddress(firstRow, firstRow, firstColumn, answerColumns);
+                answerMapWithId.put(categoryCounter + ", " + questionCounter, getAnswerObjectList(range));
+
+
+                i += answerRows;
+                firstRow += answerRows;
+            } else {
+                questionCounter = 0;
+                categoryCounter++;
+                i += categoryFields;
+                firstRow += categoryFields;
+            }
+        }
+
+        answerMapWithId.forEach((id, ans) -> System.out.println(id));
+        return answerMapWithId;
+    }
 
 
     protected Sheet getSheet() {
@@ -97,6 +141,21 @@ public abstract class QuestionObjectProvider {
         return sheet.getRow(address.getRow()).getCell(address.getColumn() + 1).toString();
     }
 
+    private ArrayList<Answer> getAnswerObjectList(CellRangeAddress addressRange) {
+        ArrayList<Answer> answerList = new ArrayList<>();
+        addressRange.forEach((r) -> {
+            Answer currentAnswer = new Answer();
+            currentAnswer.setText(sheet.getRow(r.getRow()).getCell(r.getColumn()).toString());
+            currentAnswer.setFraction(sheet.getRow(r.getRow() + 1).getCell(r.getColumn()).toString());
+            currentAnswer.setFeedback(new Feedback(sheet.getRow(r.getRow() + 2).getCell(r.getColumn()).toString()));
+
+
+            answerList.add(currentAnswer);
+
+        });
+        return answerList;
+    }
+
     private boolean isQuestion(CellAddress address) {
         try {
             return !sheet.getRow(address.getRow()).getCell(address.getColumn() - 1).toString().equals("Kategória");
@@ -107,8 +166,8 @@ public abstract class QuestionObjectProvider {
     }
 
     private void nextQuestion() {
-        firstRow += numberOfFields + answerFields;
-        lastRow += numberOfFields + answerFields;
+        firstRow += numberOfFields + answerRows;
+        lastRow += numberOfFields + answerRows;
     }
 
     private void setCategory(CellAddress address) {
@@ -119,6 +178,33 @@ public abstract class QuestionObjectProvider {
         firstRow += categoryFields;
         lastRow += categoryFields;
     }
+
+    //region Getters and setters
+    public int getAnswerColumns() {
+        return answerColumns;
+    }
+
+    public void setAnswerColumns(int answerColumns) {
+        this.answerColumns = answerColumns;
+    }
+
+    public int getFirstRow() {
+        return firstRow;
+    }
+
+    public void setFirstRow(int firstRow) {
+        this.firstRow = firstRow;
+    }
+
+    public int getAnswerRows() {
+        return answerRows;
+    }
+
+    public void setAnswerRows(int answerRows) {
+        this.answerRows = answerRows;
+    }
+
+    //endregion
 
 
 }

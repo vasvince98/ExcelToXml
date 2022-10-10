@@ -7,6 +7,7 @@ import com.edti.exceltoxml.Models.Q.Enums.QType;
 import com.edti.exceltoxml.Models.Q.Factories.QuestionFactory;
 import com.edti.exceltoxml.Models.Q.QuestionTypes.Cat;
 import com.edti.exceltoxml.Models.Q.QuestionTypes.Multichoice;
+import com.edti.exceltoxml.Models.Q.QuestionTypes.Question;
 import com.edti.exceltoxml.Models.Q.QuestionTypes.RealQuestion;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.springframework.stereotype.Service;
@@ -25,26 +26,33 @@ public class MultichoiceQuestionProvider extends QuestionObjectProvider {
         HashMap<Cat, List<RealQuestion>> resultMap = new HashMap<>();
 
         this.sheet = sheet;
-        setNumberOfFields(11);
+        initFieldNumbers();
         createQuestionListWithCategoryName();
+
+        initFieldNumbers();
+        createAnswerList();
 
         questionListWithCategoryName.forEach(((cat, questionMaps) -> {
             List<RealQuestion> questionList = new ArrayList<>();
             questionMaps.forEach((question) -> {
-                createAnswerList(cat);
-                questionList.add(getQuestion(question));
+                Multichoice currentQuestion = getQuestion(question);
+                String currentIdNumber = currentQuestion.getIdnumber();
+                currentQuestion.setAnswer(createAnswerList().get(currentIdNumber));
+
+                questionList.add(currentQuestion);
             });
             resultMap.put(cat, questionList);
         }));
         return resultMap;
     }
 
-    @Override
-    protected List<Answer> createAnswerList(Cat category) {
-        return null;
-    }
-
     private Multichoice getQuestion(HashMap<String, String> dataMap) {
         return (Multichoice) QuestionFactory.getQuestion(QType.multichoice, dataMap);
+    }
+
+    private void initFieldNumbers() {
+        this.setNumberOfFields(11);
+        this.setAnswerRows(3);
+        this.setAnswerColumns(6);
     }
 }
