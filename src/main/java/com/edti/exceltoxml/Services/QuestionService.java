@@ -14,6 +14,7 @@ import com.edti.exceltoxml.Services.Interfaces.IImageService;
 import com.edti.exceltoxml.Services.Interfaces.IQuestionService;
 import com.edti.exceltoxml.Services.Interfaces.IStateService;
 import com.edti.exceltoxml.Services.QuestionObjectProviders.MultichoiceQuestionProvider;
+import com.edti.exceltoxml.Services.QuestionObjectProviders.TrueFalseQuestionProvider;
 import com.sun.xml.bind.marshaller.CharacterEscapeHandler;
 import com.sun.xml.bind.marshaller.NoEscapeHandler;
 import org.apache.poi.ss.usermodel.*;
@@ -43,11 +44,18 @@ public class QuestionService implements IQuestionService {
 
     private final IImageService imageService;
     private final IStateService stateService;
+    private final MultichoiceQuestionProvider multichoiceQuestionProvider;
+    private final TrueFalseQuestionProvider trueFalseQuestionProvider;
 
     @Autowired
-    public QuestionService(IImageService imageService, IStateService stateService) {
+    public QuestionService(IImageService imageService,
+                           IStateService stateService,
+                           MultichoiceQuestionProvider multichoiceQuestionProvider,
+                           TrueFalseQuestionProvider trueFalseQuestionProvider) {
         this.imageService = imageService;
         this.stateService = stateService;
+        this.multichoiceQuestionProvider = multichoiceQuestionProvider;
+        this.trueFalseQuestionProvider = trueFalseQuestionProvider;
     }
 
 
@@ -56,17 +64,19 @@ public class QuestionService implements IQuestionService {
     public String createXmlFromExcel(Workbook workbook) throws IOException {
         finalXml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<quiz>\n";
         workbook.setActiveSheet(0);
-        MultichoiceQuestionProvider multichoiceQuestionProvider = new MultichoiceQuestionProvider();
         Map<Cat, List<RealQuestion>> multichoiceMap = new HashMap<>();
+        Map<Cat, List<RealQuestion>> truefalseMap = new HashMap<>();
+
 
         for (Sheet sheet : workbook) {
             switch (sheet.getSheetName()) {
                 case "feleletválasztó" ->  multichoiceMap = multichoiceQuestionProvider.objectListFromSheet(sheet);
-//                case "igazhamis" -> truefalseMap = truefalseQuestionProvider.objectListFromSheet(sheet);
+                case "igazhamis" -> truefalseMap = trueFalseQuestionProvider.objectListFromSheet(sheet);
                 default -> System.out.println("Nincs még lekezelve");
             }
 
         }
+
         return createFinalXml(multichoiceMap);
     }
 
