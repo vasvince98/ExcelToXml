@@ -38,7 +38,6 @@ public abstract class QuestionObjectProvider {
     private int categoryCounter = 0;
 
 
-    //todo: override equals method of category
     public abstract Map<Cat, List<RealQuestion>> objectListFromSheet(Sheet sheet);
 
     /**
@@ -116,6 +115,8 @@ public abstract class QuestionObjectProvider {
         return answerMapWithId;
     }
 
+    protected abstract void initFieldNumbers();
+
 
     protected Sheet getSheet() {
         return this.sheet;
@@ -129,7 +130,7 @@ public abstract class QuestionObjectProvider {
         return numberOfFields;
     }
 
-    public void setNumberOfFields(int numberOfFields) {
+    public void setNumberOfQuestionFields(int numberOfFields) {
         this.numberOfFields = numberOfFields;
     }
 

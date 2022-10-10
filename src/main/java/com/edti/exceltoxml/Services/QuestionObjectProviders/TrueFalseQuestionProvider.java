@@ -5,9 +5,9 @@ import com.edti.exceltoxml.Models.Q.Factories.QuestionFactory;
 import com.edti.exceltoxml.Models.Q.QuestionTypes.Cat;
 import com.edti.exceltoxml.Models.Q.QuestionTypes.Multichoice;
 import com.edti.exceltoxml.Models.Q.QuestionTypes.RealQuestion;
+import com.edti.exceltoxml.Models.Q.QuestionTypes.Truefalse;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.springframework.stereotype.Service;
-
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -15,8 +15,7 @@ import java.util.List;
 import java.util.Map;
 
 @Service
-public class MultichoiceQuestionProvider extends QuestionObjectProvider {
-
+public class TrueFalseQuestionProvider extends QuestionObjectProvider {
     @Override
     public Map<Cat, List<RealQuestion>> objectListFromSheet(Sheet sheet) {
         HashMap<Cat, List<RealQuestion>> resultMap = new HashMap<>();
@@ -31,7 +30,7 @@ public class MultichoiceQuestionProvider extends QuestionObjectProvider {
         questionListWithCategoryName.forEach(((cat, questionMaps) -> {
             List<RealQuestion> questionList = new ArrayList<>();
             questionMaps.forEach((question) -> {
-                Multichoice currentQuestion = getQuestion(question);
+                Truefalse currentQuestion = getQuestion(question);
                 String currentIdNumber = currentQuestion.getIdnumber();
                 currentQuestion.setAnswer(createAnswerList().get(currentIdNumber));
 
@@ -42,14 +41,16 @@ public class MultichoiceQuestionProvider extends QuestionObjectProvider {
         return resultMap;
     }
 
-    private Multichoice getQuestion(HashMap<String, String> dataMap) {
-        return (Multichoice) QuestionFactory.getQuestion(QType.multichoice, dataMap);
+    private Truefalse getQuestion(HashMap<String, String> dataMap) {
+        return (Truefalse) QuestionFactory.getQuestion(QType.multichoice, dataMap);
     }
 
     @Override
     protected void initFieldNumbers() {
-        this.setNumberOfQuestionFields(11);
+        this.setNumberOfQuestionFields(6);
         this.setAnswerRows(3);
-        this.setAnswerColumns(6);
+        this.setAnswerColumns(3);
     }
+
+
 }
