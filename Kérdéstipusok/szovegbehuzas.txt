@@ -1,88 +1,40 @@
--<question type="ddwtos">
-
-
--<name>
-
-<text>Szövegbe húzás neve</text>
-
-</name>
-
-
--<questiontext format="html">
-
-
--<text>
-
--<![CDATA[<p dir="ltr" style="text-align: left;"></p><h2>Szövegbe húzás szövege? [[1]] kék válasz helye. [[2]] zöld válasz helye</h2><br><p></p>]]>
-</text>
-
-</questiontext>
-
-
--<generalfeedback format="html">
-
-<text/>
-
-</generalfeedback>
-
-<defaultgrade>100.0000000</defaultgrade>
-
-<penalty>0.3333333</penalty>
-
-<hidden>0</hidden>
-
-<idnumber/>
-
-<shuffleanswers>1</shuffleanswers>
-
-
--<correctfeedback format="html">
-
-<text>Válasza helyes.</text>
-
-</correctfeedback>
-
-
--<partiallycorrectfeedback format="html">
-
-<text>Válasza részben helyes.</text>
-
-</partiallycorrectfeedback>
-
-
--<incorrectfeedback format="html">
-
-<text>Válasza helytelen.</text>
-
-</incorrectfeedback>
-
-<shownumcorrect/>
-
-
--<dragbox>
-
-<text>kék</text>
-
-<group>1</group>
-
-</dragbox>
-
-
--<dragbox>
-
-<text>zöld</text>
-
-<group>1</group>
-
-</dragbox>
-
-
--<dragbox>
-
-<text>fekete</text>
-
-<group>1</group>
-
-</dragbox>
-
+<question type="ddwtos">
+	<name>
+		<text>Szövegbe húzás neve</text>
+	</name>
+	<questiontext format="html">
+		<text>
+			Szövegbe húzás szövege? [[1]] kék válasz helye. [[2]] zöld válasz helye
+		</text>
+	</questiontext>
+	<generalfeedback format="html">
+		<text/>
+	</generalfeedback>
+	<defaultgrade>100.0000000</defaultgrade>
+	<penalty>0.3333333</penalty>
+	<hidden>0</hidden>
+	<idnumber/>
+	<shuffleanswers>1</shuffleanswers>
+	<correctfeedback format="html">
+		<text>Válasza helyes.</text>
+	</correctfeedback>
+	<partiallycorrectfeedback format="html">
+		<text>Válasza részben helyes.</text>
+	</partiallycorrectfeedback>
+	<incorrectfeedback format="html">
+		<text>Válasza helytelen.</text>
+	</incorrectfeedback>
+	<shownumcorrect/>
+	<dragbox>
+		<text>kék</text>
+		<group>1</group>
+	</dragbox>
+	<dragbox>
+		<text>zöld</text>
+		<group>1</group>
+	</dragbox>
+	<dragbox>
+		<text>fekete</text>
+		<group>1</group>
+	</dragbox>
 </question>

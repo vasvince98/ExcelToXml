@@ -1,9 +1,6 @@
 package com.edti.exceltoxml.Models.QuestionTypes;
 
-import com.edti.exceltoxml.Models.AuxClasses.Answer;
-import com.edti.exceltoxml.Models.AuxClasses.Generalfeedback;
-import com.edti.exceltoxml.Models.AuxClasses.Name;
-import com.edti.exceltoxml.Models.AuxClasses.Questiontext;
+import com.edti.exceltoxml.Models.AuxClasses.*;
 
 import java.util.ArrayList;
 
@@ -15,7 +12,7 @@ public abstract class RealQuestion extends Question {
     private String penalty;
     private String hidden;
 
-    private ArrayList<Answer> answer = new ArrayList<>();
+    private ArrayList<AbstractAnswer> answer = new ArrayList<>();
 
     public Name getName() {
         return name;
@@ -65,11 +62,11 @@ public abstract class RealQuestion extends Question {
         this.hidden = hidden;
     }
 
-    public ArrayList<Answer> getAnswer() {
+    public ArrayList<AbstractAnswer> getAnswer() {
         return answer;
     }
 
-    public void setAnswer(ArrayList<Answer> answer) {
+    public void setAnswer(ArrayList<AbstractAnswer> answer) {
         this.answer = answer;
     }
 

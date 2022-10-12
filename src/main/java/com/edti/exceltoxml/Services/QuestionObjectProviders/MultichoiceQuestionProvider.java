@@ -1,5 +1,6 @@
 package com.edti.exceltoxml.Services.QuestionObjectProviders;
 
+import com.edti.exceltoxml.Models.AuxClasses.AbstractAnswer;
 import com.edti.exceltoxml.Models.AuxClasses.Answer;
 import com.edti.exceltoxml.Models.AuxClasses.Feedback;
 import com.edti.exceltoxml.Models.Enums.QType;
@@ -29,8 +30,8 @@ public class MultichoiceQuestionProvider extends QuestionObjectProvider {
     }
 
     @Override
-    protected ArrayList<Answer> getAnswerObjectList(CellRangeAddress addressRange) {
-        ArrayList<Answer> answerList = new ArrayList<>();
+    protected ArrayList<AbstractAnswer> getAnswerObjectList(CellRangeAddress addressRange) {
+        ArrayList<AbstractAnswer> answerList = new ArrayList<>();
         addressRange.forEach((r) -> {
             Answer currentAnswer = new Answer();
             currentAnswer.setText(sheet.getRow(r.getRow()).getCell(r.getColumn()).toString());

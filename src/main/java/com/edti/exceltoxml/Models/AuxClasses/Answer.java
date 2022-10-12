@@ -4,7 +4,7 @@ import javax.xml.bind.annotation.*;
 
 @XmlRootElement()
 @XmlAccessorType(XmlAccessType.FIELD)
-public class Answer extends AbsFeedback{
+public class Answer extends AbstractAnswer {
     Feedback feedback;
     @XmlAttribute(name="fraction")
     private String fraction;

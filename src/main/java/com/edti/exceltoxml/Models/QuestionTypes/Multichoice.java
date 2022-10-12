@@ -1,12 +1,19 @@
 package com.edti.exceltoxml.Models.QuestionTypes;
 
 import com.edti.exceltoxml.Models.AuxClasses.*;
+import com.edti.exceltoxml.Models.PropertyClasses.FieldProperties;
+import com.edti.exceltoxml.Services.ImageService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.stereotype.Component;
 
 import javax.xml.bind.*;
 import java.io.FileNotFoundException;
 import java.util.HashMap;
 
 //@XmlRootElement
+@Component
 public class Multichoice extends RealQuestion {
 
     //region Fields
@@ -21,12 +28,16 @@ public class Multichoice extends RealQuestion {
 
     //endregion
 
+    FieldProperties fieldProperties;
+
     //region Constructors
 
 
-    public Multichoice() {}
+    public Multichoice() {
+    }
 
     public Multichoice(HashMap<String, String> data) {
+        fieldProperties = new FieldProperties();
         initInstance(data);
     }
     //endregion
@@ -130,27 +141,27 @@ public class Multichoice extends RealQuestion {
         this.setType("multichoice");
         Name n = new Name();
         //question name
-        n.setText(data.get("Kérdés neve"));
+        n.setText(data.get(fieldProperties.getQuestionName()));
         this.setName(n);
 
         Questiontext qt = new Questiontext();
         qt.setFormat("html");
         //questiontext
-        qt.setText(data.get("Kérdés szövege"));
+        qt.setText(data.get(fieldProperties.getQuestionText()));
         this.setQuestiontext(qt);
 
         Generalfeedback gf = new Generalfeedback();
         gf.setFormat("html");
         //general feedback
-        gf.setText(data.get("Általános visszajelzés"));
+        gf.setText(data.get(fieldProperties.getGeneralFeedback()));
         this.setGeneralfeedback(gf);
 
         //Pont
         this.setDefaultgrade(data.get("Pont"));
         //Penalty
-        this.setPenalty(data.get("Rossz válasz esetén mínusz pont"));
+        this.setPenalty(data.get(fieldProperties.getPenalty()));
         //Hidden
-        this.setHidden(data.get("Elrejtve?"));
+        this.setHidden(data.get(fieldProperties.getHidden()));
         //Single
         this.setSingle(data.get("Egy válasz a jó?"));
         //Shuffleanswers

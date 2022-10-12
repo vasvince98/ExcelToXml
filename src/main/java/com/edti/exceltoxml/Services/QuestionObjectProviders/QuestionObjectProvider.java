@@ -1,5 +1,6 @@
 package com.edti.exceltoxml.Services.QuestionObjectProviders;
 
+import com.edti.exceltoxml.Models.AuxClasses.AbstractAnswer;
 import com.edti.exceltoxml.Models.AuxClasses.Answer;
 import com.edti.exceltoxml.Models.AuxClasses.Category;
 import com.edti.exceltoxml.Models.AuxClasses.Info;
@@ -103,13 +104,13 @@ public abstract class QuestionObjectProvider {
         return resultMap;
     }
 
-    protected HashMap<String, ArrayList<Answer>> createAnswerMapWithID() {
+    protected HashMap<String, ArrayList<AbstractAnswer>> createAnswerMapWithID() {
         this.firstRow = 0;
         this.categoryCounter = 0;
         this.questionCounter = 0;
         int i = 0;
 
-        HashMap<String, ArrayList<Answer>> answerMapWithId = new HashMap<>();
+        HashMap<String, ArrayList<AbstractAnswer>> answerMapWithId = new HashMap<>();
 
         while (i < sheet.getPhysicalNumberOfRows()) {
 
@@ -139,7 +140,7 @@ public abstract class QuestionObjectProvider {
     }
 
     protected abstract void initFieldNumbers();
-    protected abstract ArrayList<Answer> getAnswerObjectList(CellRangeAddress addressRange);
+    protected abstract ArrayList<AbstractAnswer> getAnswerObjectList(CellRangeAddress addressRange);
     protected abstract RealQuestion getQuestion(HashMap<String, String> dataMap, QType type);
 
 

@@ -1,6 +1,7 @@
 package com.edti.exceltoxml.Services;
 
 import com.edti.exceltoxml.Exceptions.MissingHeaderException;
+import com.edti.exceltoxml.Models.AuxClasses.AbstractAnswer;
 import com.edti.exceltoxml.Models.AuxClasses.Answer;
 import com.edti.exceltoxml.Models.AuxClasses.Questiontext;
 import com.edti.exceltoxml.Models.Enums.QType;
@@ -63,6 +64,9 @@ public class QuestionService implements IQuestionService {
                     truefalseMap = trueFalseQuestionProvider.objectListFromSheet(sheet, QType.truefalse);
                     questionList.add(truefalseMap);
                 }
+                case "párosító" -> {
+                    System.out.println("Párosító");
+                }
                 default -> System.out.println("Nincs még lekezelve");
             }
 
@@ -114,7 +118,7 @@ public class QuestionService implements IQuestionService {
 
         question.setQuestiontext(new Questiontext(questionText));
 
-        for (Answer answer : question.getAnswer()) {
+        for (AbstractAnswer answer : question.getAnswer()) {
             String answerText = getStringFromHTML(answer.getText());
             answer.setText(String.format("<img src=\"data:image/png;base64,%s\"/>",imageService.transformStringToBase64(answerText)));
         }

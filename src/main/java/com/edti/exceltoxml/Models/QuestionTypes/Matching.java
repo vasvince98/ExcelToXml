@@ -1,6 +1,9 @@
 package com.edti.exceltoxml.Models.QuestionTypes;
 
 import com.edti.exceltoxml.Models.AuxClasses.*;
+import com.edti.exceltoxml.Models.PropertyClasses.FieldProperties;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.PropertySource;
 
 import javax.xml.bind.JAXBException;
 import java.io.FileNotFoundException;
@@ -17,9 +20,16 @@ public class Matching extends RealQuestion {
 
     //endregion
 
+    private FieldProperties fieldProperties;
+
     //region Constructors
 
     public Matching() {}
+
+    @Autowired
+    public Matching(FieldProperties fieldProperties) {
+        this.fieldProperties = fieldProperties;
+    }
 
     public Matching(HashMap<String, String> data) {
         initInstance(data);
@@ -82,27 +92,50 @@ public class Matching extends RealQuestion {
 
         Name n = new Name();
         //question name
-        n.setText(data.get("Kérdés neve"));
+        n.setText(data.get(fieldProperties.getQuestionName()));
         this.setName(n);
 
         Questiontext qt = new Questiontext();
         qt.setFormat("html");
         //questiontext
-        qt.setText(data.get("Kérdés szövege"));
+        qt.setText(data.get(fieldProperties.getQuestionText()));
         this.setQuestiontext(qt);
 
         Generalfeedback gf = new Generalfeedback();
         gf.setFormat("html");
         //general feedback
-        gf.setText(data.get("Általános visszajelzés"));
+        gf.setText(data.get(fieldProperties.getGeneralFeedback()));
         this.setGeneralfeedback(gf);
 
         //Pont
-        this.setDefaultgrade(data.get("Pont"));
+        this.setDefaultgrade(data.get(fieldProperties.getDefaultGrade()));
         //Penalty
-        this.setPenalty(data.get("Rossz válasz esetén mínusz pont"));
+        this.setPenalty(data.get(fieldProperties.getPenalty()));
         //Hidden
-        this.setHidden(data.get("Elrejtve?"));
+        this.setHidden(data.get(fieldProperties.getHidden()));
+        //IdNumber
+        this.setIdnumber(data.get(fieldProperties.getIdNumber()));
+        //Shuffle answers
+        this.setShuffleanswers(data.get(fieldProperties.getShuffleAnswers()));
+
+        Correctfeedback cf = new Correctfeedback();
+        cf.setFormat("html");
+        //Correct feedback
+        cf.setText(data.get(fieldProperties.getCorrectFeedback()));
+        this.setCorrectfeedback(cf);
+
+        Partiallycorrectfeedback pf = new Partiallycorrectfeedback();
+        pf.setFormat("html");
+        //Partially correct feedback
+        pf.setText(data.get(fieldProperties.getPartiallyCorrectFeedback()));
+        this.setPartiallycorrectfeedback(pf);
+
+        Incorrectfeedback inf = new Incorrectfeedback();
+        inf.setFormat("html");
+        //Incorrect feedback
+        inf.setText(data.get(fieldProperties.getIncorrectFeedback()));
+        this.setIncorrectfeedback(inf);
+        this.setShownumcorrect(fieldProperties.getShowNumCorrect());
 
 
     }
