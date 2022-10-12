@@ -1,8 +1,5 @@
-package com.edti.exceltoxml.Models.Q.QuestionTypes;
+package com.edti.exceltoxml.Models.QuestionTypes;
 
-import com.edti.exceltoxml.Models.Q.AuxClasses.Generalfeedback;
-import com.edti.exceltoxml.Models.Q.AuxClasses.Name;
-import com.edti.exceltoxml.Models.Q.AuxClasses.Questiontext;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.JAXBException;
@@ -13,9 +10,7 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.namespace.QName;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.StringWriter;
-import java.util.HashMap;
 
 @XmlRootElement()
 @XmlAccessorType(XmlAccessType.FIELD)

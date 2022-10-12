@@ -1,9 +1,9 @@
-package com.edti.exceltoxml.Models.Q.QuestionTypes;
+package com.edti.exceltoxml.Models.QuestionTypes;
 
-import com.edti.exceltoxml.Models.Q.AuxClasses.Answer;
-import com.edti.exceltoxml.Models.Q.AuxClasses.Generalfeedback;
-import com.edti.exceltoxml.Models.Q.AuxClasses.Name;
-import com.edti.exceltoxml.Models.Q.AuxClasses.Questiontext;
+import com.edti.exceltoxml.Models.AuxClasses.Answer;
+import com.edti.exceltoxml.Models.AuxClasses.Generalfeedback;
+import com.edti.exceltoxml.Models.AuxClasses.Name;
+import com.edti.exceltoxml.Models.AuxClasses.Questiontext;
 
 import java.util.ArrayList;
 

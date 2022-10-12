@@ -1,13 +1,11 @@
-package com.edti.exceltoxml.Models.Q.QuestionTypes;
+package com.edti.exceltoxml.Models.QuestionTypes;
 
-import com.edti.exceltoxml.Models.Q.AuxClasses.Answer;
-import com.edti.exceltoxml.Models.Q.AuxClasses.Generalfeedback;
-import com.edti.exceltoxml.Models.Q.AuxClasses.Name;
-import com.edti.exceltoxml.Models.Q.AuxClasses.Questiontext;
+import com.edti.exceltoxml.Models.AuxClasses.Generalfeedback;
+import com.edti.exceltoxml.Models.AuxClasses.Name;
+import com.edti.exceltoxml.Models.AuxClasses.Questiontext;
 
 import javax.xml.bind.JAXBException;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Truefalse extends RealQuestion {

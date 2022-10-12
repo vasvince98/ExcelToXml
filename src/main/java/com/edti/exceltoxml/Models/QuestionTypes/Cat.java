@@ -1,10 +1,9 @@
-package com.edti.exceltoxml.Models.Q.QuestionTypes;
+package com.edti.exceltoxml.Models.QuestionTypes;
 
-import com.edti.exceltoxml.Models.Q.AuxClasses.Info;
-import com.edti.exceltoxml.Models.Q.AuxClasses.Category;
+import com.edti.exceltoxml.Models.AuxClasses.Info;
+import com.edti.exceltoxml.Models.AuxClasses.Category;
 
 import javax.xml.bind.JAXBException;
-import javax.xml.bind.annotation.XmlTransient;
 import java.io.FileNotFoundException;
 
 public class Cat extends Question {

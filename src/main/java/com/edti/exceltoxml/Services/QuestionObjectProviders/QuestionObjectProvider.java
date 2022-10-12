@@ -1,11 +1,11 @@
 package com.edti.exceltoxml.Services.QuestionObjectProviders;
 
-import com.edti.exceltoxml.Models.Q.AuxClasses.Answer;
-import com.edti.exceltoxml.Models.Q.AuxClasses.Category;
-import com.edti.exceltoxml.Models.Q.AuxClasses.Info;
-import com.edti.exceltoxml.Models.Q.Enums.QType;
-import com.edti.exceltoxml.Models.Q.QuestionTypes.Cat;
-import com.edti.exceltoxml.Models.Q.QuestionTypes.RealQuestion;
+import com.edti.exceltoxml.Models.AuxClasses.Answer;
+import com.edti.exceltoxml.Models.AuxClasses.Category;
+import com.edti.exceltoxml.Models.AuxClasses.Info;
+import com.edti.exceltoxml.Models.Enums.QType;
+import com.edti.exceltoxml.Models.QuestionTypes.Cat;
+import com.edti.exceltoxml.Models.QuestionTypes.RealQuestion;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.util.CellAddress;
 import org.apache.poi.ss.util.CellRangeAddress;
@@ -38,18 +38,42 @@ public abstract class QuestionObjectProvider {
     private int categoryCounter = 0;
 
 
-    public abstract Map<Cat, List<RealQuestion>> objectListFromSheet(Sheet sheet);
+    public Map<Cat, List<RealQuestion>> objectListFromSheet(Sheet sheet, QType type) {
+        HashMap<Cat, List<RealQuestion>> resultMap = new HashMap<>();
+
+        this.sheet = sheet;
+        initFieldNumbers();
+        createQuestionListWithCategoryName();
+
+        initFieldNumbers();
+        createAnswerMapWithID();
+
+        questionListWithCategoryName.forEach(((cat, questionMaps) -> {
+            List<RealQuestion> questionList = new ArrayList<>();
+            questionMaps.forEach((question) -> {
+                RealQuestion currentQuestion = getQuestion(question, type);
+
+                String currentIdNumber = currentQuestion.getIdnumber();
+
+                currentQuestion.setAnswer(createAnswerMapWithID().get(currentIdNumber));
+
+
+                questionList.add(currentQuestion);
+            });
+            resultMap.put(cat, questionList);
+        }));
+        return resultMap;
+    }
 
     /**
      *
      * @return a map with a key: Category name, and a value: A list with a question hash map, where the
      *          key value pairs represents the question fields
      */
-    protected HashMap<Cat, List<HashMap<String, String>>> createQuestionListWithCategoryName(QType type) {
+    protected HashMap<Cat, List<HashMap<String, String>>> createQuestionListWithCategoryName() {
         HashMap<Cat, List<HashMap<String, String>>> resultMap = new HashMap<>();
 
         int i = 0;
-
 
         lastRow = numberOfFields + firstRow;
 
@@ -116,6 +140,7 @@ public abstract class QuestionObjectProvider {
 
     protected abstract void initFieldNumbers();
     protected abstract ArrayList<Answer> getAnswerObjectList(CellRangeAddress addressRange);
+    protected abstract RealQuestion getQuestion(HashMap<String, String> dataMap, QType type);
 
 
     protected Sheet getSheet() {

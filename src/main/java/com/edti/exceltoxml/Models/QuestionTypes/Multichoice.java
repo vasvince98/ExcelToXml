@@ -1,12 +1,9 @@
-package com.edti.exceltoxml.Models.Q.QuestionTypes;
+package com.edti.exceltoxml.Models.QuestionTypes;
 
-import com.edti.exceltoxml.Models.Q.AuxClasses.*;
-import org.apache.poi.ss.formula.functions.Na;
+import com.edti.exceltoxml.Models.AuxClasses.*;
 
 import javax.xml.bind.*;
-import javax.xml.bind.annotation.XmlRootElement;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
 import java.util.HashMap;
 
 //@XmlRootElement

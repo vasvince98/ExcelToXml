@@ -1,11 +1,6 @@
-package com.edti.exceltoxml.Models.Q.AuxClasses;
+package com.edti.exceltoxml.Models.AuxClasses;
 
-import com.edti.exceltoxml.Models.Q.QuestionTypes.Cat;
-
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlRootElement;
 
 
 public class Info extends Auxiliary{

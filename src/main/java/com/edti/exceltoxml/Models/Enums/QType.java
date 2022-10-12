@@ -1,4 +1,4 @@
-package com.edti.exceltoxml.Models.Q.Enums;
+package com.edti.exceltoxml.Models.Enums;
 
 public enum QType {
     multichoice,

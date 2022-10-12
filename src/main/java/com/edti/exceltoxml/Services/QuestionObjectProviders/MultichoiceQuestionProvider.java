@@ -1,52 +1,24 @@
 package com.edti.exceltoxml.Services.QuestionObjectProviders;
 
-import com.edti.exceltoxml.Models.Q.AuxClasses.Answer;
-import com.edti.exceltoxml.Models.Q.AuxClasses.Feedback;
-import com.edti.exceltoxml.Models.Q.Enums.QType;
-import com.edti.exceltoxml.Models.Q.Factories.QuestionFactory;
-import com.edti.exceltoxml.Models.Q.QuestionTypes.Cat;
-import com.edti.exceltoxml.Models.Q.QuestionTypes.Multichoice;
-import com.edti.exceltoxml.Models.Q.QuestionTypes.RealQuestion;
-import org.apache.poi.ss.usermodel.Sheet;
+import com.edti.exceltoxml.Models.AuxClasses.Answer;
+import com.edti.exceltoxml.Models.AuxClasses.Feedback;
+import com.edti.exceltoxml.Models.Enums.QType;
+import com.edti.exceltoxml.Models.Factories.QuestionFactory;
+import com.edti.exceltoxml.Models.QuestionTypes.Multichoice;
+import com.edti.exceltoxml.Models.QuestionTypes.RealQuestion;
 import org.apache.poi.ss.util.CellRangeAddress;
 import org.springframework.stereotype.Service;
 
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 @Service
 public class MultichoiceQuestionProvider extends QuestionObjectProvider {
 
     @Override
-    public Map<Cat, List<RealQuestion>> objectListFromSheet(Sheet sheet) {
-        HashMap<Cat, List<RealQuestion>> resultMap = new HashMap<>();
-
-        this.sheet = sheet;
-        initFieldNumbers();
-        createQuestionListWithCategoryName();
-
-        initFieldNumbers();
-        createAnswerMapWithID();
-
-        questionListWithCategoryName.forEach(((cat, questionMaps) -> {
-            List<RealQuestion> questionList = new ArrayList<>();
-            questionMaps.forEach((question) -> {
-                Multichoice currentQuestion = getQuestion(question);
-                String currentIdNumber = currentQuestion.getIdnumber();
-                currentQuestion.setAnswer(createAnswerMapWithID().get(currentIdNumber));
-
-                questionList.add(currentQuestion);
-            });
-            resultMap.put(cat, questionList);
-        }));
-        return resultMap;
-    }
-
-    private Multichoice getQuestion(HashMap<String, String> dataMap) {
-        return (Multichoice) QuestionFactory.getQuestion(QType.multichoice, dataMap);
+    protected RealQuestion getQuestion(HashMap<String, String> dataMap, QType type) {
+        return (Multichoice) QuestionFactory.getQuestion(type, dataMap);
     }
 
     @Override

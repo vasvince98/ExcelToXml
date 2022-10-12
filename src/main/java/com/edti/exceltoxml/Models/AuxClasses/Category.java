@@ -1,4 +1,4 @@
-package com.edti.exceltoxml.Models.Q.AuxClasses;
+package com.edti.exceltoxml.Models.AuxClasses;
 
 public class Category extends Auxiliary {
 
