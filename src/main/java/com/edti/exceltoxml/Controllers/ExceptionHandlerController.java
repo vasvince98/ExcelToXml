@@ -38,4 +38,11 @@ public class ExceptionHandlerController implements ErrorController {
         m.addAttribute("error", error);
         return "error";
     }
+
+    @ExceptionHandler({QuestionNotExistException.class})
+    public String QuestionNotExistExceptionHandler(Model m) {
+        OwnError error = new OwnError("Hibás kérdéstípus! Nézd meg ");
+        m.addAttribute("error", error);
+        return "error";
+    }
 }

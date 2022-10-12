@@ -1,11 +1,10 @@
 package com.edti.exceltoxml.Services;
 
 import com.edti.exceltoxml.Models.FormattedText;
-import com.edti.exceltoxml.Models.GlobalProperties;
+import com.edti.exceltoxml.Models.PropertyClasses.GlobalProperties;
 import com.edti.exceltoxml.Models.RenderAPI;
 import com.edti.exceltoxml.Services.Interfaces.IImageService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Service;
 

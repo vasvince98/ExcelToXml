@@ -8,6 +8,7 @@ import java.util.HashMap;
 
 //@XmlRootElement
 public class Multichoice extends RealQuestion {
+
     //region Fields
     private String single;
     private String shuffleanswers;
@@ -17,6 +18,8 @@ public class Multichoice extends RealQuestion {
     Partiallycorrectfeedback partiallycorrectfeedback;
     Incorrectfeedback incorrectfeedback;
     private String shownumcorrect;
+
+    //endregion
 
     //region Constructors
 
@@ -119,7 +122,7 @@ public class Multichoice extends RealQuestion {
 
     //endregion
 
-    public String getXmlForm() throws JAXBException, FileNotFoundException {
+    public String getXmlForm() throws JAXBException {
         return this.generateXmlForm(Multichoice.class, this.getClass().getSuperclass().getSuperclass().getSimpleName().toLowerCase(), this);
     }
 

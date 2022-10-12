@@ -23,8 +23,9 @@
       		<text>Válasza helytelen.</text>
     	</incorrectfeedback>
     	<shownumcorrect/>
+
     	<subquestion format="html">
-      		<text><![CDATA[<p dir="ltr" style="text-align: left;">Kék Válasz 1</				p>]]></text>
+      		<text>Kék Válasz 1</text>
       		<answer>
         		<text>Kék Válasz 2</text>
       		</answer>

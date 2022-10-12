@@ -1,4 +1,4 @@
-package com.edti.exceltoxml.Models;
+package com.edti.exceltoxml.Models.PropertyClasses;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
