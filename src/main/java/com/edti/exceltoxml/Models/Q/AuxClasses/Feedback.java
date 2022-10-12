@@ -4,4 +4,6 @@ public class Feedback extends AbsFeedback {
     public Feedback(String text) {
         setText(text);
     }
+
+
 }

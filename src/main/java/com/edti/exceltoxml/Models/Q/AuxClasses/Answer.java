@@ -40,4 +40,17 @@ public class Answer extends AbsFeedback{
     }
 
     //endregion
+
+
+    @Override
+    public String toString() {
+        return "Answer{" +
+                "feedback=" + feedback +
+                ", fraction='" + fraction + '\'' +
+                ", idNumber='" + idNumber + '\'' +
+                ", questionText='" + getText() + '\'' +
+                '}';
+    }
+
+
 }

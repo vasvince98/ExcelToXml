@@ -18,4 +18,14 @@ public abstract class AbsFeedback extends Auxiliary{
     public void setFormat(String format) {
         this.format = format;
     }
+
+    @Override
+    public String toString() {
+        return "AbsFeedback{" +
+                "format='" + format + '\'' +
+                "text='" + getText() + '\'' +
+                '}';
+    }
+
+
 }

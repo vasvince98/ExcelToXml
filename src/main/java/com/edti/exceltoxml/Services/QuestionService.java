@@ -61,23 +61,31 @@ public class QuestionService implements IQuestionService {
 
 
     @Override
-    public String createXmlFromExcel(Workbook workbook) throws IOException {
+    public String createXmlFromExcel(Workbook workbook) {
+        List<Map<Cat, List<RealQuestion>>> questionList = new ArrayList<>();
         finalXml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<quiz>\n";
         workbook.setActiveSheet(0);
-        Map<Cat, List<RealQuestion>> multichoiceMap = new HashMap<>();
-        Map<Cat, List<RealQuestion>> truefalseMap = new HashMap<>();
+        Map<Cat, List<RealQuestion>> multichoiceMap;
+        Map<Cat, List<RealQuestion>> truefalseMap;
 
 
         for (Sheet sheet : workbook) {
             switch (sheet.getSheetName()) {
-                case "feleletválasztó" ->  multichoiceMap = multichoiceQuestionProvider.objectListFromSheet(sheet);
-                case "igazhamis" -> truefalseMap = trueFalseQuestionProvider.objectListFromSheet(sheet);
+                case "feleletválasztó" ->  {
+                    multichoiceMap = multichoiceQuestionProvider.objectListFromSheet(sheet);
+                    questionList.add(multichoiceMap);
+                }
+                case "igazhamis" -> {
+                    truefalseMap = trueFalseQuestionProvider.objectListFromSheet(sheet);
+                    questionList.add(truefalseMap);
+                }
                 default -> System.out.println("Nincs még lekezelve");
             }
 
         }
 
-        return createFinalXml(multichoiceMap);
+
+        return createFinalXml(questionList);
     }
 
     @Override
@@ -99,22 +107,24 @@ public class QuestionService implements IQuestionService {
     }
 
 
-    private String createFinalXml(Map<Cat, List<RealQuestion>> map) {
+    private String createFinalXml(List<Map<Cat, List<RealQuestion>>> questionList) {
 
-        map.forEach(((cat, realQuestions) -> {
-            try {
-                finalXml = finalXml.concat(cat.getXmlForm());
-                realQuestions.forEach((realQuestion -> {
-                    try {
-                        finalXml = finalXml.concat(realQuestion.getXmlForm());
-                    } catch (JAXBException | FileNotFoundException e) {
-                        throw new RuntimeException(e);
-                    }
-                }));
-            } catch (JAXBException | FileNotFoundException e) {
-                throw new RuntimeException(e);
-            }
-        }));
+        questionList.forEach((map) -> {
+            map.forEach(((cat, realQuestions) -> {
+                try {
+                    finalXml = finalXml.concat(cat.getXmlForm());
+                    realQuestions.forEach((realQuestion -> {
+                        try {
+                            finalXml = finalXml.concat(realQuestion.getXmlForm());
+                        } catch (JAXBException | FileNotFoundException e) {
+                            throw new RuntimeException(e);
+                        }
+                    }));
+                } catch (JAXBException | FileNotFoundException e) {
+                    throw new RuntimeException(e);
+                }
+            }));
+        });
         finalXml = finalXml.concat("\n</quiz>");
         return finalXml;
     }

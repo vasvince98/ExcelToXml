@@ -151,7 +151,6 @@ public class Multichoice extends RealQuestion {
         this.setPenalty(data.get("Rossz válasz esetén mínusz pont"));
         //Hidden
         this.setHidden(data.get("Elrejtve?"));
-        this.setIdnumber("");
         //Single
         this.setSingle(data.get("Egy válasz a jó?"));
         //Shuffleanswers

@@ -2,8 +2,8 @@ package com.edti.exceltoxml.Services.QuestionObjectProviders;
 
 import com.edti.exceltoxml.Models.Q.AuxClasses.Answer;
 import com.edti.exceltoxml.Models.Q.AuxClasses.Category;
-import com.edti.exceltoxml.Models.Q.AuxClasses.Feedback;
 import com.edti.exceltoxml.Models.Q.AuxClasses.Info;
+import com.edti.exceltoxml.Models.Q.Enums.QType;
 import com.edti.exceltoxml.Models.Q.QuestionTypes.Cat;
 import com.edti.exceltoxml.Models.Q.QuestionTypes.RealQuestion;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -45,8 +45,7 @@ public abstract class QuestionObjectProvider {
      * @return a map with a key: Category name, and a value: A list with a question hash map, where the
      *          key value pairs represents the question fields
      */
-    protected HashMap<Cat, List<HashMap<String, String>>> createQuestionListWithCategoryName() {
-
+    protected HashMap<Cat, List<HashMap<String, String>>> createQuestionListWithCategoryName(QType type) {
         HashMap<Cat, List<HashMap<String, String>>> resultMap = new HashMap<>();
 
         int i = 0;
@@ -80,7 +79,7 @@ public abstract class QuestionObjectProvider {
         return resultMap;
     }
 
-    protected HashMap<String, ArrayList<Answer>> createAnswerList() {
+    protected HashMap<String, ArrayList<Answer>> createAnswerMapWithID() {
         this.firstRow = 0;
         this.categoryCounter = 0;
         this.questionCounter = 0;
@@ -111,11 +110,12 @@ public abstract class QuestionObjectProvider {
             }
         }
 
-        answerMapWithId.forEach((id, ans) -> System.out.println(id));
+
         return answerMapWithId;
     }
 
     protected abstract void initFieldNumbers();
+    protected abstract ArrayList<Answer> getAnswerObjectList(CellRangeAddress addressRange);
 
 
     protected Sheet getSheet() {
@@ -140,21 +140,6 @@ public abstract class QuestionObjectProvider {
 
     private String getMapValueFromAddress(CellAddress address) {
         return sheet.getRow(address.getRow()).getCell(address.getColumn() + 1).toString();
-    }
-
-    private ArrayList<Answer> getAnswerObjectList(CellRangeAddress addressRange) {
-        ArrayList<Answer> answerList = new ArrayList<>();
-        addressRange.forEach((r) -> {
-            Answer currentAnswer = new Answer();
-            currentAnswer.setText(sheet.getRow(r.getRow()).getCell(r.getColumn()).toString());
-            currentAnswer.setFraction(sheet.getRow(r.getRow() + 1).getCell(r.getColumn()).toString());
-            currentAnswer.setFeedback(new Feedback(sheet.getRow(r.getRow() + 2).getCell(r.getColumn()).toString()));
-
-
-            answerList.add(currentAnswer);
-
-        });
-        return answerList;
     }
 
     private boolean isQuestion(CellAddress address) {

@@ -10,7 +10,7 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class Truefalse extends RealQuestion{
+public class Truefalse extends RealQuestion {
 
     //region Constructor
     public Truefalse(HashMap<String, String> data) {
@@ -25,23 +25,41 @@ public class Truefalse extends RealQuestion{
 
     private void initInstance(HashMap<String, String> data) {
         this.setType("truefalse");
+
+        //Name
         Name n = new Name();
-        n.setText(data.get("name"));
+        n.setText(data.get("Kérdés neve"));
         this.setName(n);
 
+        //Question text
         Questiontext qt = new Questiontext();
         qt.setFormat("html");
-        qt.setText(data.get("questiontext"));
+        qt.setText(data.get("Kérdés szövege"));
         this.setQuestiontext(qt);
 
+        //General feedback
         Generalfeedback gf = new Generalfeedback();
         gf.setFormat("html");
-        gf.setText(data.get("generalfeedback"));
+        gf.setText(data.get("Általános visszajelzés"));
         this.setGeneralfeedback(gf);
 
-        this.setDefaultgrade(data.get("defaultgrade"));
-        this.setPenalty(data.get("penalty"));
-        this.setHidden(data.get("hidden"));
-        this.setIdnumber("");
+        //Default grade
+        this.setDefaultgrade(data.get("Pont"));
+        //Penalty
+        this.setPenalty(data.get("Rossz válasz esetén mínusz pont"));
+        //Hidden
+        this.setHidden(data.get("Elrejtve?"));
+        //Idnumber
+        this.setIdnumber(data.get("id"));
+    }
+
+    @Override
+    public String toString() {
+        return "Truefalse{" +
+                "name=" + name +
+                ", questiontext=" + questiontext +
+                ", generalfeedback=" + generalfeedback +
+                ", idNumber=" + getIdnumber() +
+                '}';
     }
 }
