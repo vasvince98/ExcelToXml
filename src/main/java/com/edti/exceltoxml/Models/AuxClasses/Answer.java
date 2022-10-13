@@ -13,6 +13,14 @@ public class Answer extends AbstractAnswer {
     private String idNumber;
 
 
+    public Answer() {
+    }
+
+    public Answer(String text) {
+        setText(text);
+    }
+
+
     //region Getters and Setters
 
     public Feedback getFeedback() {

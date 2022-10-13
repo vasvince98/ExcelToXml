@@ -59,6 +59,7 @@ public class MainController {
         stateService.setState(isPicture);
 
         uploadAndDownloadService.handleExcelFile(file);
+        uploadAndDownloadService.convertFile();
 
         ModelAndView mav = new ModelAndView();
         mav.setViewName("redirect");

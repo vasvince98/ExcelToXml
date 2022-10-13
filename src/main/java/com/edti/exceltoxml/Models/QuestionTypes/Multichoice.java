@@ -166,9 +166,9 @@ public class Multichoice extends RealQuestion {
         //Hidden
         this.setHidden(data.get(fieldProperties.getHidden()));
         //Single
-        this.setSingle(data.get("Egy válasz a jó?"));
+        this.setSingle(data.get("Egy válasz a jó?").toLowerCase());
         //Shuffleanswers
-        this.setShuffleanswers(data.get("Keverje a válaszokat?"));
+        this.setShuffleanswers(data.get("Keverje a válaszokat?").toLowerCase());
         //Answernumbering
         //todo: get from excel, but I think this should be default like this:
         this.setAnswernumbering("abc");

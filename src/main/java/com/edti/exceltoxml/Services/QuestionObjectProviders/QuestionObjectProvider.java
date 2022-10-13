@@ -50,6 +50,8 @@ public abstract class QuestionObjectProvider {
         initFieldNumbers();
         createAnswerMapWithID();
 
+
+
         questionListWithCategoryName.forEach(((cat, questionMaps) -> {
             List<RealQuestion> questionList = new ArrayList<>();
             questionMaps.forEach((question) -> {
@@ -57,7 +59,7 @@ public abstract class QuestionObjectProvider {
 
                 String currentIdNumber = currentQuestion.getIdnumber();
 
-                currentQuestion.setAnswer(createAnswerMapWithID().get(currentIdNumber));
+                currentQuestion.setAnswer(createAnswerMapWithID().get(currentIdNumber), type);
 
 
                 questionList.add(currentQuestion);

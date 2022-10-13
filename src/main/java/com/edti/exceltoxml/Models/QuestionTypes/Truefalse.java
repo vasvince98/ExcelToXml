@@ -8,24 +8,27 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.xml.bind.JAXBException;
+import javax.xml.bind.annotation.XmlTransient;
 import java.io.FileNotFoundException;
 import java.util.HashMap;
 
 
 public class Truefalse extends RealQuestion {
 
-
+    @XmlTransient
+    private final FieldProperties fieldProperties;
 
     //region Constructor
 
 
     public Truefalse(HashMap<String, String> data, FieldProperties fieldProperties) {
+        this.fieldProperties = fieldProperties;
         initInstance(data);
     }
     //endregion
 
     @Override
-    public String getXmlForm() throws JAXBException, FileNotFoundException {
+    public String getXmlForm() throws JAXBException {
         return this.generateXmlForm(Truefalse.class, this.getClass().getSuperclass().getSuperclass().getSimpleName().toLowerCase(), this);
     }
 

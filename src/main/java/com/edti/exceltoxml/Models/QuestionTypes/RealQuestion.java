@@ -1,10 +1,7 @@
 package com.edti.exceltoxml.Models.QuestionTypes;
 
 import com.edti.exceltoxml.Models.AuxClasses.*;
-import com.edti.exceltoxml.Models.PropertyClasses.FieldProperties;
-import org.apache.poi.ss.formula.functions.T;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import com.edti.exceltoxml.Models.Enums.QType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,6 +16,7 @@ public abstract class RealQuestion extends Question {
     private String hidden;
 
     private List<Answer> answer = new ArrayList<>();
+    private List<Subquestion> subquestion = new ArrayList<>();
 
 
     public Name getName() {
@@ -73,10 +71,20 @@ public abstract class RealQuestion extends Question {
         return answer;
     }
 
-    public void setAnswer(ArrayList<AbstractAnswer> answer) {
-        List<Answer> answerList = new ArrayList<>();
-        answer.forEach((a) -> answerList.add((Answer) a));
-        this.answer = answerList;
+    public void setAnswer(ArrayList<AbstractAnswer> answer, QType type) {
+        switch (type) {
+            case multichoice, truefalse -> {
+                List<Answer> answerList = new ArrayList<>();
+                answer.forEach((a) -> answerList.add((Answer) a));
+                this.answer = answerList;
+            }
+            case matching -> {
+                List<Subquestion> answerList = new ArrayList<>();
+                answer.forEach((a) -> answerList.add((Subquestion) a));
+                this.subquestion = answerList;
+            }
+        }
+
     }
 
 

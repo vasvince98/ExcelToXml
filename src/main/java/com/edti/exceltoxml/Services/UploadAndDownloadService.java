@@ -6,6 +6,7 @@ import com.edti.exceltoxml.Services.Interfaces.IQuestionService;
 import com.edti.exceltoxml.Services.Interfaces.IUploadAndDownloadService;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ByteArrayResource;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -22,6 +23,8 @@ public class UploadAndDownloadService implements IUploadAndDownloadService {
     private final PathLocatorService pathLocatorService;
     private final IQuestionService questionService;
     private String filePath;
+
+    private ResponseEntity<ByteArrayResource> responseEntity;
 
     @Autowired
     public UploadAndDownloadService(PathLocatorService pathLocatorService, IQuestionService questionService) {
@@ -52,7 +55,7 @@ public class UploadAndDownloadService implements IUploadAndDownloadService {
     }
 
     @Override
-    public ResponseEntity<InputStreamResource> convertAndDownloadFile() {
+    public void convertFile() {
         try {
             File folder = new File(pathLocatorService.getPath());
             File[] listOfFiles = folder.listFiles();
@@ -68,16 +71,18 @@ public class UploadAndDownloadService implements IUploadAndDownloadService {
 
             File localSaveFile = new File(filePath);
 
-            InputStreamResource resource = new InputStreamResource(
-                    new ByteArrayInputStream(questionService.createXmlFromExcel(WorkbookFactory.create(localSaveFile)).getBytes()));
+//            InputStreamResource resource = new InputStreamResource(
+//                    new ByteArrayInputStream(questionService.createXmlFromExcel(WorkbookFactory.create(localSaveFile)).getBytes()));
+
+            ByteArrayResource resource = new ByteArrayResource(questionService.createXmlFromExcel(WorkbookFactory.create(localSaveFile)).getBytes());
 
             if (fileName.toLowerCase().endsWith(".xml")) {
-                return ResponseEntity.ok()
+                this.responseEntity = ResponseEntity.ok()
                         .header(HttpHeaders.CONTENT_DISPOSITION, "attachment;filename=" + fileName)
                         .contentType(MediaType.APPLICATION_OCTET_STREAM)
                         .body(resource);
             } else {
-                return ResponseEntity.ok()
+                this.responseEntity = ResponseEntity.ok()
                         .header(HttpHeaders.CONTENT_DISPOSITION, "attachment;filename=" + "CONVERTED.xml")
                         .contentType(MediaType.APPLICATION_OCTET_STREAM)
                         .body(resource);
@@ -88,6 +93,11 @@ public class UploadAndDownloadService implements IUploadAndDownloadService {
             e.printStackTrace();
             throw new MissingFileException("Nem töltött fel fájlt!");
         }
+    }
+
+    @Override
+    public ResponseEntity<ByteArrayResource> downloadFile() {
+        return this.responseEntity;
     }
 
     @Override

@@ -1,11 +1,11 @@
 package com.edti.exceltoxml.Models.AuxClasses;
 
-public class SubQuestion extends AbstractAnswer {
+public class Subquestion extends AbstractAnswer {
     private Answer answer;
 
-    public SubQuestion() {}
+    public Subquestion() {}
 
-    public SubQuestion(String text) {
+    public Subquestion(String text) {
         setText(text);
     }
 

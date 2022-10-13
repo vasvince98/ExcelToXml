@@ -10,6 +10,7 @@ import com.edti.exceltoxml.Models.QuestionTypes.Cat;
 import com.edti.exceltoxml.Models.QuestionTypes.RealQuestion;
 import com.edti.exceltoxml.Services.Interfaces.IImageService;
 import com.edti.exceltoxml.Services.Interfaces.IQuestionService;
+import com.edti.exceltoxml.Services.QuestionObjectProviders.MatchingQuestionProvider;
 import com.edti.exceltoxml.Services.QuestionObjectProviders.MultichoiceQuestionProvider;
 import com.edti.exceltoxml.Services.QuestionObjectProviders.TrueFalseQuestionProvider;
 import org.apache.poi.ss.usermodel.*;
@@ -34,14 +35,17 @@ public class QuestionService implements IQuestionService {
     private final IImageService imageService;
     private final MultichoiceQuestionProvider multichoiceQuestionProvider;
     private final TrueFalseQuestionProvider trueFalseQuestionProvider;
+    private final MatchingQuestionProvider matchingQuestionProvider;
 
     @Autowired
     public QuestionService(IImageService imageService,
                            MultichoiceQuestionProvider multichoiceQuestionProvider,
-                           TrueFalseQuestionProvider trueFalseQuestionProvider) {
+                           TrueFalseQuestionProvider trueFalseQuestionProvider,
+                           MatchingQuestionProvider matchingQuestionProvider) {
         this.imageService = imageService;
         this.multichoiceQuestionProvider = multichoiceQuestionProvider;
         this.trueFalseQuestionProvider = trueFalseQuestionProvider;
+        this.matchingQuestionProvider = matchingQuestionProvider;
     }
 
 
@@ -53,6 +57,7 @@ public class QuestionService implements IQuestionService {
         workbook.setActiveSheet(0);
         Map<Cat, List<RealQuestion>> multichoiceMap;
         Map<Cat, List<RealQuestion>> truefalseMap;
+        Map<Cat, List<RealQuestion>> matchingMap;
 
 
         for (Sheet sheet : workbook) {
@@ -66,7 +71,8 @@ public class QuestionService implements IQuestionService {
                     questionList.add(truefalseMap);
                 }
                 case "párosító" -> {
-                    System.out.println("Párosító");
+                    matchingMap = matchingQuestionProvider.objectListFromSheet(sheet, QType.matching);
+                    questionList.add(matchingMap);
                 }
                 default -> System.out.println("Nincs még lekezelve");
             }

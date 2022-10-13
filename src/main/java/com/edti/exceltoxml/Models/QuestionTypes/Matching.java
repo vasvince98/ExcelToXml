@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.PropertySource;
 
 import javax.xml.bind.JAXBException;
+import javax.xml.bind.annotation.XmlTransient;
 import java.io.FileNotFoundException;
 import java.util.HashMap;
 
@@ -20,12 +21,14 @@ public class Matching extends RealQuestion {
 
     //endregion
 
-    private FieldProperties fieldProperties;
+    @XmlTransient
+    private final FieldProperties fieldProperties;
 
     //region Constructors
 
 
-    public Matching(HashMap<String, String> data) {
+    public Matching(HashMap<String, String> data, FieldProperties fieldProperties) {
+        this.fieldProperties = fieldProperties;
         initInstance(data);
     }
 
@@ -110,7 +113,7 @@ public class Matching extends RealQuestion {
         //IdNumber
         this.setIdnumber(data.get(fieldProperties.getIdNumber()));
         //Shuffle answers
-        this.setShuffleanswers(data.get(fieldProperties.getShuffleAnswers()));
+        this.setShuffleanswers(data.get(fieldProperties.getShuffleAnswers()).toLowerCase());
 
         Correctfeedback cf = new Correctfeedback();
         cf.setFormat("html");
