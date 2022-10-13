@@ -31,14 +31,10 @@ public class QuestionFactory {
         }
 
         if (type.equals(QType.multichoice)) {
-            System.out.println(fieldProperties.getQuestionName());
-            Multichoice m = new Multichoice(data);
-            m.setFieldProperties(fieldProperties);
-            m.initInstance();
-            return m;
+            return new Multichoice(data, fieldProperties);
         }
         else if(type.equals(QType.truefalse)){
-            return new Truefalse(data);
+            return new Truefalse(data, fieldProperties);
         }
 
         return null;

@@ -2,10 +2,12 @@ package com.edti.exceltoxml.Models.QuestionTypes;
 
 import com.edti.exceltoxml.Models.AuxClasses.*;
 import com.edti.exceltoxml.Models.PropertyClasses.FieldProperties;
+import org.apache.poi.ss.formula.functions.T;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 public abstract class RealQuestion extends Question {
@@ -16,7 +18,7 @@ public abstract class RealQuestion extends Question {
     private String penalty;
     private String hidden;
 
-    private ArrayList<AbstractAnswer> answer = new ArrayList<>();
+    private List<Answer> answer = new ArrayList<>();
 
 
     public Name getName() {
@@ -67,13 +69,16 @@ public abstract class RealQuestion extends Question {
         this.hidden = hidden;
     }
 
-    public ArrayList<AbstractAnswer> getAnswer() {
+    public List<Answer> getAnswer() {
         return answer;
     }
 
     public void setAnswer(ArrayList<AbstractAnswer> answer) {
-        this.answer = answer;
+        List<Answer> answerList = new ArrayList<>();
+        answer.forEach((a) -> answerList.add((Answer) a));
+        this.answer = answerList;
     }
+
 
     @Override
     public String toString() {

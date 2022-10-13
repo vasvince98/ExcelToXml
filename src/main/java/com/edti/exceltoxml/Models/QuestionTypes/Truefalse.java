@@ -14,10 +14,12 @@ import java.util.HashMap;
 
 public class Truefalse extends RealQuestion {
 
+
+
     //region Constructor
 
 
-    public Truefalse(HashMap<String, String> data) {
+    public Truefalse(HashMap<String, String> data, FieldProperties fieldProperties) {
         initInstance(data);
     }
     //endregion

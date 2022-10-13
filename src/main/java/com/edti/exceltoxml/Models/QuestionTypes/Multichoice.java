@@ -15,7 +15,7 @@ import javax.xml.bind.*;
 import javax.xml.bind.annotation.XmlTransient;
 import java.io.FileNotFoundException;
 import java.util.HashMap;
-
+import java.util.List;
 
 
 public class Multichoice extends RealQuestion {
@@ -31,22 +31,16 @@ public class Multichoice extends RealQuestion {
     private String shownumcorrect;
 
     @XmlTransient
-    private HashMap<String, String> data;
-
-    @XmlTransient
-    private FieldProperties fieldProperties;
-
-    public void setFieldProperties(FieldProperties fieldProperties) {
-        this.fieldProperties = fieldProperties;
-    }
+    private final FieldProperties fieldProperties;
 
     //endregion
 
     //region Constructors
 
 
-    public Multichoice(HashMap<String, String> data) {
-        this.data = data;
+    public Multichoice(HashMap<String, String> data, FieldProperties fieldProperties) {
+        this.fieldProperties = fieldProperties;
+        initInstance(data);
     }
     //endregion
 
@@ -145,7 +139,8 @@ public class Multichoice extends RealQuestion {
         return this.generateXmlForm(Multichoice.class, this.getClass().getSuperclass().getSuperclass().getSimpleName().toLowerCase(), this);
     }
 
-    public void initInstance() {
+
+    private void initInstance(HashMap<String, String> data) {
         this.setType("multichoice");
         Name n = new Name();
         //question name
