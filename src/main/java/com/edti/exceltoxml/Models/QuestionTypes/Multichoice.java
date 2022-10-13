@@ -2,18 +2,22 @@ package com.edti.exceltoxml.Models.QuestionTypes;
 
 import com.edti.exceltoxml.Models.AuxClasses.*;
 import com.edti.exceltoxml.Models.PropertyClasses.FieldProperties;
+import com.edti.exceltoxml.Models.PropertyClasses.GlobalProperties;
 import com.edti.exceltoxml.Services.ImageService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import javax.xml.bind.*;
+import javax.xml.bind.annotation.XmlTransient;
 import java.io.FileNotFoundException;
 import java.util.HashMap;
 
-//@XmlRootElement
-@Component
+
+
 public class Multichoice extends RealQuestion {
 
     //region Fields
@@ -26,19 +30,23 @@ public class Multichoice extends RealQuestion {
     Incorrectfeedback incorrectfeedback;
     private String shownumcorrect;
 
-    //endregion
+    @XmlTransient
+    private HashMap<String, String> data;
 
-    FieldProperties fieldProperties;
+    @XmlTransient
+    private FieldProperties fieldProperties;
+
+    public void setFieldProperties(FieldProperties fieldProperties) {
+        this.fieldProperties = fieldProperties;
+    }
+
+    //endregion
 
     //region Constructors
 
 
-    public Multichoice() {
-    }
-
     public Multichoice(HashMap<String, String> data) {
-        fieldProperties = new FieldProperties();
-        initInstance(data);
+        this.data = data;
     }
     //endregion
 
@@ -137,7 +145,7 @@ public class Multichoice extends RealQuestion {
         return this.generateXmlForm(Multichoice.class, this.getClass().getSuperclass().getSuperclass().getSimpleName().toLowerCase(), this);
     }
 
-    private void initInstance(HashMap<String, String> data){
+    public void initInstance() {
         this.setType("multichoice");
         Name n = new Name();
         //question name

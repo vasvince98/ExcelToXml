@@ -4,9 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
-@PropertySource(value = "/fields.properties")
+@PropertySource("classpath:fields.properties")
 @Component
 public class FieldProperties {
     //region Fields
@@ -30,9 +29,6 @@ public class FieldProperties {
 
     //region Constructors
 
-
-    public FieldProperties() {
-    }
 
     @Autowired
     public FieldProperties(@Value("${name}") String questionName,
@@ -65,18 +61,20 @@ public class FieldProperties {
         this.partiallyCorrectFeedback = partiallyCorrectFeedback;
         this.incorrectFeedback = incorrectFeedback;
         this.showNumCorrect = showNumCorrect;
-
-        System.out.println(this.questionName + "+++++++++++++");
     }
 
     //endregion
 
 
     //region Getters and setters
+
+
     public String getQuestionName() {
         return questionName;
     }
 
+
+    @Value("${name}")
     public void setQuestionName(String questionName) {
         this.questionName = questionName;
     }

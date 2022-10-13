@@ -5,6 +5,7 @@ import com.edti.exceltoxml.Models.AuxClasses.Answer;
 import com.edti.exceltoxml.Models.AuxClasses.Category;
 import com.edti.exceltoxml.Models.AuxClasses.Info;
 import com.edti.exceltoxml.Models.Enums.QType;
+import com.edti.exceltoxml.Models.PropertyClasses.FieldProperties;
 import com.edti.exceltoxml.Models.QuestionTypes.Cat;
 import com.edti.exceltoxml.Models.QuestionTypes.RealQuestion;
 import org.apache.poi.ss.usermodel.Sheet;

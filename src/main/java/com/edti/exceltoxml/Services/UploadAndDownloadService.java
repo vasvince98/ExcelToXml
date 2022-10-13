@@ -1,6 +1,7 @@
 package com.edti.exceltoxml.Services;
 
 import com.edti.exceltoxml.Exceptions.MissingFileException;
+import com.edti.exceltoxml.Models.PropertyClasses.FieldProperties;
 import com.edti.exceltoxml.Services.Interfaces.IQuestionService;
 import com.edti.exceltoxml.Services.Interfaces.IUploadAndDownloadService;
 import org.apache.poi.ss.usermodel.WorkbookFactory;

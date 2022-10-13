@@ -1,5 +1,9 @@
 package com.edti.exceltoxml.Models.QuestionTypes;
 
+import com.edti.exceltoxml.Models.PropertyClasses.FieldProperties;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.JAXBException;

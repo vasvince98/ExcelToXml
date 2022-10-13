@@ -3,14 +3,20 @@ package com.edti.exceltoxml.Models.QuestionTypes;
 import com.edti.exceltoxml.Models.AuxClasses.Generalfeedback;
 import com.edti.exceltoxml.Models.AuxClasses.Name;
 import com.edti.exceltoxml.Models.AuxClasses.Questiontext;
+import com.edti.exceltoxml.Models.PropertyClasses.FieldProperties;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import javax.xml.bind.JAXBException;
 import java.io.FileNotFoundException;
 import java.util.HashMap;
 
+
 public class Truefalse extends RealQuestion {
 
     //region Constructor
+
+
     public Truefalse(HashMap<String, String> data) {
         initInstance(data);
     }

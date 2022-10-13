@@ -5,6 +5,7 @@ import com.edti.exceltoxml.Models.AuxClasses.Answer;
 import com.edti.exceltoxml.Models.AuxClasses.Feedback;
 import com.edti.exceltoxml.Models.Enums.QType;
 import com.edti.exceltoxml.Models.Factories.QuestionFactory;
+import com.edti.exceltoxml.Models.PropertyClasses.FieldProperties;
 import com.edti.exceltoxml.Models.QuestionTypes.Multichoice;
 import com.edti.exceltoxml.Models.QuestionTypes.RealQuestion;
 import org.apache.poi.ss.util.CellRangeAddress;

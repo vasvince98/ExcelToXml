@@ -5,6 +5,7 @@ import com.edti.exceltoxml.Models.AuxClasses.AbstractAnswer;
 import com.edti.exceltoxml.Models.AuxClasses.Answer;
 import com.edti.exceltoxml.Models.AuxClasses.Questiontext;
 import com.edti.exceltoxml.Models.Enums.QType;
+import com.edti.exceltoxml.Models.PropertyClasses.FieldProperties;
 import com.edti.exceltoxml.Models.QuestionTypes.Cat;
 import com.edti.exceltoxml.Models.QuestionTypes.RealQuestion;
 import com.edti.exceltoxml.Services.Interfaces.IImageService;

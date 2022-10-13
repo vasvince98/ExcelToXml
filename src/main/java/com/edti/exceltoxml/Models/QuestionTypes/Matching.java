@@ -24,12 +24,6 @@ public class Matching extends RealQuestion {
 
     //region Constructors
 
-    public Matching() {}
-
-    @Autowired
-    public Matching(FieldProperties fieldProperties) {
-        this.fieldProperties = fieldProperties;
-    }
 
     public Matching(HashMap<String, String> data) {
         initInstance(data);

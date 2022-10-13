@@ -1,8 +1,12 @@
 package com.edti.exceltoxml.Models.QuestionTypes;
 
 import com.edti.exceltoxml.Models.AuxClasses.*;
+import com.edti.exceltoxml.Models.PropertyClasses.FieldProperties;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
+
 
 public abstract class RealQuestion extends Question {
     Name name;
@@ -13,6 +17,7 @@ public abstract class RealQuestion extends Question {
     private String hidden;
 
     private ArrayList<AbstractAnswer> answer = new ArrayList<>();
+
 
     public Name getName() {
         return name;
