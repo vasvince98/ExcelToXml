@@ -74,6 +74,9 @@ public class QuestionService implements IQuestionService {
                     matchingMap = matchingQuestionProvider.objectListFromSheet(sheet, QType.matching);
                     questionList.add(matchingMap);
                 }
+                case "szövegbehúzás" -> {
+                    System.out.println("Szövegbehúzás");
+                }
                 default -> System.out.println("Nincs még lekezelve");
             }
 

@@ -84,7 +84,8 @@ public class Matching extends RealQuestion {
         return this.generateXmlForm(Matching.class, this.getClass().getSuperclass().getSuperclass().getSimpleName().toLowerCase(), this);
     }
 
-    private void initInstance(HashMap<String, String> data) {
+    @Override
+    protected void initInstance(HashMap<String, String> data) {
         this.setType("matching");
 
         Name n = new Name();

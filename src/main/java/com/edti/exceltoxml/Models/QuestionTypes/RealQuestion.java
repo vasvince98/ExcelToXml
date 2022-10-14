@@ -4,6 +4,7 @@ import com.edti.exceltoxml.Models.AuxClasses.*;
 import com.edti.exceltoxml.Models.Enums.QType;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 
@@ -86,6 +87,8 @@ public abstract class RealQuestion extends Question {
         }
 
     }
+
+    protected abstract void initInstance(HashMap<String, String> data);
 
 
     @Override

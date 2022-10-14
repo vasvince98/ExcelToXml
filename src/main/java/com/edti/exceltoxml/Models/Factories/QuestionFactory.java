@@ -2,10 +2,7 @@ package com.edti.exceltoxml.Models.Factories;
 
 import com.edti.exceltoxml.Models.Enums.QType;
 import com.edti.exceltoxml.Models.PropertyClasses.FieldProperties;
-import com.edti.exceltoxml.Models.QuestionTypes.Matching;
-import com.edti.exceltoxml.Models.QuestionTypes.Multichoice;
-import com.edti.exceltoxml.Models.QuestionTypes.Question;
-import com.edti.exceltoxml.Models.QuestionTypes.Truefalse;
+import com.edti.exceltoxml.Models.QuestionTypes.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -37,6 +34,8 @@ public class QuestionFactory {
             return new Truefalse(data, fieldProperties);
         } else if (type.equals(QType.matching)) {
             return new Matching(data, fieldProperties);
+        } else if(type.equals(QType.ddwtos)) {
+            return new Ddwtos(data, fieldProperties);
         }
 
         return null;

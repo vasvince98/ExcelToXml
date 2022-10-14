@@ -140,7 +140,8 @@ public class Multichoice extends RealQuestion {
     }
 
 
-    private void initInstance(HashMap<String, String> data) {
+    @Override
+    protected void initInstance(HashMap<String, String> data) {
         this.setType("multichoice");
         Name n = new Name();
         //question name

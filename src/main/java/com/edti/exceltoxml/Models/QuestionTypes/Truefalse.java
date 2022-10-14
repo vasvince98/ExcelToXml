@@ -32,7 +32,8 @@ public class Truefalse extends RealQuestion {
         return this.generateXmlForm(Truefalse.class, this.getClass().getSuperclass().getSuperclass().getSimpleName().toLowerCase(), this);
     }
 
-    private void initInstance(HashMap<String, String> data) {
+    @Override
+    protected void initInstance(HashMap<String, String> data) {
         this.setType("truefalse");
 
         //Name
