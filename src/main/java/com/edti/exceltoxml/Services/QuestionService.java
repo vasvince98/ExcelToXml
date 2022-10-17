@@ -10,6 +10,7 @@ import com.edti.exceltoxml.Models.QuestionTypes.Cat;
 import com.edti.exceltoxml.Models.QuestionTypes.RealQuestion;
 import com.edti.exceltoxml.Services.Interfaces.IImageService;
 import com.edti.exceltoxml.Services.Interfaces.IQuestionService;
+import com.edti.exceltoxml.Services.QuestionObjectProviders.DdwtosQuestionProvider;
 import com.edti.exceltoxml.Services.QuestionObjectProviders.MatchingQuestionProvider;
 import com.edti.exceltoxml.Services.QuestionObjectProviders.MultichoiceQuestionProvider;
 import com.edti.exceltoxml.Services.QuestionObjectProviders.TrueFalseQuestionProvider;
@@ -36,16 +37,19 @@ public class QuestionService implements IQuestionService {
     private final MultichoiceQuestionProvider multichoiceQuestionProvider;
     private final TrueFalseQuestionProvider trueFalseQuestionProvider;
     private final MatchingQuestionProvider matchingQuestionProvider;
+    private final DdwtosQuestionProvider ddwtosQuestionProvider;
 
     @Autowired
     public QuestionService(IImageService imageService,
                            MultichoiceQuestionProvider multichoiceQuestionProvider,
                            TrueFalseQuestionProvider trueFalseQuestionProvider,
-                           MatchingQuestionProvider matchingQuestionProvider) {
+                           MatchingQuestionProvider matchingQuestionProvider,
+                           DdwtosQuestionProvider ddwtosQuestionProvider) {
         this.imageService = imageService;
         this.multichoiceQuestionProvider = multichoiceQuestionProvider;
         this.trueFalseQuestionProvider = trueFalseQuestionProvider;
         this.matchingQuestionProvider = matchingQuestionProvider;
+        this.ddwtosQuestionProvider = ddwtosQuestionProvider;
     }
 
 
@@ -55,28 +59,16 @@ public class QuestionService implements IQuestionService {
         List<Map<Cat, List<RealQuestion>>> questionList = new ArrayList<>();
         finalXml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<quiz>\n";
         workbook.setActiveSheet(0);
-        Map<Cat, List<RealQuestion>> multichoiceMap;
-        Map<Cat, List<RealQuestion>> truefalseMap;
-        Map<Cat, List<RealQuestion>> matchingMap;
+
+
 
 
         for (Sheet sheet : workbook) {
             switch (sheet.getSheetName()) {
-                case "feleletválasztó" ->  {
-                    multichoiceMap = multichoiceQuestionProvider.objectListFromSheet(sheet, QType.multichoice);
-                    questionList.add(multichoiceMap);
-                }
-                case "igazhamis" -> {
-                    truefalseMap = trueFalseQuestionProvider.objectListFromSheet(sheet, QType.truefalse);
-                    questionList.add(truefalseMap);
-                }
-                case "párosító" -> {
-                    matchingMap = matchingQuestionProvider.objectListFromSheet(sheet, QType.matching);
-                    questionList.add(matchingMap);
-                }
-                case "szövegbehúzás" -> {
-                    System.out.println("Szövegbehúzás");
-                }
+                case "feleletválasztó" -> questionList.add(multichoiceQuestionProvider.objectListFromSheet(sheet, QType.multichoice));
+                case "igazhamis" -> questionList.add(trueFalseQuestionProvider.objectListFromSheet(sheet, QType.truefalse));
+                case "párosító" -> questionList.add(matchingQuestionProvider.objectListFromSheet(sheet, QType.matching));
+                case "szövegbehúzás" -> questionList.add(ddwtosQuestionProvider.objectListFromSheet(sheet, QType.ddwtos));
                 default -> System.out.println("Nincs még lekezelve");
             }
 
@@ -96,11 +88,11 @@ public class QuestionService implements IQuestionService {
                     realQuestions.forEach((realQuestion -> {
                         try {
                             finalXml = finalXml.concat(realQuestion.getXmlForm());
-                        } catch (JAXBException | FileNotFoundException e) {
+                        } catch (JAXBException e) {
                             throw new RuntimeException(e);
                         }
                     }));
-                } catch (JAXBException | FileNotFoundException e) {
+                } catch (JAXBException e) {
                     throw new RuntimeException(e);
                 }
             }));
@@ -109,15 +101,6 @@ public class QuestionService implements IQuestionService {
         return finalXml;
     }
 
-    private void removeFirstRow(Sheet sheet) {
-        try {
-            sheet.removeRow(sheet.getRow(0));
-            System.out.println("First row deleted!");
-        } catch (Exception e) {
-            throw new MissingHeaderException("Az első sorban szerepelnie kell a mező típusoknak!");
-        }
-
-    }
 
     private String getStringFromHTML(String html) {
         return Jsoup.parse(html).text();

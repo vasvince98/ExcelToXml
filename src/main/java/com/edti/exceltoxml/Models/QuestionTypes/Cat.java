@@ -40,7 +40,7 @@ public class Cat extends Question {
     //endregion
 
     @Override
-    public String getXmlForm() throws JAXBException, FileNotFoundException {
+    public String getXmlForm() throws JAXBException {
         return this.generateXmlForm(Cat.class, this.getClass().getSuperclass().getSimpleName().toLowerCase(), this);
     }
 

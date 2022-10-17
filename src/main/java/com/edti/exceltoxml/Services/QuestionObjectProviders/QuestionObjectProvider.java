@@ -166,11 +166,17 @@ public abstract class QuestionObjectProvider {
     }
 
     private String getMapKeyFromAddress(CellAddress address) {
+        System.out.println(address);
         return sheet.getRow(address.getRow()).getCell(address.getColumn()).getStringCellValue();
     }
 
     private String getMapValueFromAddress(CellAddress address) {
-        return sheet.getRow(address.getRow()).getCell(address.getColumn() + 1).toString();
+        try {
+            return sheet.getRow(address.getRow()).getCell(address.getColumn() + 1).toString();
+        } catch (Exception e) {
+            System.out.println("Empty cell");
+        }
+        return null;
     }
 
     private boolean isQuestion(CellAddress address) {

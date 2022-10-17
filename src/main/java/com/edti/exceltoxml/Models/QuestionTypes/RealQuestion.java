@@ -18,6 +18,7 @@ public abstract class RealQuestion extends Question {
 
     private List<Answer> answer = new ArrayList<>();
     private List<Subquestion> subquestion = new ArrayList<>();
+    private List<Dragbox> dragbox = new ArrayList<>();
 
 
     public Name getName() {
@@ -83,6 +84,11 @@ public abstract class RealQuestion extends Question {
                 List<Subquestion> answerList = new ArrayList<>();
                 answer.forEach((a) -> answerList.add((Subquestion) a));
                 this.subquestion = answerList;
+            }
+            case ddwtos -> {
+                List<Dragbox> answerList = new ArrayList<>();
+                answer.forEach((a) -> answerList.add((Dragbox) a));
+                this.dragbox = answerList;
             }
         }
 
