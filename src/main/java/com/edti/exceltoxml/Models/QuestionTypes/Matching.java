@@ -80,7 +80,7 @@ public class Matching extends RealQuestion {
     //endregion
 
     @Override
-    public String getXmlForm() throws JAXBException, FileNotFoundException {
+    public String getXmlForm() throws JAXBException {
         return this.generateXmlForm(Matching.class, this.getClass().getSuperclass().getSuperclass().getSimpleName().toLowerCase(), this);
     }
 

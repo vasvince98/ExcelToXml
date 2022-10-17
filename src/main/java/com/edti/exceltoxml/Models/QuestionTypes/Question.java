@@ -44,7 +44,7 @@ public abstract class Question {
     }
     //endregion
 
-    public abstract String getXmlForm() throws JAXBException, FileNotFoundException;
+    public abstract String getXmlForm() throws JAXBException;
 
     protected String generateXmlForm(Class c, String qname, Object object) throws JAXBException {
         StringWriter sw = new StringWriter();
