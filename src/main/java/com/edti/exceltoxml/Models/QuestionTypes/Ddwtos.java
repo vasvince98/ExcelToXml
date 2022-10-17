@@ -19,7 +19,7 @@ public class Ddwtos extends RealQuestion {
 
     @Override
     public String getXmlForm() throws JAXBException, FileNotFoundException {
-        return null;
+        return this.generateXmlForm();
     }
 
     @Override

@@ -19,6 +19,7 @@ import java.util.Map;
 
 public abstract class QuestionObjectProvider {
 
+    //region Fields
     protected Sheet sheet;
     protected int numberOfFields;
     protected int firstRow = 0;
@@ -39,6 +40,7 @@ public abstract class QuestionObjectProvider {
     private int questionCounter = 0;
     private int categoryCounter = 0;
 
+    //endregion
 
     public Map<Cat, List<RealQuestion>> objectListFromSheet(Sheet sheet, QType type) {
         HashMap<Cat, List<RealQuestion>> resultMap = new HashMap<>();

@@ -18,9 +18,6 @@ public class QuestionFactory {
         QuestionFactory.fieldProperties = fieldProperties;
     }
 
-    //    public void setFieldProperties(FieldProperties fieldProperties) {
-//        QuestionFactory.fieldProperties = fieldProperties;
-//    }
 
     public static Question getQuestion(QType type, HashMap<String, String> data){
 
