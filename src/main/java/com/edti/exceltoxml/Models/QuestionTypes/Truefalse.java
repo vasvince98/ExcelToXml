@@ -4,12 +4,12 @@ import com.edti.exceltoxml.Models.AuxClasses.Generalfeedback;
 import com.edti.exceltoxml.Models.AuxClasses.Name;
 import com.edti.exceltoxml.Models.AuxClasses.Questiontext;
 import com.edti.exceltoxml.Models.PropertyClasses.FieldProperties;
+import com.edti.exceltoxml.Services.Interfaces.IImageService;
+import com.edti.exceltoxml.Services.Interfaces.IStateService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.annotation.XmlTransient;
-import java.io.FileNotFoundException;
 import java.util.HashMap;
 
 
@@ -17,13 +17,27 @@ public class Truefalse extends RealQuestion {
 
     @XmlTransient
     private final FieldProperties fieldProperties;
+    @XmlTransient
+    private final IStateService stateService;
+    @XmlTransient
+    private final IImageService imageService;
 
     //region Constructor
 
 
-    public Truefalse(HashMap<String, String> data, FieldProperties fieldProperties) {
+    public Truefalse(HashMap<String, String> data,
+                     FieldProperties fieldProperties,
+                     IStateService stateService,
+                     IImageService imageService) {
         this.fieldProperties = fieldProperties;
-        initInstance(data);
+        this.stateService = stateService;
+        this.imageService = imageService;
+        if (stateService.getState().equals("on")) {
+            initImageInstance(data);
+        } else {
+            initSimpleInstance(data);
+        }
+
     }
     //endregion
 
@@ -33,7 +47,7 @@ public class Truefalse extends RealQuestion {
     }
 
     @Override
-    protected void initInstance(HashMap<String, String> data) {
+    protected void initSimpleInstance(HashMap<String, String> data) {
         this.setType("truefalse");
 
         //Name
@@ -61,6 +75,11 @@ public class Truefalse extends RealQuestion {
         this.setHidden(data.get("Elrejtve?"));
         //Idnumber
         this.setIdnumber(data.get("id"));
+    }
+
+    @Override
+    protected void initImageInstance(HashMap<String, String> data) {
+        System.out.println("Képpé alakítottam a truefalset!");
     }
 
     @Override

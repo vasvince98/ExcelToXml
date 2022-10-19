@@ -1,13 +1,11 @@
 package com.edti.exceltoxml.Services;
 
 import com.edti.exceltoxml.Exceptions.MissingFileException;
-import com.edti.exceltoxml.Models.PropertyClasses.FieldProperties;
 import com.edti.exceltoxml.Services.Interfaces.IQuestionService;
 import com.edti.exceltoxml.Services.Interfaces.IUploadAndDownloadService;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ByteArrayResource;
-import org.springframework.core.io.InputStreamResource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -23,6 +21,7 @@ public class UploadAndDownloadService implements IUploadAndDownloadService {
     private final PathLocatorService pathLocatorService;
     private final IQuestionService questionService;
     private String filePath;
+    private String fileName;
 
     private ResponseEntity<ByteArrayResource> responseEntity;
 
@@ -55,39 +54,22 @@ public class UploadAndDownloadService implements IUploadAndDownloadService {
     }
 
     @Override
-    public void convertFile() {
+    public void convertFileToSimpleXml() {
         try {
-            File folder = new File(pathLocatorService.getPath());
-            File[] listOfFiles = folder.listFiles();
-            assert listOfFiles != null;
-            String fileName = null;
-            for (File listOfFile : listOfFiles) {
-                if (listOfFile.getName().toLowerCase().endsWith(".xml") && !listOfFile.getName().toLowerCase().endsWith("om.xml") ||
-                        listOfFile.getName().toLowerCase().endsWith(".xlsx")) {
-                    filePath = listOfFile.getPath();
-                    fileName = listOfFile.getName();
-                }
-            }
+            File localSaveFile = getFileFromServer();
+            setResponseEntity(new ByteArrayResource(questionService.createXmlFromExcel(WorkbookFactory.create(localSaveFile)).getBytes()));
 
-            File localSaveFile = new File(filePath);
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new MissingFileException("Nem töltött fel fájlt!");
+        }
+    }
 
-//            InputStreamResource resource = new InputStreamResource(
-//                    new ByteArrayInputStream(questionService.createXmlFromExcel(WorkbookFactory.create(localSaveFile)).getBytes()));
-
-            ByteArrayResource resource = new ByteArrayResource(questionService.createXmlFromExcel(WorkbookFactory.create(localSaveFile)).getBytes());
-
-            if (fileName.toLowerCase().endsWith(".xml")) {
-                this.responseEntity = ResponseEntity.ok()
-                        .header(HttpHeaders.CONTENT_DISPOSITION, "attachment;filename=" + fileName)
-                        .contentType(MediaType.APPLICATION_OCTET_STREAM)
-                        .body(resource);
-            } else {
-                this.responseEntity = ResponseEntity.ok()
-                        .header(HttpHeaders.CONTENT_DISPOSITION, "attachment;filename=" + "CONVERTED.xml")
-                        .contentType(MediaType.APPLICATION_OCTET_STREAM)
-                        .body(resource);
-            }
-
+    @Override
+    public void convertFileToImageXml() {
+        try {
+            File localSaveFile = getFileFromServer();
+            setResponseEntity(new ByteArrayResource(questionService.createXmlFromExcel(WorkbookFactory.create(localSaveFile)).getBytes()));
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -113,6 +95,37 @@ public class UploadAndDownloadService implements IUploadAndDownloadService {
                     f.delete();
                 }
             }
+        }
+    }
+
+
+    private File getFileFromServer() {
+
+        File folder = new File(pathLocatorService.getPath());
+        File[] listOfFiles = folder.listFiles();
+        assert listOfFiles != null;
+        for (File listOfFile : listOfFiles) {
+            if (listOfFile.getName().toLowerCase().endsWith(".xml") && !listOfFile.getName().toLowerCase().endsWith("om.xml") ||
+                    listOfFile.getName().toLowerCase().endsWith(".xlsx")) {
+                this.filePath = listOfFile.getPath();
+                this.fileName = listOfFile.getName();
+            }
+        }
+        return new File(filePath);
+    }
+
+
+    private void setResponseEntity(ByteArrayResource resource) {
+        if (fileName.toLowerCase().endsWith(".xml")) {
+            this.responseEntity = ResponseEntity.ok()
+                    .header(HttpHeaders.CONTENT_DISPOSITION, "attachment;filename=" + this.fileName)
+                    .contentType(MediaType.APPLICATION_OCTET_STREAM)
+                    .body(resource);
+        } else {
+            this.responseEntity = ResponseEntity.ok()
+                    .header(HttpHeaders.CONTENT_DISPOSITION, "attachment;filename=" + "CONVERTED.xml")
+                    .contentType(MediaType.APPLICATION_OCTET_STREAM)
+                    .body(resource);
         }
     }
 }

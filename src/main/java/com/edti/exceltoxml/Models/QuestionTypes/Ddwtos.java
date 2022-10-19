@@ -2,10 +2,11 @@ package com.edti.exceltoxml.Models.QuestionTypes;
 
 import com.edti.exceltoxml.Models.AuxClasses.*;
 import com.edti.exceltoxml.Models.PropertyClasses.FieldProperties;
+import com.edti.exceltoxml.Services.Interfaces.IImageService;
+import com.edti.exceltoxml.Services.Interfaces.IStateService;
 
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.annotation.XmlTransient;
-import java.io.FileNotFoundException;
 import java.util.HashMap;
 
 public class Ddwtos extends RealQuestion {
@@ -21,10 +22,19 @@ public class Ddwtos extends RealQuestion {
 
     @XmlTransient
     private final FieldProperties fieldProperties;
+    @XmlTransient
+    private final IStateService stateService;
+    @XmlTransient
+    private final IImageService imageService;
 
-    public Ddwtos(HashMap<String, String> data, FieldProperties fieldProperties) {
+    public Ddwtos(HashMap<String, String> data,
+                  FieldProperties fieldProperties,
+                  IStateService stateService,
+                  IImageService imageService) {
         this.fieldProperties = fieldProperties;
-        initInstance(data);
+        this.stateService = stateService;
+        this.imageService = imageService;
+        initSimpleInstance(data);
     }
 
 
@@ -77,7 +87,7 @@ public class Ddwtos extends RealQuestion {
     }
 
     @Override
-    protected void initInstance(HashMap<String, String> data) {
+    protected void initSimpleInstance(HashMap<String, String> data) {
         this.setType("ddwtos");
 
         Name n = new Name();
@@ -126,5 +136,10 @@ public class Ddwtos extends RealQuestion {
         inf.setText(data.get(fieldProperties.getIncorrectFeedback()));
         this.setIncorrectfeedback(inf);
         this.setShownumcorrect(fieldProperties.getShowNumCorrect());
+    }
+
+    @Override
+    protected void initImageInstance(HashMap<String, String> data) {
+        System.out.println("Ez meg implementálva van de sose lesz meghívva");
     }
 }

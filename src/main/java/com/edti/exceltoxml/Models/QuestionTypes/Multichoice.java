@@ -2,20 +2,12 @@ package com.edti.exceltoxml.Models.QuestionTypes;
 
 import com.edti.exceltoxml.Models.AuxClasses.*;
 import com.edti.exceltoxml.Models.PropertyClasses.FieldProperties;
-import com.edti.exceltoxml.Models.PropertyClasses.GlobalProperties;
-import com.edti.exceltoxml.Services.ImageService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Configurable;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.PropertySource;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
+import com.edti.exceltoxml.Services.Interfaces.IImageService;
+import com.edti.exceltoxml.Services.Interfaces.IStateService;
 
 import javax.xml.bind.*;
 import javax.xml.bind.annotation.XmlTransient;
-import java.io.FileNotFoundException;
 import java.util.HashMap;
-import java.util.List;
 
 
 public class Multichoice extends RealQuestion {
@@ -32,15 +24,28 @@ public class Multichoice extends RealQuestion {
 
     @XmlTransient
     private final FieldProperties fieldProperties;
+    @XmlTransient
+    private final IStateService stateService;
+    @XmlTransient
+    private final IImageService imageService;
 
     //endregion
 
     //region Constructors
 
 
-    public Multichoice(HashMap<String, String> data, FieldProperties fieldProperties) {
+    public Multichoice(HashMap<String, String> data,
+                       FieldProperties fieldProperties,
+                       IStateService stateService,
+                       IImageService imageService) {
         this.fieldProperties = fieldProperties;
-        initInstance(data);
+        this.stateService = stateService;
+        this.imageService = imageService;
+        if (stateService.getState().equals("on")) {
+            initImageInstance(data);
+        } else {
+            initSimpleInstance(data);
+        }
     }
     //endregion
 
@@ -141,7 +146,7 @@ public class Multichoice extends RealQuestion {
 
 
     @Override
-    protected void initInstance(HashMap<String, String> data) {
+    protected void initSimpleInstance(HashMap<String, String> data) {
         this.setType("multichoice");
         Name n = new Name();
         //question name
@@ -194,6 +199,11 @@ public class Multichoice extends RealQuestion {
         inf.setText(data.get("Visszajelzés rossz válasz esetén"));
         this.setIncorrectfeedback(inf);
         this.setShownumcorrect("");
+    }
+
+    @Override
+    protected void initImageInstance(HashMap<String, String> data) {
+        System.out.println("Képpé alakítottam a multichoice-t!");
     }
 
     @Override

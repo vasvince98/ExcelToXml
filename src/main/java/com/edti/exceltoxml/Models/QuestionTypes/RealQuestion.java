@@ -2,12 +2,16 @@ package com.edti.exceltoxml.Models.QuestionTypes;
 
 import com.edti.exceltoxml.Models.AuxClasses.*;
 import com.edti.exceltoxml.Models.Enums.QType;
+import com.edti.exceltoxml.Services.Interfaces.IImageService;
+import com.edti.exceltoxml.Services.Interfaces.IStateService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-
+@Component
 public abstract class RealQuestion extends Question {
     Name name;
     Questiontext questiontext;
@@ -19,6 +23,7 @@ public abstract class RealQuestion extends Question {
     private List<Answer> answer = new ArrayList<>();
     private List<Subquestion> subquestion = new ArrayList<>();
     private List<Dragbox> dragbox = new ArrayList<>();
+
 
 
     public Name getName() {
@@ -73,6 +78,7 @@ public abstract class RealQuestion extends Question {
         return answer;
     }
 
+
     public void setAnswer(ArrayList<AbstractAnswer> answer, QType type) {
         switch (type) {
             case multichoice, truefalse -> {
@@ -94,7 +100,8 @@ public abstract class RealQuestion extends Question {
 
     }
 
-    protected abstract void initInstance(HashMap<String, String> data);
+    protected abstract void initSimpleInstance(HashMap<String, String> data);
+    protected abstract void initImageInstance(HashMap<String, String> data);
 
 
     @Override

@@ -57,10 +57,8 @@ public class MainController {
                                        @Nullable @RequestParam("checkBox") String isPicture) throws IOException, URISyntaxException {
 
         stateService.setState(isPicture);
-
         uploadAndDownloadService.handleExcelFile(file);
-        uploadAndDownloadService.convertFile();
-
+        uploadAndDownloadService.convertFileToImageXml();
         ModelAndView mav = new ModelAndView();
         mav.setViewName("redirect");
         return mav;

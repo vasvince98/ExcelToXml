@@ -1,6 +1,8 @@
 package com.edti.exceltoxml.Models.QuestionTypes;
 
 import com.edti.exceltoxml.Models.PropertyClasses.FieldProperties;
+import com.edti.exceltoxml.Services.Interfaces.IImageService;
+import com.edti.exceltoxml.Services.Interfaces.IStateService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -18,9 +20,10 @@ import java.io.StringWriter;
 
 @XmlRootElement()
 @XmlAccessorType(XmlAccessType.FIELD)
+@Component
 public abstract class Question {
 
-    //region Description
+
     @XmlAttribute(name="type")
     private String type;
 
@@ -42,7 +45,6 @@ public abstract class Question {
     public void setIdnumber(String idnumber) {
         this.idnumber = idnumber;
     }
-    //endregion
 
     public abstract String getXmlForm() throws JAXBException;
 

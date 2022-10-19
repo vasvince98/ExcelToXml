@@ -2,12 +2,11 @@ package com.edti.exceltoxml.Models.QuestionTypes;
 
 import com.edti.exceltoxml.Models.AuxClasses.*;
 import com.edti.exceltoxml.Models.PropertyClasses.FieldProperties;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.PropertySource;
+import com.edti.exceltoxml.Services.Interfaces.IImageService;
+import com.edti.exceltoxml.Services.Interfaces.IStateService;
 
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.annotation.XmlTransient;
-import java.io.FileNotFoundException;
 import java.util.HashMap;
 
 public class Matching extends RealQuestion {
@@ -23,13 +22,26 @@ public class Matching extends RealQuestion {
 
     @XmlTransient
     private final FieldProperties fieldProperties;
+    @XmlTransient
+    private final IStateService stateService;
+    @XmlTransient
+    private final IImageService imageService;
 
     //region Constructors
 
 
-    public Matching(HashMap<String, String> data, FieldProperties fieldProperties) {
+    public Matching(HashMap<String, String> data,
+                    FieldProperties fieldProperties,
+                    IStateService stateService,
+                    IImageService imageService) {
         this.fieldProperties = fieldProperties;
-        initInstance(data);
+        this.stateService = stateService;
+        this.imageService = imageService;
+        if (stateService.getState().equals("on")) {
+            initImageInstance(data);
+        } else {
+            initSimpleInstance(data);
+        }
     }
 
     //endregion
@@ -85,7 +97,7 @@ public class Matching extends RealQuestion {
     }
 
     @Override
-    protected void initInstance(HashMap<String, String> data) {
+    protected void initSimpleInstance(HashMap<String, String> data) {
         this.setType("matching");
 
         Name n = new Name();
@@ -134,8 +146,11 @@ public class Matching extends RealQuestion {
         inf.setText(data.get(fieldProperties.getIncorrectFeedback()));
         this.setIncorrectfeedback(inf);
         this.setShownumcorrect(fieldProperties.getShowNumCorrect());
+    }
 
-
+    @Override
+    protected void initImageInstance(HashMap<String, String> data) {
+        System.out.println("Képpé alakítottam a matchinget!");
     }
 
     @Override

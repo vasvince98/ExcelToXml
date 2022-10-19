@@ -8,9 +8,11 @@ import com.edti.exceltoxml.Models.Enums.QType;
 import com.edti.exceltoxml.Models.PropertyClasses.FieldProperties;
 import com.edti.exceltoxml.Models.QuestionTypes.Cat;
 import com.edti.exceltoxml.Models.QuestionTypes.RealQuestion;
+import com.edti.exceltoxml.Services.StateService;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.util.CellAddress;
 import org.apache.poi.ss.util.CellRangeAddress;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -42,6 +44,9 @@ public abstract class QuestionObjectProvider {
 
     //endregion
 
+    //region Constructors
+
+    //endregion
     public Map<Cat, List<RealQuestion>> objectListFromSheet(Sheet sheet, QType type) {
         HashMap<Cat, List<RealQuestion>> resultMap = new HashMap<>();
 
