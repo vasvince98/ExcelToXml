@@ -32,19 +32,19 @@ public class DdwtosQuestionProvider extends QuestionObjectProvider {
             try {
                 currentDragbox.setAnswerNumber(sheet.getRow(r.getRow()).getCell(r.getColumn()).toString());
             } catch (Exception e) {
-                System.out.println("Empty cell");
+                System.out.println("Empty cell at: " + r);          //todo: replace with log
             }
 
             try {
                 currentDragbox.setText(sheet.getRow(r.getRow() + 1).getCell(r.getColumn()).toString());
             } catch (Exception e) {
-                System.out.println("Empty cell");
+                System.out.println("Empty cell at: " + r);          //todo: replace with log
             }
 
             try {
-                currentDragbox.setGroup(sheet.getRow(r.getRow() + 2).getCell(r.getColumn()).toString());
+                currentDragbox.setGroup((int) Double.parseDouble(sheet.getRow(r.getRow() + 2).getCell(r.getColumn()).toString()));
             } catch (Exception e) {
-                System.out.println("Empty cell");
+                System.out.println("Empty cell at: " + r);          //todo: replace with log
             }
 
 

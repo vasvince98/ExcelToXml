@@ -3,23 +3,23 @@ package com.edti.exceltoxml.Models.AuxClasses;
 import javax.xml.bind.annotation.XmlTransient;
 
 public class Dragbox extends AbstractAnswer {
-    private String group;
+    private int group;
 
     @XmlTransient
     private String answerNumber;
 
     public Dragbox() {}
 
-    public Dragbox(String text, String group) {
+    public Dragbox(String text, int group) {
         setText(text);
         this.group = group;
     }
 
-    public String getGroup() {
+    public int getGroup() {
         return group;
     }
 
-    public void setGroup(String group) {
+    public void setGroup(int group) {
         this.group = group;
     }
 
