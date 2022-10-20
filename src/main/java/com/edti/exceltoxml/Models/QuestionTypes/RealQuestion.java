@@ -13,9 +13,11 @@ import java.util.List;
 
 @Component
 public abstract class RealQuestion extends Question {
-    Name name;
-    Questiontext questiontext;
-    Generalfeedback generalfeedback;
+
+    //region Fields
+    private Name name;
+    private Questiontext questiontext;
+    private Generalfeedback generalfeedback;
     private String defaultgrade;
     private String penalty;
     private String hidden;
@@ -24,7 +26,10 @@ public abstract class RealQuestion extends Question {
     private List<Subquestion> subquestion = new ArrayList<>();
     private List<Dragbox> dragbox = new ArrayList<>();
 
+    //endregion
 
+
+    //region Getters and Setters
 
     public Name getName() {
         return name;
@@ -78,7 +83,35 @@ public abstract class RealQuestion extends Question {
         return answer;
     }
 
+    public void setAnswer(List<Answer> answer) {
+        this.answer = answer;
+    }
 
+    public List<Subquestion> getSubquestion() {
+        return subquestion;
+    }
+
+    public void setSubquestion(List<Subquestion> subquestion) {
+        this.subquestion = subquestion;
+    }
+
+    public List<Dragbox> getDragbox() {
+        return dragbox;
+    }
+
+    public void setDragbox(List<Dragbox> dragbox) {
+        this.dragbox = dragbox;
+    }
+
+    //endregion
+
+    /**
+     *
+     * Set the answer based on the provided question type.
+     *
+     * @param answer list with answers with a specific type.
+     * @param type The type of question associated with the answer.
+     */
     public void setAnswer(ArrayList<AbstractAnswer> answer, QType type) {
         switch (type) {
             case multichoice, truefalse -> {
@@ -100,7 +133,20 @@ public abstract class RealQuestion extends Question {
 
     }
 
+    /**
+     *
+     * This method will be called when you want to do a simple conversion, without image generating.
+     *
+     * @param data The provided data map will be converted to object.
+     */
     protected abstract void initSimpleInstance(HashMap<String, String> data);
+
+    /**
+     *
+     * This method will be called when you want to convert the strings into <b>base64</b> coded image.
+     *
+     * @param data The provided data map will be converted to object.
+     */
     protected abstract void initImageInstance(HashMap<String, String> data);
 
 
