@@ -14,6 +14,8 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.*;
 import java.time.LocalDateTime;
+import java.util.Arrays;
+import java.util.Objects;
 
 @Service
 public class UploadAndDownloadService implements IUploadAndDownloadService {
@@ -70,6 +72,8 @@ public class UploadAndDownloadService implements IUploadAndDownloadService {
         try {
             File localSaveFile = getFileFromServer();
             setResponseEntity(new ByteArrayResource(questionService.createXmlFromExcel(WorkbookFactory.create(localSaveFile)).getBytes()));
+            System.out.println(responseEntity.getStatusCodeValue());
+            System.out.println(responseEntity.getBody());
 
         } catch (Exception e) {
             e.printStackTrace();

@@ -24,7 +24,7 @@ public abstract class QuestionObjectProvider {
     //region Fields
     protected Sheet sheet;
     protected int numberOfFields;
-    protected int firstRow = 0;
+    protected int firstRow;
     protected int lastRow;
     protected int dataColumn = 1;
 
@@ -39,8 +39,8 @@ public abstract class QuestionObjectProvider {
 
     private HashMap<String, HashMap<String, String>> resultMap = new HashMap<>();
 
-    private int questionCounter = 0;
-    private int categoryCounter = 0;
+    private int questionCounter;
+    private int categoryCounter;
 
     //endregion
 
@@ -129,8 +129,10 @@ public abstract class QuestionObjectProvider {
      */
     protected HashMap<Cat, List<HashMap<String, String>>> createQuestionListWithCategoryName() {
         HashMap<Cat, List<HashMap<String, String>>> resultMap = new HashMap<>();
-
         int i = 0;
+        firstRow = 0;
+        this.categoryCounter = 0;
+        this.questionCounter = 0;
 
         lastRow = numberOfFields + firstRow;
 
@@ -195,7 +197,6 @@ public abstract class QuestionObjectProvider {
                 firstRow += categoryFields;
             }
         }
-
 
         return answerMapWithId;
     }
