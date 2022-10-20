@@ -44,9 +44,55 @@ public abstract class QuestionObjectProvider {
 
     //endregion
 
-    //region Constructors
+    //region Getters and Setters
+    protected Sheet getSheet() {
+        return this.sheet;
+    }
 
+    protected void setSheet(Sheet sheet) {
+        this.sheet = sheet;
+    }
+
+    public int getNumberOfFields() {
+        return numberOfFields;
+    }
+
+    public void setNumberOfQuestionFields(int numberOfFields) {
+        this.numberOfFields = numberOfFields;
+    }
+
+    public int getAnswerColumns() {
+        return answerColumns;
+    }
+
+    public void setAnswerColumns(int answerColumns) {
+        this.answerColumns = answerColumns;
+    }
+
+    public int getFirstRow() {
+        return firstRow;
+    }
+
+    public void setFirstRow(int firstRow) {
+        this.firstRow = firstRow;
+    }
+
+    public int getAnswerRows() {
+        return answerRows;
+    }
+
+    public void setAnswerRows(int answerRows) {
+        this.answerRows = answerRows;
+    }
     //endregion
+
+
+    /**
+     *
+     * @param sheet Current sheet of the Excel file. There will be only one type of question in a specific sheet.
+     * @param type Type of the question (ENUM)
+     * @return a map, where the key is a category object, and the value is a list of question within the key category
+     */
     public Map<Cat, List<RealQuestion>> objectListFromSheet(Sheet sheet, QType type) {
         HashMap<Cat, List<RealQuestion>> resultMap = new HashMap<>();
 
@@ -114,6 +160,11 @@ public abstract class QuestionObjectProvider {
         return resultMap;
     }
 
+    /**
+     *
+     * @return a map, where the key is an idNumber with two numbers. The first number is the category number, the second is the question number.
+     *              This is important to know, because in the future will be paired the question and the answer based on this idNumber.
+     */
     protected HashMap<String, ArrayList<AbstractAnswer>> createAnswerMapWithID() {
         this.firstRow = 0;
         this.categoryCounter = 0;
@@ -149,26 +200,36 @@ public abstract class QuestionObjectProvider {
         return answerMapWithId;
     }
 
+    /**
+     *
+     * Set the field numbers based on the Excel file's rows.
+     * Fields needed to be set:
+     *      <li><b>setNumberOfQuestionFields</b> -> All the fields in the Excel, except the answer's fields.</li>
+     *      <li><b>setAnswerRows</b> -> Number of the answer rows</li>
+     *      <li><b>setAnswerColumns</b> -> Number of the answer columns. The option fields are included.</li>
+     */
     protected abstract void initFieldNumbers();
+
+    /**
+     *
+     * @param addressRange Contains all the cell address of the first answer row.
+     * @return List of all the answers of a one specific question.
+     */
     protected abstract ArrayList<AbstractAnswer> getAnswerObjectList(CellRangeAddress addressRange);
+
+    /**
+     *
+     * After overriding the method you have to cast the return value to
+     * the class of the question!
+     *
+     * @param dataMap Map, where the key is a field from the Excel, and a value is the questions value
+     * @param type type of the question (ENUM)
+     * @return a real question object based on the dataMap parameter
+     */
     protected abstract RealQuestion getQuestion(HashMap<String, String> dataMap, QType type);
 
 
-    protected Sheet getSheet() {
-        return this.sheet;
-    }
 
-    protected void setSheet(Sheet sheet) {
-        this.sheet = sheet;
-    }
-
-    public int getNumberOfFields() {
-        return numberOfFields;
-    }
-
-    public void setNumberOfQuestionFields(int numberOfFields) {
-        this.numberOfFields = numberOfFields;
-    }
 
     private String getMapKeyFromAddress(CellAddress address) {
         try {
@@ -211,33 +272,6 @@ public abstract class QuestionObjectProvider {
         firstRow += categoryFields;
         lastRow += categoryFields;
     }
-
-    //region Getters and setters
-    public int getAnswerColumns() {
-        return answerColumns;
-    }
-
-    public void setAnswerColumns(int answerColumns) {
-        this.answerColumns = answerColumns;
-    }
-
-    public int getFirstRow() {
-        return firstRow;
-    }
-
-    public void setFirstRow(int firstRow) {
-        this.firstRow = firstRow;
-    }
-
-    public int getAnswerRows() {
-        return answerRows;
-    }
-
-    public void setAnswerRows(int answerRows) {
-        this.answerRows = answerRows;
-    }
-
-    //endregion
 
 
 }
