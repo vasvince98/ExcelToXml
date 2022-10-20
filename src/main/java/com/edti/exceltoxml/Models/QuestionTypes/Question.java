@@ -24,11 +24,16 @@ import java.io.StringWriter;
 public abstract class Question {
 
 
+    //region Fields
     @XmlAttribute(name="type")
     private String type;
 
     private String idnumber;
 
+    //endregion
+
+
+    //region Getters and Setters
 
     public String getType() {
         return type;
@@ -46,6 +51,13 @@ public abstract class Question {
         this.idnumber = idnumber;
     }
 
+    //endregion
+
+    /**
+     *
+     * @return Return a .xml formatted string.
+     * @throws JAXBException is thrown, when the marshalling fails.
+     */
     public abstract String getXmlForm() throws JAXBException;
 
     protected String generateXmlForm(Class c, String qname, Object object) throws JAXBException {

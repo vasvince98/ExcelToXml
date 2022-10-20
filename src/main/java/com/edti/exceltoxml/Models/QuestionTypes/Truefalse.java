@@ -6,14 +6,16 @@ import com.edti.exceltoxml.Models.AuxClasses.Questiontext;
 import com.edti.exceltoxml.Models.PropertyClasses.FieldProperties;
 import com.edti.exceltoxml.Services.Interfaces.IImageService;
 import com.edti.exceltoxml.Services.Interfaces.IStateService;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.annotation.XmlTransient;
+import java.io.IOException;
 import java.util.HashMap;
 
 
 public class Truefalse extends RealQuestion {
+
+    //region Fields
 
     @XmlTransient
     private final FieldProperties fieldProperties;
@@ -22,13 +24,15 @@ public class Truefalse extends RealQuestion {
     @XmlTransient
     private final IImageService imageService;
 
+    //endregion
+
     //region Constructor
 
 
     public Truefalse(HashMap<String, String> data,
                      FieldProperties fieldProperties,
                      IStateService stateService,
-                     IImageService imageService) {
+                     IImageService imageService) throws IOException {
         this.fieldProperties = fieldProperties;
         this.stateService = stateService;
         this.imageService = imageService;
@@ -48,18 +52,36 @@ public class Truefalse extends RealQuestion {
 
     @Override
     protected void initSimpleInstance(HashMap<String, String> data) {
-        this.setType("truefalse");
 
-        //Name
-        Name n = new Name();
-        n.setText(data.get("Kérdés neve"));
-        this.setName(n);
+        initBaseData(data);
 
         //Question text
         Questiontext qt = new Questiontext();
         qt.setFormat("html");
         qt.setText(data.get("Kérdés szövege"));
         this.setQuestiontext(qt);
+
+    }
+
+    @Override
+    protected void initImageInstance(HashMap<String, String> data) throws IOException {
+        initBaseData(data);
+
+        //Question text
+        Questiontext qt = new Questiontext();
+        qt.setFormat("html");
+        qt.setText(imageService.transformStringToBase64(data.get("Kérdés szövege")));
+        this.setQuestiontext(qt);
+    }
+
+    @Override
+    protected void initBaseData(HashMap<String, String> data) {
+        this.setType("truefalse");
+
+        //Name
+        Name n = new Name();
+        n.setText(data.get("Kérdés neve"));
+        this.setName(n);
 
         //General feedback
         Generalfeedback gf = new Generalfeedback();
@@ -75,11 +97,6 @@ public class Truefalse extends RealQuestion {
         this.setHidden(data.get("Elrejtve?"));
         //Idnumber
         this.setIdnumber(data.get("id"));
-    }
-
-    @Override
-    protected void initImageInstance(HashMap<String, String> data) {
-        System.out.println("Képpé alakítottam a truefalset!");
     }
 
     @Override

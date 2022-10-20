@@ -9,6 +9,7 @@ import com.edti.exceltoxml.Services.StateService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.io.IOException;
 import java.util.HashMap;
 
 @Component
@@ -28,7 +29,7 @@ public class QuestionFactory {
     }
 
 
-    public static Question getQuestion(QType type, HashMap<String, String> data){
+    public static Question getQuestion(QType type, HashMap<String, String> data) throws IOException {
 
         if (type == null){
             return null;

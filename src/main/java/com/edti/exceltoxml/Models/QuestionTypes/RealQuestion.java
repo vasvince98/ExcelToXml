@@ -7,6 +7,7 @@ import com.edti.exceltoxml.Services.Interfaces.IStateService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -15,9 +16,9 @@ import java.util.List;
 public abstract class RealQuestion extends Question {
 
     //region Fields
-    private Name name;
-    private Questiontext questiontext;
-    private Generalfeedback generalfeedback;
+    protected Name name;
+    protected Questiontext questiontext;
+    protected Generalfeedback generalfeedback;
     private String defaultgrade;
     private String penalty;
     private String hidden;
@@ -135,6 +136,14 @@ public abstract class RealQuestion extends Question {
 
     /**
      *
+     * Shared data even if we want to generate image or not.
+     *
+     * @param data Map of the data fields from Excel.
+     */
+    protected abstract void initBaseData(HashMap<String, String> data);
+
+    /**
+     *
      * This method will be called when you want to do a simple conversion, without image generating.
      *
      * @param data The provided data map will be converted to object.
@@ -147,7 +156,7 @@ public abstract class RealQuestion extends Question {
      *
      * @param data The provided data map will be converted to object.
      */
-    protected abstract void initImageInstance(HashMap<String, String> data);
+    protected abstract void initImageInstance(HashMap<String, String> data) throws IOException;
 
 
     @Override

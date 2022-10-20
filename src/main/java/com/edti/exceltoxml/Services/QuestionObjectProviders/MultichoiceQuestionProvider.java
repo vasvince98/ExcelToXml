@@ -12,6 +12,7 @@ import org.apache.poi.ss.util.CellRangeAddress;
 import org.springframework.stereotype.Service;
 
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -19,7 +20,7 @@ import java.util.HashMap;
 public class MultichoiceQuestionProvider extends QuestionObjectProvider {
 
     @Override
-    protected RealQuestion getQuestion(HashMap<String, String> dataMap, QType type) {
+    protected RealQuestion getQuestion(HashMap<String, String> dataMap, QType type) throws IOException {
         return (Multichoice) QuestionFactory.getQuestion(type, dataMap);
     }
 

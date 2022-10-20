@@ -7,6 +7,7 @@ import com.edti.exceltoxml.Services.Interfaces.IStateService;
 
 import javax.xml.bind.*;
 import javax.xml.bind.annotation.XmlTransient;
+import java.io.IOException;
 import java.util.HashMap;
 
 
@@ -17,9 +18,9 @@ public class Multichoice extends RealQuestion {
     private String shuffleanswers;
     private String answernumbering;
     private String showstandardinstruction;
-    Correctfeedback correctfeedback;
-    Partiallycorrectfeedback partiallycorrectfeedback;
-    Incorrectfeedback incorrectfeedback;
+    private Correctfeedback correctfeedback;
+    private Partiallycorrectfeedback partiallycorrectfeedback;
+    private Incorrectfeedback incorrectfeedback;
     private String shownumcorrect;
 
     @XmlTransient
@@ -37,7 +38,7 @@ public class Multichoice extends RealQuestion {
     public Multichoice(HashMap<String, String> data,
                        FieldProperties fieldProperties,
                        IStateService stateService,
-                       IImageService imageService) {
+                       IImageService imageService) throws IOException {
         this.fieldProperties = fieldProperties;
         this.stateService = stateService;
         this.imageService = imageService;
@@ -147,17 +148,36 @@ public class Multichoice extends RealQuestion {
 
     @Override
     protected void initSimpleInstance(HashMap<String, String> data) {
-        this.setType("multichoice");
-        Name n = new Name();
-        //question name
-        n.setText(data.get(fieldProperties.getQuestionName()));
-        this.setName(n);
+
+        initBaseData(data);
 
         Questiontext qt = new Questiontext();
         qt.setFormat("html");
         //questiontext
         qt.setText(data.get(fieldProperties.getQuestionText()));
         this.setQuestiontext(qt);
+    }
+
+    @Override
+    protected void initImageInstance(HashMap<String, String> data) throws IOException {
+        initBaseData(data);
+
+        Questiontext qt = new Questiontext();
+        qt.setFormat("html");
+        //questiontext
+        qt.setText(imageService.transformStringToBase64(data.get(fieldProperties.getQuestionText())));
+        this.setQuestiontext(qt);
+
+
+    }
+
+    @Override
+    protected void initBaseData(HashMap<String, String> data) {
+        this.setType("multichoice");
+        Name n = new Name();
+        //question name
+        n.setText(data.get(fieldProperties.getQuestionName()));
+        this.setName(n);
 
         Generalfeedback gf = new Generalfeedback();
         gf.setFormat("html");
@@ -199,11 +219,6 @@ public class Multichoice extends RealQuestion {
         inf.setText(data.get("Visszajelzés rossz válasz esetén"));
         this.setIncorrectfeedback(inf);
         this.setShownumcorrect("");
-    }
-
-    @Override
-    protected void initImageInstance(HashMap<String, String> data) {
-        System.out.println("Képpé alakítottam a multichoice-t!");
     }
 
     @Override

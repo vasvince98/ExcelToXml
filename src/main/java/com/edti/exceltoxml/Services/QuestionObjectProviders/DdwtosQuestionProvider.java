@@ -12,6 +12,7 @@ import com.edti.exceltoxml.Services.StateService;
 import org.apache.poi.ss.util.CellRangeAddress;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -56,7 +57,7 @@ public class DdwtosQuestionProvider extends QuestionObjectProvider {
     }
 
     @Override
-    protected RealQuestion getQuestion(HashMap<String, String> dataMap, QType type) {
+    protected RealQuestion getQuestion(HashMap<String, String> dataMap, QType type) throws IOException {
         return (Ddwtos) QuestionFactory.getQuestion(type, dataMap);
     }
 }

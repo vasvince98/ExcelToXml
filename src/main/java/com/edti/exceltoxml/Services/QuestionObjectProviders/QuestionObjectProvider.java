@@ -14,6 +14,7 @@ import org.apache.poi.ss.util.CellAddress;
 import org.apache.poi.ss.util.CellRangeAddress;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -108,7 +109,12 @@ public abstract class QuestionObjectProvider {
         questionListWithCategoryName.forEach(((cat, questionMaps) -> {
             List<RealQuestion> questionList = new ArrayList<>();
             questionMaps.forEach((question) -> {
-                RealQuestion currentQuestion = getQuestion(question, type);
+                RealQuestion currentQuestion = null;
+                try {
+                    currentQuestion = getQuestion(question, type);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
 
                 String currentIdNumber = currentQuestion.getIdnumber();
 
@@ -227,7 +233,7 @@ public abstract class QuestionObjectProvider {
      * @param type type of the question (ENUM)
      * @return a real question object based on the dataMap parameter
      */
-    protected abstract RealQuestion getQuestion(HashMap<String, String> dataMap, QType type);
+    protected abstract RealQuestion getQuestion(HashMap<String, String> dataMap, QType type) throws IOException;
 
 
 

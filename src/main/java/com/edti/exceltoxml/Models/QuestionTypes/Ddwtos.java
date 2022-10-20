@@ -7,6 +7,7 @@ import com.edti.exceltoxml.Services.Interfaces.IStateService;
 
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.annotation.XmlTransient;
+import java.io.IOException;
 import java.util.HashMap;
 
 public class Ddwtos extends RealQuestion {
@@ -18,14 +19,18 @@ public class Ddwtos extends RealQuestion {
     Incorrectfeedback incorrectfeedback;
     private String shownumcorrect;
 
-    //endregion
-
     @XmlTransient
     private final FieldProperties fieldProperties;
     @XmlTransient
     private final IStateService stateService;
     @XmlTransient
     private final IImageService imageService;
+
+    //endregion
+
+
+
+    //region Constructors
 
     public Ddwtos(HashMap<String, String> data,
                   FieldProperties fieldProperties,
@@ -36,6 +41,8 @@ public class Ddwtos extends RealQuestion {
         this.imageService = imageService;
         initSimpleInstance(data);
     }
+
+    //endregion
 
 
     //region Getters and Setters
@@ -88,18 +95,37 @@ public class Ddwtos extends RealQuestion {
 
     @Override
     protected void initSimpleInstance(HashMap<String, String> data) {
-        this.setType("ddwtos");
 
-        Name n = new Name();
-        //question name
-        n.setText(data.get(fieldProperties.getQuestionName()));
-        this.setName(n);
+        initBaseData(data);
 
         Questiontext qt = new Questiontext();
         qt.setFormat("html");
         //questiontext
         qt.setText(data.get(fieldProperties.getQuestionText()));
         this.setQuestiontext(qt);
+
+
+    }
+
+    @Override
+    protected void initImageInstance(HashMap<String, String> data) throws IOException {
+        initBaseData(data);
+
+        Questiontext qt = new Questiontext();
+        qt.setFormat("html");
+        //questiontext
+        qt.setText(imageService.transformStringToBase64(data.get(fieldProperties.getQuestionText())));
+        this.setQuestiontext(qt);
+    }
+
+    @Override
+    protected void initBaseData(HashMap<String, String> data) {
+        this.setType("ddwtos");
+
+        Name n = new Name();
+        //question name
+        n.setText(data.get(fieldProperties.getQuestionName()));
+        this.setName(n);
 
         Generalfeedback gf = new Generalfeedback();
         gf.setFormat("html");
@@ -136,10 +162,5 @@ public class Ddwtos extends RealQuestion {
         inf.setText(data.get(fieldProperties.getIncorrectFeedback()));
         this.setIncorrectfeedback(inf);
         this.setShownumcorrect(fieldProperties.getShowNumCorrect());
-    }
-
-    @Override
-    protected void initImageInstance(HashMap<String, String> data) {
-        System.out.println("Ez meg implementálva van de sose lesz meghívva");
     }
 }
