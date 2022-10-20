@@ -1,9 +1,10 @@
 package com.edti.exceltoxml.Models.QuestionTypes;
 
-import com.edti.exceltoxml.Models.PropertyClasses.FieldProperties;
-import com.edti.exceltoxml.Services.Interfaces.IImageService;
-import com.edti.exceltoxml.Services.Interfaces.IStateService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.edti.exceltoxml.Models.AdapterCDATA;
+import com.edti.exceltoxml.Models.AuxClasses.Auxiliary;
+import com.edti.exceltoxml.Models.JaxbCharacterEscapeHandler;
+import com.sun.xml.bind.marshaller.CharacterEscapeHandler;
+import com.sun.xml.bind.marshaller.DataWriter;
 import org.springframework.stereotype.Component;
 
 import javax.xml.bind.JAXBContext;
@@ -14,9 +15,12 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.adapters.XmlAdapter;
 import javax.xml.namespace.QName;
-import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.io.StringWriter;
+import java.io.Writer;
 
 @XmlRootElement()
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -65,7 +69,12 @@ public abstract class Question {
         JAXBContext ctx = JAXBContext.newInstance(c);
         Marshaller m = ctx.createMarshaller();
         m.setProperty(Marshaller.JAXB_FRAGMENT, true);
-        m.marshal(new JAXBElement<>(new QName(qname), c, object), sw);
+        m.setAdapter(new AdapterCDATA());
+
+        PrintWriter printWriter = new PrintWriter(sw);
+        DataWriter dw = new DataWriter(printWriter, "UTF-8", new JaxbCharacterEscapeHandler());
+
+        m.marshal(new JAXBElement<>(new QName(qname), c, object), dw);
         return sw.toString();
     }
 
