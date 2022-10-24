@@ -43,7 +43,7 @@ public class UploadAndDownloadService implements IUploadAndDownloadService {
             File currDir = new File(serverPath + "/" + date + file.getOriginalFilename());
             FileOutputStream server = new FileOutputStream(currDir);
 
-            int ch = 0;
+            int ch;
             while ((ch = in.read()) != -1) {
                 server.write(ch);
             }
