@@ -34,7 +34,7 @@ public class TrueFalseQuestionProvider extends QuestionObjectProvider {
         ArrayList<AbstractAnswer> answerList = new ArrayList<>();
         addressRange.forEach((r) -> {
             Answer currentAnswer = new Answer();
-            currentAnswer.setText(sheet.getRow(r.getRow()).getCell(r.getColumn()).toString().toLowerCase());
+            currentAnswer.setSimpleText(sheet.getRow(r.getRow()).getCell(r.getColumn()).toString().toLowerCase());
             String answerPoint = sheet.getRow(r.getRow() + 1).getCell(r.getColumn()).toString();
             if (answerPoint.equals("0.0")) {
                 currentAnswer.setFraction("0");

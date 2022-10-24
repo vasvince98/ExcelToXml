@@ -5,24 +5,14 @@ import javax.xml.bind.annotation.XmlAttribute;
 
 public class Info extends Auxiliary {
 
-    private String text;
-
-    @Override
-    public String getText() {
-        return this.text;
-    }
-
-    @Override
-    public void setText(String text) {
-        this.text = text;
-    }
     @XmlAttribute(name="format")
     private String format;
 
     public Info(String text) {
+        setSimpleText(text);
         this.format = "moodle_auto_format";
-        setText(text);
     }
+
 
     public String getFormat() {
         return format;

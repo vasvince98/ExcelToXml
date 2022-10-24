@@ -8,13 +8,10 @@ public class Category extends Auxiliary {
         return this.text;
     }
 
-    @Override
-    public void setText(String text) {
-        this.text = text;
-    }
+
 
     public Category(String text) {
-        setText(text);
+        setImageText(text);
     }
 
 

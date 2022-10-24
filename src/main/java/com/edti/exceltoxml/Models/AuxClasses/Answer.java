@@ -17,7 +17,7 @@ public class Answer extends AbstractAnswer {
     }
 
     public Answer(String text) {
-        setText(text);
+        setImageText(text);
     }
 
 

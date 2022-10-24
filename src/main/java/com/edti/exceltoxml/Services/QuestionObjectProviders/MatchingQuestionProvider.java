@@ -29,7 +29,7 @@ public class MatchingQuestionProvider extends QuestionObjectProvider {
         addressRange.forEach((r) -> {
             Subquestion currentSubquestion = new Subquestion();
             try {
-                currentSubquestion.setText(sheet.getRow(r.getRow()).getCell(r.getColumn()).toString());
+                currentSubquestion.setImageText(sheet.getRow(r.getRow()).getCell(r.getColumn()).toString());
             } catch (Exception e) {
                 System.out.println("Empty cell");
             }

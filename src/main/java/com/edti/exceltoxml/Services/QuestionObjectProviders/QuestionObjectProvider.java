@@ -109,7 +109,7 @@ public abstract class QuestionObjectProvider {
         questionListWithCategoryName.forEach(((cat, questionMaps) -> {
             List<RealQuestion> questionList = new ArrayList<>();
             questionMaps.forEach((question) -> {
-                RealQuestion currentQuestion = null;
+                RealQuestion currentQuestion;
                 try {
                     currentQuestion = getQuestion(question, type);
                 } catch (IOException e) {

@@ -6,7 +6,7 @@ public class Subquestion extends AbstractAnswer {
     public Subquestion() {}
 
     public Subquestion(String text) {
-        setText(text);
+        setImageText(text);
     }
 
     public Answer getAnswer() {

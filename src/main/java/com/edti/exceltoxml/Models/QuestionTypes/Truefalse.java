@@ -58,7 +58,7 @@ public class Truefalse extends RealQuestion {
         //Question text
         Questiontext qt = new Questiontext();
         qt.setFormat("html");
-        qt.setText(data.get("Kérdés szövege"));
+        qt.setSimpleText(data.get("Kérdés szövege"));
         this.setQuestiontext(qt);
 
     }
@@ -70,7 +70,7 @@ public class Truefalse extends RealQuestion {
         //Question text
         Questiontext qt = new Questiontext();
         qt.setFormat("html");
-        qt.setText(imageService.transformStringToBase64(data.get("Kérdés szövege")));
+        qt.setImageText(imageService.transformStringToBase64(data.get("Kérdés szövege")));
         this.setQuestiontext(qt);
     }
 
@@ -80,13 +80,13 @@ public class Truefalse extends RealQuestion {
 
         //Name
         Name n = new Name();
-        n.setText(data.get("Kérdés neve"));
+        n.setImageText(data.get("Kérdés neve"));
         this.setName(n);
 
         //General feedback
         Generalfeedback gf = new Generalfeedback();
         gf.setFormat("html");
-        gf.setText(data.get("Általános visszajelzés"));
+        gf.setImageText(data.get("Általános visszajelzés"));
         this.setGeneralfeedback(gf);
 
         //Default grade

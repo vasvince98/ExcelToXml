@@ -11,7 +11,7 @@ public class Dragbox extends AbstractAnswer {
     public Dragbox() {}
 
     public Dragbox(String text, int group) {
-        setText(text);
+        setImageText(text);
         this.group = group;
     }
 

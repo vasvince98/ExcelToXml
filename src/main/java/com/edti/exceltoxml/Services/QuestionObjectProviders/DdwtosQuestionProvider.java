@@ -1,14 +1,11 @@
 package com.edti.exceltoxml.Services.QuestionObjectProviders;
 
 import com.edti.exceltoxml.Models.AuxClasses.AbstractAnswer;
-import com.edti.exceltoxml.Models.AuxClasses.Answer;
 import com.edti.exceltoxml.Models.AuxClasses.Dragbox;
-import com.edti.exceltoxml.Models.AuxClasses.Subquestion;
 import com.edti.exceltoxml.Models.Enums.QType;
 import com.edti.exceltoxml.Models.Factories.QuestionFactory;
 import com.edti.exceltoxml.Models.QuestionTypes.Ddwtos;
 import com.edti.exceltoxml.Models.QuestionTypes.RealQuestion;
-import com.edti.exceltoxml.Services.StateService;
 import org.apache.poi.ss.util.CellRangeAddress;
 import org.springframework.stereotype.Service;
 
@@ -38,7 +35,7 @@ public class DdwtosQuestionProvider extends QuestionObjectProvider {
             }
 
             try {
-                currentDragbox.setText(sheet.getRow(r.getRow() + 1).getCell(r.getColumn()).toString());
+                currentDragbox.setImageText(sheet.getRow(r.getRow() + 1).getCell(r.getColumn()).toString());
             } catch (Exception e) {
                 System.out.println("Empty cell at: " + r);          //todo: replace with log
             }

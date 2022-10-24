@@ -154,7 +154,7 @@ public class Multichoice extends RealQuestion {
         Questiontext qt = new Questiontext();
         qt.setFormat("html");
         //questiontext
-        qt.setText(data.get(fieldProperties.getQuestionText()));
+        qt.setImageText(data.get(fieldProperties.getQuestionText()));
         this.setQuestiontext(qt);
     }
 
@@ -165,7 +165,7 @@ public class Multichoice extends RealQuestion {
         Questiontext qt = new Questiontext();
         qt.setFormat("html");
         //questiontext
-        qt.setText(imageService.transformStringToBase64(data.get(fieldProperties.getQuestionText())));
+        qt.setImageText(imageService.transformStringToBase64(data.get(fieldProperties.getQuestionText())));
         this.setQuestiontext(qt);
 
 
@@ -176,13 +176,13 @@ public class Multichoice extends RealQuestion {
         this.setType("multichoice");
         Name n = new Name();
         //question name
-        n.setText(data.get(fieldProperties.getQuestionName()));
+        n.setImageText(data.get(fieldProperties.getQuestionName()));
         this.setName(n);
 
         Generalfeedback gf = new Generalfeedback();
         gf.setFormat("html");
         //general feedback
-        gf.setText(data.get(fieldProperties.getGeneralFeedback()));
+        gf.setImageText(data.get(fieldProperties.getGeneralFeedback()));
         this.setGeneralfeedback(gf);
 
         //Pont
@@ -204,19 +204,19 @@ public class Multichoice extends RealQuestion {
         Correctfeedback cf = new Correctfeedback();
         cf.setFormat("html");
         //Correct feedback
-        cf.setText(data.get("Visszajelzés helyes válasz esetén"));
+        cf.setImageText(data.get("Visszajelzés helyes válasz esetén"));
         this.setCorrectfeedback(cf);
 
         Partiallycorrectfeedback pf = new Partiallycorrectfeedback();
         pf.setFormat("html");
         //Partially correct feedback
-        pf.setText(data.get("Visszajelzés részben helyes válasz esetén"));
+        pf.setImageText(data.get("Visszajelzés részben helyes válasz esetén"));
         this.setPartiallycorrectfeedback(pf);
 
         Incorrectfeedback inf = new Incorrectfeedback();
         inf.setFormat("html");
         //Incorrect feedback
-        inf.setText(data.get("Visszajelzés rossz válasz esetén"));
+        inf.setImageText(data.get("Visszajelzés rossz válasz esetén"));
         this.setIncorrectfeedback(inf);
         this.setShownumcorrect("");
     }
