@@ -38,7 +38,9 @@ public class UploadAndDownloadService implements IUploadAndDownloadService {
         try {
             InputStream in = file.getInputStream();
             String serverPath = pathLocatorService.getPath();
-            File currDir = new File(serverPath + "/" + LocalDateTime.now() + file.getOriginalFilename());
+            LocalDateTime ldt =  LocalDateTime.now();
+            String date = String.format("%s-%s-%s-%s-%s-%s-", ldt.getYear(), ldt.getMonthValue(), ldt.getDayOfMonth(), ldt.getHour(), ldt.getMinute(), ldt.getSecond());
+            File currDir = new File(serverPath + "/" + date + file.getOriginalFilename());
             FileOutputStream server = new FileOutputStream(currDir);
 
             int ch = 0;
