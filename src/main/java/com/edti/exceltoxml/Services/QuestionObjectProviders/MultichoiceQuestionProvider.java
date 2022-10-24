@@ -7,6 +7,8 @@ import com.edti.exceltoxml.Models.Enums.QType;
 import com.edti.exceltoxml.Models.Factories.QuestionFactory;
 import com.edti.exceltoxml.Models.QuestionTypes.Multichoice;
 import com.edti.exceltoxml.Models.QuestionTypes.RealQuestion;
+import com.edti.exceltoxml.Services.Interfaces.IImageService;
+import com.edti.exceltoxml.Services.Interfaces.IStateService;
 import org.apache.poi.ss.util.CellRangeAddress;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +19,10 @@ import java.util.HashMap;
 
 @Service
 public class MultichoiceQuestionProvider extends QuestionObjectProvider {
+
+    public MultichoiceQuestionProvider(IImageService imageService, IStateService stateService) {
+        super(imageService, stateService);
+    }
 
     @Override
     protected RealQuestion getQuestion(HashMap<String, String> dataMap, QType type) throws IOException {
@@ -35,7 +41,15 @@ public class MultichoiceQuestionProvider extends QuestionObjectProvider {
         ArrayList<AbstractAnswer> answerList = new ArrayList<>();
         addressRange.forEach((r) -> {
             Answer currentAnswer = new Answer();
-            currentAnswer.setImageText(sheet.getRow(r.getRow()).getCell(r.getColumn()).toString());
+            if (stateService.getState()) {
+                try {
+                    currentAnswer.setImageText(imageService.transformStringToBase64(sheet.getRow(r.getRow()).getCell(r.getColumn()).toString()));
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            } else {
+                currentAnswer.setSimpleText(sheet.getRow(r.getRow()).getCell(r.getColumn()).toString());
+            }
             currentAnswer.setFraction(sheet.getRow(r.getRow() + 1).getCell(r.getColumn()).toString());
             currentAnswer.setFeedback(new Feedback(sheet.getRow(r.getRow() + 2).getCell(r.getColumn()).toString()));
 

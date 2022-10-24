@@ -36,7 +36,7 @@ public class Truefalse extends RealQuestion {
         this.fieldProperties = fieldProperties;
         this.stateService = stateService;
         this.imageService = imageService;
-        if (stateService.getState().equals("on")) {
+        if (stateService.getState()) {
             initImageInstance(data);
         } else {
             initSimpleInstance(data);
@@ -80,13 +80,13 @@ public class Truefalse extends RealQuestion {
 
         //Name
         Name n = new Name();
-        n.setImageText(data.get("Kérdés neve"));
+        n.setSimpleText(data.get("Kérdés neve"));
         this.setName(n);
 
         //General feedback
         Generalfeedback gf = new Generalfeedback();
         gf.setFormat("html");
-        gf.setImageText(data.get("Általános visszajelzés"));
+        gf.setSimpleText(data.get("Általános visszajelzés"));
         this.setGeneralfeedback(gf);
 
         //Default grade

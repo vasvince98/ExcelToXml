@@ -7,7 +7,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement()
 @XmlAccessorType(XmlAccessType.FIELD)
-public abstract class AbsFeedback extends Auxiliary{
+public abstract class AbsFeedback extends Auxiliary {
     @XmlAttribute(name="format")
     private String format;
 

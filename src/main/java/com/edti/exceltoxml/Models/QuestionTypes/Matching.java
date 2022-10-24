@@ -39,7 +39,7 @@ public class Matching extends RealQuestion {
         this.fieldProperties = fieldProperties;
         this.stateService = stateService;
         this.imageService = imageService;
-        if (stateService.getState().equals("on")) {
+        if (stateService.getState()) {
             initImageInstance(data);
         } else {
             initSimpleInstance(data);
@@ -106,7 +106,7 @@ public class Matching extends RealQuestion {
         Questiontext qt = new Questiontext();
         qt.setFormat("html");
         //questiontext
-        qt.setImageText(data.get(fieldProperties.getQuestionText()));
+        qt.setSimpleText(data.get(fieldProperties.getQuestionText()));
         this.setQuestiontext(qt);
     }
 
@@ -128,13 +128,13 @@ public class Matching extends RealQuestion {
 
         Name n = new Name();
         //question name
-        n.setImageText(data.get(fieldProperties.getQuestionName()));
+        n.setSimpleText(data.get(fieldProperties.getQuestionName()));
         this.setName(n);
 
         Generalfeedback gf = new Generalfeedback();
         gf.setFormat("html");
         //general feedback
-        gf.setImageText(data.get(fieldProperties.getGeneralFeedback()));
+        gf.setSimpleText(data.get(fieldProperties.getGeneralFeedback()));
         this.setGeneralfeedback(gf);
 
         //Pont
@@ -151,19 +151,19 @@ public class Matching extends RealQuestion {
         Correctfeedback cf = new Correctfeedback();
         cf.setFormat("html");
         //Correct feedback
-        cf.setImageText(data.get(fieldProperties.getCorrectFeedback()));
+        cf.setSimpleText(data.get(fieldProperties.getCorrectFeedback()));
         this.setCorrectfeedback(cf);
 
         Partiallycorrectfeedback pf = new Partiallycorrectfeedback();
         pf.setFormat("html");
         //Partially correct feedback
-        pf.setImageText(data.get(fieldProperties.getPartiallyCorrectFeedback()));
+        pf.setSimpleText(data.get(fieldProperties.getPartiallyCorrectFeedback()));
         this.setPartiallycorrectfeedback(pf);
 
         Incorrectfeedback inf = new Incorrectfeedback();
         inf.setFormat("html");
         //Incorrect feedback
-        inf.setImageText(data.get(fieldProperties.getIncorrectFeedback()));
+        inf.setSimpleText(data.get(fieldProperties.getIncorrectFeedback()));
         this.setIncorrectfeedback(inf);
         this.setShownumcorrect(fieldProperties.getShowNumCorrect());
     }

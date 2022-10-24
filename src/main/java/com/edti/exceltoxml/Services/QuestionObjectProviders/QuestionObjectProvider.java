@@ -8,6 +8,8 @@ import com.edti.exceltoxml.Models.Enums.QType;
 import com.edti.exceltoxml.Models.PropertyClasses.FieldProperties;
 import com.edti.exceltoxml.Models.QuestionTypes.Cat;
 import com.edti.exceltoxml.Models.QuestionTypes.RealQuestion;
+import com.edti.exceltoxml.Services.Interfaces.IImageService;
+import com.edti.exceltoxml.Services.Interfaces.IStateService;
 import com.edti.exceltoxml.Services.StateService;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.util.CellAddress;
@@ -42,8 +44,17 @@ public abstract class QuestionObjectProvider {
 
     private int questionCounter;
     private int categoryCounter;
+    protected IImageService imageService;
+    protected IStateService stateService;
 
     //endregion
+
+
+    @Autowired
+    public QuestionObjectProvider(IImageService imageService, IStateService stateService) {
+        this.imageService = imageService;
+        this.stateService = stateService;
+    }
 
     //region Getters and Setters
     protected Sheet getSheet() {

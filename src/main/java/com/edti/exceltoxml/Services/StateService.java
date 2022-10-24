@@ -21,7 +21,8 @@ public class StateService implements IStateService {
         }
     }
 
-    public String getState() {
-        return state;
+    public boolean getState() {
+        return this.state.equals("on");
+
     }
 }

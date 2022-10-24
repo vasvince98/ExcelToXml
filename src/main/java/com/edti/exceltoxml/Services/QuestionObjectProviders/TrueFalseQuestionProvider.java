@@ -7,6 +7,8 @@ import com.edti.exceltoxml.Models.Enums.QType;
 import com.edti.exceltoxml.Models.Factories.QuestionFactory;
 import com.edti.exceltoxml.Models.QuestionTypes.RealQuestion;
 import com.edti.exceltoxml.Models.QuestionTypes.Truefalse;
+import com.edti.exceltoxml.Services.Interfaces.IImageService;
+import com.edti.exceltoxml.Services.Interfaces.IStateService;
 import org.apache.poi.ss.util.CellRangeAddress;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +18,10 @@ import java.util.HashMap;
 
 @Service
 public class TrueFalseQuestionProvider extends QuestionObjectProvider {
+
+    public TrueFalseQuestionProvider(IImageService imageService, IStateService stateService) {
+        super(imageService, stateService);
+    }
 
     @Override
     protected RealQuestion getQuestion(HashMap<String, String> dataMap, QType type) throws IOException {

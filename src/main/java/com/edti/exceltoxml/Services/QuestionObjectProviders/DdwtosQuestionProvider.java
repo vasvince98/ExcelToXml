@@ -6,6 +6,8 @@ import com.edti.exceltoxml.Models.Enums.QType;
 import com.edti.exceltoxml.Models.Factories.QuestionFactory;
 import com.edti.exceltoxml.Models.QuestionTypes.Ddwtos;
 import com.edti.exceltoxml.Models.QuestionTypes.RealQuestion;
+import com.edti.exceltoxml.Services.Interfaces.IImageService;
+import com.edti.exceltoxml.Services.Interfaces.IStateService;
 import org.apache.poi.ss.util.CellRangeAddress;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +17,10 @@ import java.util.HashMap;
 
 @Service
 public class DdwtosQuestionProvider extends QuestionObjectProvider {
+
+    public DdwtosQuestionProvider(IImageService imageService, IStateService stateService) {
+        super(imageService, stateService);
+    }
 
     @Override
     protected void initFieldNumbers() {
@@ -35,7 +41,7 @@ public class DdwtosQuestionProvider extends QuestionObjectProvider {
             }
 
             try {
-                currentDragbox.setImageText(sheet.getRow(r.getRow() + 1).getCell(r.getColumn()).toString());
+                currentDragbox.setSimpleText(sheet.getRow(r.getRow() + 1).getCell(r.getColumn()).toString());
             } catch (Exception e) {
                 System.out.println("Empty cell at: " + r);          //todo: replace with log
             }
