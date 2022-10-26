@@ -18,6 +18,15 @@ public class ExceptionHandlerController implements ErrorController {
         return "error";
     }
 
+    @ExceptionHandler({MissingDataException.class})
+    public String incorrectFieldException(Model m) {
+        OwnError error = new OwnError("Every cell must be filled!");
+        m.addAttribute("error", error);
+        return "error";
+    }
+
+
+
     @ExceptionHandler({MissingHeaderException.class})
     public String missingHeaderExceptionHandler(Model m) {
         OwnError error = new OwnError("Az első sorban szerepelnie kell a mező típusoknak!");

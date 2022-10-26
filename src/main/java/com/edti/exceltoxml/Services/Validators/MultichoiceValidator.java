@@ -1,5 +1,6 @@
 package com.edti.exceltoxml.Services.Validators;
 
+import com.edti.exceltoxml.Exceptions.IncorrectFieldException;
 import com.edti.exceltoxml.Models.QuestionTypes.RealQuestion;
 
 public class MultichoiceValidator extends Validator {
@@ -13,4 +14,19 @@ public class MultichoiceValidator extends Validator {
     private boolean isShuffleAnswerValid(String shuffleAnswer) {
         return true;
     }
+
+    private String isSingle(String single) {
+        switch (single) {
+            case "IGAZ", "igaz", "true", "TRUE", "igen", "IGEN" -> {
+                return "true";
+            }
+
+            case "HAMIS", "hamis", "false", "FALSE", "NEM", "nem" -> {
+                return "false";
+            }
+
+            default -> throw new IncorrectFieldException();
+        }
+    }
+
 }
