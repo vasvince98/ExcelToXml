@@ -1,5 +1,5 @@
 # How to add a new question type to the code
-Spring app, create a moodle xml format from excel file, and convert an existing xml to base64 coded xml
+Spring app, create a Moodle xml format from Excel file, and convert an existing xml to base64 coded xml
 
 This is an instruction how you can add a new question type to the code.
   <h1>1. Create a class with a name of your new questiontype!</h1><br>
@@ -23,11 +23,15 @@ This is an instruction how you can add a new question type to the code.
         
   <h1>4. Create a new question provider class!</h1><br>
         <p>- In the <b>'com.edti.exceltoxml.Services.QuestionObjectProviders'</b> package, create a new question provider class. </p>
-        <p>- Annotate it with a <b>@Service<b> annotation!</p>
+        <p>- Annotate it with a <b>@Service</b> annotation!</p>
         <p>- Extend the class from abstract class QuestionObjectProvider! </p>
         <p>- Implement the required methods!</p>
         
   <h1>5. Add the question to the question service!</h1><br>
         <p>- Inject the new question provider service into the QuestionService class!</p>
-        <p>- In the createQuestionList method extract the switch-case with a copy of the new questions's name of the excel sheet! </p>
+        <p>- In the createQuestionList method extract the switch-case with a copy of the new questions's name of the Excel sheet! </p>
+
+  <h1>6. Add a validator for the new class!</h1><br>
+        <p>- Create a new validator class!</p>
+        <p>- Extend the abstract Validator class, and implement the methods for the unique fields!</p>
     
