@@ -18,7 +18,7 @@ public class ExceptionHandlerController implements ErrorController {
         return "error";
     }
 
-    @ExceptionHandler({MissingDataException.class})
+    @ExceptionHandler({IncorrectFieldException.class})
     public String incorrectFieldException(Model m) {
         OwnError error = new OwnError("Every cell must be filled!");
         m.addAttribute("error", error);

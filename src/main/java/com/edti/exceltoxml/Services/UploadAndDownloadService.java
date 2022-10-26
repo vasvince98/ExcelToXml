@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.Objects;
@@ -124,13 +125,16 @@ public class UploadAndDownloadService implements IUploadAndDownloadService {
     private void setResponseEntity(ByteArrayResource resource) {
         if (fileName.toLowerCase().endsWith(".xml")) {
             this.responseEntity = ResponseEntity.ok()
-                    .header(HttpHeaders.CONTENT_DISPOSITION, "attachment;filename=" + this.fileName)
+                    .header(HttpHeaders.CONTENT_DISPOSITION, "attachment;filename*=utf-8" + this.fileName)
                     .contentType(MediaType.APPLICATION_OCTET_STREAM)
                     .body(resource);
         } else {
+            HttpHeaders responseHeaders = new HttpHeaders();
+            responseHeaders.add(HttpHeaders.CONTENT_DISPOSITION, "attachment;filename=" + "CONVERTED.xml");
+            responseHeaders.add("Content-type", "application/octet-stream; charset=utf-8");
+
             this.responseEntity = ResponseEntity.ok()
-                    .header(HttpHeaders.CONTENT_DISPOSITION, "attachment;filename=" + "CONVERTED.xml")
-                    .contentType(MediaType.APPLICATION_OCTET_STREAM)
+                    .headers(responseHeaders)
                     .body(resource);
         }
     }
