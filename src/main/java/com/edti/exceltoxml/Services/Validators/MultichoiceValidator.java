@@ -25,7 +25,7 @@ public class MultichoiceValidator extends Validator {
                 return "false";
             }
 
-            default -> throw new IncorrectFieldException();
+            default -> throw new IncorrectFieldException("The 'Egy válasz a jó?' parameter was incorrect, please check it!");
         }
     }
 
